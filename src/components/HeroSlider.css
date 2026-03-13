@@ -1,0 +1,72 @@
+.hero-slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    background: #000; /* Prevent white flash if image fails */
+}
+
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    transform: scale(1);
+    z-index: 0;
+}
+
+.slider-image.active {
+    opacity: 1;
+    z-index: 1;
+    animation: kenBurns 8s ease-out forwards;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1); /* Pronounced zoom for cinematic effect */
+    }
+}
+
+.hero-overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Cinematic vignette and deep gradient for high contrast */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.1) 30%,
+        rgba(0, 0, 0, 0.15) 70%,
+        rgba(0, 0, 0, 0.7) 100%
+    ), radial-gradient(
+        circle at center,
+        transparent 40%,
+        rgba(0, 0, 0, 0.3) 120%
+    );
+    z-index: 2;
+}
+
+/* Ensure the content is above the slider */
+.hero-content-wrap {
+    position: relative;
+    z-index: 3 !important;
+}
+
+/* Adjust hero-section to contain the slider properly */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}

@@ -1,0 +1,47 @@
+﻿
+C:\Users\sreenanda\OneDrive\Attachments\Desktop\roaming website\src\components\LevitatingCarousel.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\sreenanda\OneDrive\Attachments\Desktop\roaming website\src\components\Navbar.jsx
+  26:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  24 |
+  25 |     useEffect(() => {
+> 26 |         setMenuOpen(false);
+     |         ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  27 |     }, [location]);
+  28 |
+  29 |     useEffect(() => {  react-hooks/set-state-in-effect
+
+C:\Users\sreenanda\OneDrive\Attachments\Desktop\roaming website\src\pages\DestinationDetail.jsx
+  29:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  27 |     const found = destinationsData.find(d => d.id === id);
+  28 |     if (found) {
+> 29 |       setDest(found);
+     |       ^^^^^^^ Avoid calling setState() directly within an effect
+  30 |     } else {
+  31 |       navigate('/destinations'); // Redirect back if not found
+  32 |     }  react-hooks/set-state-in-effect
+
+C:\Users\sreenanda\OneDrive\Attachments\Desktop\roaming website\src\pages\Home.jsx
+   1:29  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u        no-unused-vars
+  39:7   error  'stats' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\sreenanda\OneDrive\Attachments\Desktop\roaming website\src\pages\Services.jsx
+  200:7  error  'featureIcons' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 6 problems (6 errors, 0 warnings)
+

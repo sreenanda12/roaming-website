@@ -1,0 +1,40 @@
+/* App.css - page transition & global polish */
+.app-wrapper {
+  position: relative;
+}
+
+/* Page transition overlay */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Cursor glow (decorative) */
+.cursor-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(58, 133, 69, 0.04) 0%,
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: 0.15s ease;
+}
