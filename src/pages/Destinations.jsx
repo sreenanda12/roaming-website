@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MapPin, ArrowRight, ExternalLink } from 'lucide-react';
+import { MapPin, ArrowRight, ExternalLink, Search } from 'lucide-react';
 import destinationsData from '../data/destinationsData';
 import './Destinations.css';
 
 export default function Destinations() {
+  const [searchQuery, setSearchQuery] = useState('');
+
   useEffect(() => {
     // Scroll observer for animations
     const observer = new IntersectionObserver(
@@ -17,7 +19,13 @@ export default function Destinations() {
     );
     document.querySelectorAll('.aos, .aos-left, .aos-right, .aos-scale').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [searchQuery]); // Re-run when search changes to observer new elements
+
+  const filteredDestinations = destinationsData.filter(dest => 
+    dest.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    dest.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    dest.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="destinations-page">
@@ -39,48 +47,67 @@ export default function Destinations() {
         </div>
       </section>
 
-      {/* Destination Grid */}
+      {/* Search & Grid */}
       <section className="section destinations-grid-section">
         <div className="container">
+          <div className="search-container aos">
+            <div className="search-wrapper">
+              <Search className="search-icon" size={20} />
+              <input 
+                type="text" 
+                placeholder="Search your next destination..." 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+
           <div className="destinations-grid">
-            {destinationsData.map((dest, i) => (
-              <NavLink 
-                to={`/destinations/${dest.id}`} 
-                key={dest.id} 
-                className="dest-card aos aos-scale"
-                style={{ '--index': i }}
-              >
-                <div className="dest-card-image">
-                  <img 
-                    src={dest.titleImage} 
-                    alt={dest.name} 
-                    loading="lazy" 
-                    onError={(e) => {
-                      e.target.src = '/images/destinations/hero.png';
-                      e.target.onerror = null;
-                    }}
-                  />
-                  <div className="dest-card-overlay">
-                    <button className="explore-btn">
-                      <span>Explore Packages</span>
-                      <ArrowRight size={16} />
-                    </button>
+            {filteredDestinations.length > 0 ? (
+              filteredDestinations.map((dest, i) => (
+                <NavLink 
+                  to={`/destinations/${dest.id}`} 
+                  key={dest.id} 
+                  className="dest-card aos aos-scale"
+                  style={{ '--index': i }}
+                >
+                  <div className="dest-card-image">
+                    <img 
+                      src={dest.titleImage} 
+                      alt={dest.name} 
+                      loading="lazy" 
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1548013146-72479768bbaa?w=1200&q=80';
+                        e.target.onerror = null;
+                      }}
+                    />
+                    <div className="dest-card-overlay">
+                      <button className="explore-btn">
+                        <span>Explore Packages</span>
+                        <ArrowRight size={16} />
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div className="dest-card-content">
-                  <div className="dest-location">
-                    <MapPin size={14} />
-                    <span>Global Gateway</span>
+                  <div className="dest-card-content">
+                    <div className="dest-location">
+                      <MapPin size={14} />
+                      <span>Global Gateway</span>
+                    </div>
+                    <h3>{dest.name}</h3>
+                    <p>{dest.description}</p>
+                    <div className="card-footer-link">
+                      <span>Discover More</span>
+                      <ExternalLink size={14} />
+                    </div>
                   </div>
-                  <h3>{dest.name}</h3>
-                  <p>{dest.description}</p>
-                  <div className="card-footer-link">
-                    <span>Discover More</span>
-                    <ExternalLink size={14} />
-                  </div>
-                </div>
-              </NavLink>
-            ))}
+                </NavLink>
+              ))
+            ) : (
+              <div className="no-results aos">
+                <h3>No destinations found matching "{searchQuery}"</h3>
+                <p>Try searching for a different city or country.</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
