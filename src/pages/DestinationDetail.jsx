@@ -126,7 +126,15 @@ export default function DestinationDetail() {
             {dest.attractions.map((attr, i) => (
               <div key={attr.name} className={`attraction-card aos aos-delay-${i + 1}`}>
                 <div className="attr-image">
-                  <img src={attr.img} alt={attr.name} loading="lazy" />
+                  <img 
+                    src={attr.img} 
+                    alt={attr.name} 
+                    loading="lazy" 
+                    onError={(e) => {
+                      e.target.src = '/images/destinations/hero.png';
+                      e.target.onerror = null;
+                    }}
+                  />
                   <div className="attr-overlay">
                     <span>Explore <ArrowRight size={14} /></span>
                   </div>
@@ -181,7 +189,15 @@ export default function DestinationDetail() {
             <div className="detail-gallery-grid">
                 {dest.gallery.map((img, i) => (
                   <div key={i} className={`gallery-item aos aos-delay-${i + 1}`}>
-                    <img src={img} alt={`${dest.name} gallery ${i}`} loading="lazy" />
+                    <img 
+                      src={img} 
+                      alt={`${dest.name} gallery ${i}`} 
+                      loading="lazy" 
+                      onError={(e) => {
+                        e.target.src = '/images/destinations/hero.png';
+                        e.target.onerror = null;
+                      }}
+                    />
                   </div>
                 ))}
             </div>

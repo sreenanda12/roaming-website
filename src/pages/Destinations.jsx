@@ -24,15 +24,15 @@ export default function Destinations() {
       {/* Hero */}
       <section className="page-hero destinations-hero">
         <div className="page-hero-overlay" />
-        <div className="container page-hero-content">
-          <div className="breadcrumb">
+        <div className="container page-hero-content destinations-hero-content">
+          <div className="breadcrumb aos">
             <NavLink to="/">Home</NavLink>
             <span>›</span>
             <span>Destinations</span>
           </div>
-          <div className="section-badge light">Our Footprint</div>
-          <h1>Explore the World</h1>
-          <p>
+          <div className="section-badge light aos">Our Footprint</div>
+          <h1 className="aos">Explore the World</h1>
+          <p className="aos aos-delay-1" style={{ textAlign: 'center', maxWidth: '700px' }}>
             From the bustling cities of Asia to the serene mountains of Europe, 
             discover destinations that inspire wonder and adventure.
           </p>
@@ -51,7 +51,15 @@ export default function Destinations() {
                 style={{ '--index': i }}
               >
                 <div className="dest-card-image">
-                  <img src={dest.titleImage} alt={dest.name} loading="lazy" />
+                  <img 
+                    src={dest.titleImage} 
+                    alt={dest.name} 
+                    loading="lazy" 
+                    onError={(e) => {
+                      e.target.src = '/images/destinations/hero.png';
+                      e.target.onerror = null;
+                    }}
+                  />
                   <div className="dest-card-overlay">
                     <button className="explore-btn">
                       <span>Explore Packages</span>
@@ -62,7 +70,7 @@ export default function Destinations() {
                 <div className="dest-card-content">
                   <div className="dest-location">
                     <MapPin size={14} />
-                    <span>International Village</span>
+                    <span>Global Gateway</span>
                   </div>
                   <h3>{dest.name}</h3>
                   <p>{dest.description}</p>

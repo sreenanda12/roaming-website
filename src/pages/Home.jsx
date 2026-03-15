@@ -46,46 +46,52 @@ const reasons = [
 ];
 
 /* ---- Component ---- */
-export default function Home() {
-    const heroRef = useRef(null);
-
-    // Parallax on scroll
+const Home = () => {
     useEffect(() => {
-        const hero = heroRef.current;
-        const handleScroll = () => {
-            if (!hero) return;
-            const scrollY = window.scrollY;
-            const heroContent = hero.querySelector('.hero-text-content');
-            if (heroContent) {
-                heroContent.style.transform = `translateY(${scrollY * 0.2}px)`;
-                heroContent.style.opacity = Math.max(0, 1 - scrollY / 600);
+        // Optimized parallax using requestAnimationFrame
+        let ticking = false;
+        const heroText = document.querySelector('.hero-text-content');
+
+        const updateParallax = () => {
+            const scrolled = window.scrollY;
+            if (heroText && scrolled < window.innerHeight) {
+                heroText.style.transform = `translate3d(0, ${scrolled * 0.35}px, 0)`;
+                heroText.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+            }
+            ticking = false;
+        };
+
+        const onScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
             }
         };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
-    // Removed Testimonial auto-cycle
+        window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Re-trigger AOS on mount
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) entry.target.classList.add('aos-animate');
-                });
-            },
-            { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-        );
-        document.querySelectorAll('.aos, .aos-left, .aos-right, .aos-scale')
-            .forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
+        // Lazy load observer for sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('aos-animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const sections = document.querySelectorAll('.section, .aos, .aos-left, .aos-right');
+        sections.forEach(section => observer.observe(section));
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            observer.disconnect();
+        };
     }, []);
 
     return (
         <div className="home-page">
             {/* ===== HERO ===== */}
-            <section className="hero-section" ref={heroRef} id="hero">
+            <section className="hero-section" id="hero">
                 <HeroSlider />
 
                 <a href="#services" className="hero-scroll-indicator" aria-label="Scroll down">
@@ -198,7 +204,7 @@ export default function Home() {
 
             {/* ===== CTA SECTION ===== */}
             <section className="cta-section">
-                <div className="container">
+                <div className="container" id="contact">
                     <div className="cta-inner aos">
                         <div className="cta-content">
                             <div className="section-badge">Get Started</div>
@@ -223,4 +229,6 @@ export default function Home() {
             </section>
         </div>
     );
-}
+};
+
+export default Home;

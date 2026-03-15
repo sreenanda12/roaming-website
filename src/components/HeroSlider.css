@@ -13,22 +13,26 @@
     inset: 0;
     opacity: 0;
     z-index: 1;
-    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+    transform: translate3d(0, 0, 0); /* Force GPU */
 }
 
 .hero-slide.active {
     opacity: 1;
-    z-index: 3; /* Fade in on top */
+    z-index: 3;
 }
 
 .hero-slide.previous {
-    opacity: 1; /* Stay visible while next fades in */
+    opacity: 1; 
     z-index: 2;
+    transition: opacity 2s ease-out; /* Slower fade out for perfect overlap */
 }
 
 .hero-slide.first-load {
     opacity: 1;
-    z-index: 5; /* Ensure first image is instant */
+    z-index: 5;
+    transition: none;
 }
 
 .hero-slide-bg {
@@ -40,56 +44,45 @@
     height: 100%;
     will-change: transform;
     backface-visibility: hidden;
-    image-rendering: auto;
+    transform: translate3d(0, 0, 0);
 }
 
-/* --- Film Grain --- */
-.film-grain {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    background-image: url("https://www.transparenttextures.com/patterns/p6.png");
-    opacity: 0.15;
-    pointer-events: none;
-    mix-blend-mode: overlay;
-}
+/* --- Ken Burns Styles (Optimized for 6s Cycle) --- */
 
-/* --- Ken Burns Styles --- */
-
-/* Image 1: slow zoom in (100% → 108%) - 3s */
+/* Image 1: slow zoom in - 6.5s to ensure overlap */
 .hero-slide.active .kb-zoom-in {
-    animation: zoomInDetailed 3.2s linear forwards;
+    animation: zoomInDetailed 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 @keyframes zoomInDetailed {
-    from { transform: scale(1); }
-    to { transform: scale(1.08); }
+    from { transform: scale(1) translate3d(0,0,0); }
+    to { transform: scale(1.1) translate3d(0,0,0); }
 }
 
-/* Image 2: slow pan left to right with slight zoom (scale 105%) - 3s */
+/* Image 2: slow pan right - 6.5s */
 .hero-slide.active .kb-pan-right {
-    animation: panRightDetailed 3.2s linear forwards;
+    animation: panRightDetailed 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 @keyframes panRightDetailed {
-    from { transform: scale(1.05) translateX(-3%); }
-    to { transform: scale(1.05) translateX(3%); }
+    from { transform: scale(1.1) translate3d(-3%, 0, 0); }
+    to { transform: scale(1.1) translate3d(3%, 0, 0); }
 }
 
-/* Image 3: slow zoom out (110% → 100%) - 3s */
+/* Image 3: slow zoom out - 6.5s */
 .hero-slide.active .kb-zoom-out {
-    animation: zoomOutDetailed 3.2s linear forwards;
+    animation: zoomOutDetailed 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 @keyframes zoomOutDetailed {
-    from { transform: scale(1.1); }
-    to { transform: scale(1); }
+    from { transform: scale(1.15) translate3d(0,0,0); }
+    to { transform: scale(1) translate3d(0,0,0); }
 }
 
-/* Image 4: subtle parallax movement with slow push forward - 3s */
+/* Image 4: slow parallax push forward - 6.5s */
 .hero-slide.active .kb-parallax-push {
-    animation: parallaxPushDetailed 3.2s linear forwards;
+    animation: parallaxPushDetailed 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 @keyframes parallaxPushDetailed {
-    from { transform: scale(1.02) translateY(-1%); }
-    to { transform: scale(1.08) translateY(1%); }
+    from { transform: scale(1.05) translate3d(0, -1%, 0); }
+    to { transform: scale(1.12) translate3d(0, 1%, 0); }
 }
 
 

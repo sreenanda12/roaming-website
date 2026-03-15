@@ -99,8 +99,42 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--forest-500);
-  border-radius: 3px;
+  background: var(--gold-400);
+}
+
+/* ---- Global Performance Optimizations ---- */
+
+/* Enable hardware acceleration for smooth scrolling */
+.home-page, .destinations-page, .services-page {
+  -webkit-overflow-scrolling: touch;
+  will-change: transform;
+}
+
+/* Reduce Paint load for off-screen sections */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px; /* Better scrollbar estimation */
+}
+
+/* Exception for Hero Section to ensure it renders immediately */
+.hero-section {
+  content-visibility: visible !important;
+}
+
+/* Ensure images don't block main thread */
+img {
+  max-width: 100%;
+  display: block;
+  content-visibility: auto;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-400);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--forest-900);
 }
 
 /* ---- Typography ---- */

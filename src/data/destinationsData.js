@@ -4,7 +4,7 @@ const destinationsData = [
         id: "georgia",
         name: "Georgia",
         tagline: "The Crossroads of Europe & Asia",
-        titleImage: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200&q=80",
+        titleImage: "/images/destinations/georgia.png",
         description: "Experience the unique blend of ancient wine culture, stunning Caucasus mountains, and the warm hospitality of Tbilisi's terracotta-roofed streets.",
         aboutText: "Georgia is home to some of the oldest winemaking traditions in the world. Nestled between the Black Sea and the Caucasus Mountains, it offers everything from subtropical coastlines to snow-capped peaks and UNESCO-listed medieval stone towers.",
         bestTime: "May to June & September to October",
@@ -31,7 +31,7 @@ const destinationsData = [
         id: "armenia",
         name: "Armenia",
         tagline: "The Land of Ancient Monasteries",
-        titleImage: "https://images.unsplash.com/photo-1549468057-0b168f121df0?w=1200&q=80",
+        titleImage: "https://images.unsplash.com/photo-1544865866-50a980721c5b?q=80&w=1200",
         description: "A country of breathtaking landscapes where stone monasteries overlook deep river canyons and Mount Ararat dominates the skyline.",
         aboutText: "Armenia is an ancient nation steeped in history. From the bustling open-air cafes of Yerevan to the serene shores of Lake Sevan, it offers a dramatic landscape of deep valleys and plateau vistas.",
         bestTime: "May, June, September, and October",
@@ -58,7 +58,7 @@ const destinationsData = [
         id: "azerbaijan",
         name: "Azerbaijan",
         tagline: "The Land of Fire",
-        titleImage: "https://images.unsplash.com/photo-1627513337953-ede04ae53381?w=1200&q=80",
+        titleImage: "/images/destinations/azerbaijan.png",
         description: "Discover a land where modern futuristic architecture meets ancient UNESCO Silk Road cities and thermal mud volcanoes.",
         aboutText: "Azerbaijan is a country of contrasts, where the Caspian Sea meets the Caucasus mountains. The capital, Baku, is a futuristic hub famous for the Flame Towers and its ancient Walled City.",
         bestTime: "April to June & September to October",
@@ -85,7 +85,7 @@ const destinationsData = [
         id: "thailand",
         name: "Thailand",
         tagline: "The Land of Smiles",
-        titleImage: "https://images.unsplash.com/photo-1528181304800-2f1408198f99?w=1200&q=80",
+        titleImage: "/images/destinations/thailand.png",
         description: "From the neon lights of Bangkok to the crystal waters of Phi Phi, Thailand is a paradise of street food, temples, and tropical blisses.",
         aboutText: "Thailand is Southeast Asia's most popular destination for a reason. Its vibrant culture, world-famous cuisine, and diverse landscapes ranging from northern jungles to southern islands make it a traveler's favorite.",
         bestTime: "November to February",
@@ -112,7 +112,7 @@ const destinationsData = [
         id: "kazakhstan",
         name: "Kazakhstan",
         tagline: "Vast Horizons & Snow-capped Peaks",
-        titleImage: "https://images.unsplash.com/photo-1533221971714-f069485cc12d?w=1200&q=80",
+        titleImage: "https://images.unsplash.com/photo-1533221971714-f069485cc12d?q=80&w=1200",
         description: "Explore the vast Central Asian steppe, breathtaking Charyn Canyon, and the modern glamour of Almaty nestled against the Tien Shan mountains.",
         aboutText: "The largest landlocked country in the world, Kazakhstan is a land of massive mountain ranges, deep river canyons, and ultra-modern cities. It offers a unique mix of nomadic history and Soviet heritage.",
         bestTime: "May to September",
@@ -139,7 +139,7 @@ const destinationsData = [
         id: "bali",
         name: "Bali, Indonesia",
         tagline: "Island of the Gods",
-        titleImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80",
+        titleImage: "/images/destinations/bali.png",
         description: "Lose yourself in the emerald rice terraces of Ubud, the golden sunsets of Seminyak, and the spiritual tranquility of ancient sea temples.",
         aboutText: "Bali is more than a place; it's a mood, an aspiration, a tropical state of mind. It offers a rich tapestry of art, spirituality, and incredible natural beauty from volcanic peaks to iconic beaches.",
         bestTime: "April to October",
@@ -165,8 +165,8 @@ const destinationsData = [
     {
         id: "india",
         name: "India",
-        tagline: "Incredible India",
-        titleImage: "https://images.unsplash.com/photo-1548013146-72479768bbaa?w=1200&q=80",
+        tagline: "Kerala, Goa, Himachal Pradesh",
+        titleImage: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200",
         description: "From the serene backwaters of Kerala and sun-soaked beaches of Goa to the majestic mountains of Himachal, India is a world in one country.",
         aboutText: "India is a land of diversity, flavor, and ancient history. Whether you seek spiritual enlightenment, Himalayan adventure, or a luxury beach getaway, India delivers an unforgettable sensory experience.",
         bestTime: "October to March",
@@ -193,7 +193,7 @@ const destinationsData = [
         id: "turkey",
         name: "Turkey",
         tagline: "Where East Meets West",
-        titleImage: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+        titleImage: "/images/destinations/turkey.png",
         description: "Witness the fairytale chimneys of Cappadocia, the blue domes of Istanbul, and the turquoise waters of the Turkish Riviera.",
         aboutText: "Turkey bridges two continents and thousands of years of history. From the bustling Grand Bazaar to the hot air balloons of Cappadocia, it is a land of vibrant culture and ancient wonders.",
         bestTime: "April, May, September, and October",
@@ -274,7 +274,7 @@ const destinationsData = [
         id: "dubai",
         name: "Dubai",
         tagline: "The City of Gold",
-        titleImage: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80",
+        titleImage: "/images/destinations/dubai.png",
         description: "Experience the future in the present — with Burj Khalifa's heights, vast desert dunes, and world-class luxury shopping.",
         aboutText: "Dubai is a global city that redefines luxury. Known for its ultra-modern architecture, high-end shopping, and vibrant nightlife, it offers an experience that is bigger and bolder than anywhere else on earth.",
         bestTime: "November to March",
@@ -328,7 +328,7 @@ const destinationsData = [
         id: "malaysia",
         name: "Malaysia",
         tagline: "Truly Asia",
-        titleImage: "https://images.unsplash.com/photo-1532003885409-ed84d334f6cc?w=1200&q=80",
+        titleImage: "https://images.unsplash.com/photo-1532003885409-ed84d334f6cc?q=80&w=1200",
         description: "A melting pot of cultures where the futuristic Petronas Towers stand alongside ancient rainforests and crystal southern islands.",
         aboutText: "Malaysia is a land of vibrant contrasts. It offers a unique mix of modernity in Kuala Lumpur and prehistoric nature in Borneo, along with some of the best street food in all of Asia.",
         bestTime: "December to April & June to August",
@@ -409,7 +409,7 @@ const destinationsData = [
         id: "maldives",
         name: "Maldives",
         tagline: "The Sunny Side of Life",
-        titleImage: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1200&q=80",
+        titleImage: "/images/destinations/maldives.png",
         description: "Wake up in an overwater villa suspended over turquoise lagoons, where the marine life is as colorful as the sunsets.",
         aboutText: "The Maldives is the world's premier beach destination, where luxury meets nature in a way that feels surreal. Every resort is its own private island, offering unparalleled privacy and crystal-clear ocean views.",
         bestTime: "November to April",
@@ -430,6 +430,27 @@ const destinationsData = [
         packages: [
             { name: "Luxury Overwater Retreat", price: "₹1,85,000", duration: "4 Nights / 5 Days" },
             { name: "Honeymoon Island Bliss", price: "₹2,50,000", duration: "5 Nights / 6 Days" }
+        ]
+    },
+    {
+        id: "switzerland",
+        name: "Switzerland",
+        tagline: "The Playground of Europe",
+        titleImage: "/images/destinations/switzerland.png",
+        description: "Explore the majestic Alps, crystal-clear lakes, and charming mountain villages in the heart of Europe.",
+        aboutText: "Switzerland is a land of unmatched natural beauty. From the luxury watches of Geneva to the skiing slopes of Zermatt, it offers a refined and breathtaking experience for every traveler.",
+        bestTime: "June to August & December to March",
+        experiences: ["Nature", "Luxury", "Skiing", "Adventure"],
+        activities: ["Mountain Trekking", "Skiing", "Lake Cruises", "Chocolate Tasting"],
+        attractions: [
+            { name: "The Matterhorn", img: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=600&q=80" },
+            { name: "Lake Lucerne", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" }
+        ],
+        gallery: [
+            "/images/destinations/switzerland.png"
+        ],
+        packages: [
+            { name: "Alpine Luxury Explorer", price: "₹2,10,000", duration: "7 Nights / 8 Days" }
         ]
     }
 ];

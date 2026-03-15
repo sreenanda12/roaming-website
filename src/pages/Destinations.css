@@ -1,16 +1,29 @@
 /* src/pages/Destinations.css */
-
-.destinations-page {}
+.destinations-hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .destinations-hero {
-    background-image: url('https://images.unsplash.com/photo-1548013146-72479768bbaa?w=1600&q=80');
+    background-image: url('/images/destinations/hero.png');
     background-size: cover;
     background-position: center;
     position: relative;
-    min-height: 520px;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     overflow: hidden;
+}
+
+.destinations-hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 800;
+    color: #d4bc8d;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .destinations-grid-section {
@@ -125,6 +138,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    line-clamp: 2;
     overflow: hidden;
 }
 
@@ -143,7 +157,9 @@
 }
 
 /* Global Reach CTA Section */
-.global-reach {}
+.global-reach {
+    padding-bottom: 80px;
+}
 
 /* Base AOS Scale for Grid Items */
 [data-aos='scale'] {

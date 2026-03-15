@@ -21,7 +21,7 @@ const destinations = [
         price: '₹1,24,999',
         duration: '7 Nights / 8 Days',
         rating: 4.8,
-        img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80',
+        img: '/images/destinations/santorini.png',
     },
     {
         id: 3,
@@ -39,7 +39,7 @@ const destinations = [
         price: '₹1,45,000',
         duration: '6 Nights / 7 Days',
         rating: 4.9,
-        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80',
+        img: '/images/destinations/kyoto.png',
     },
     {
         id: 5,
@@ -123,7 +123,16 @@ const LevitatingCarousel = () => {
                                 onClick={() => isCenter ? null : setCurrentIndex(index)}
                             >
                                 <div className="card-image-wrap">
-                                    <img src={dest.img} alt={dest.name} className="card-image" />
+                                    <img 
+                                        src={dest.img} 
+                                        alt={dest.name} 
+                                        loading="lazy" 
+                                        className="card-image" 
+                                        onError={(e) => {
+                                          e.target.src = '/images/destinations/hero.png';
+                                          e.target.onerror = null;
+                                        }}
+                                    />
                                     <div className="card-tag">{dest.tag}</div>
                                 </div>
                                 <div className="card-content">

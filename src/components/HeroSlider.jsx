@@ -16,7 +16,7 @@ const HeroSlider = () => {
     const [isFirstLoad, setIsFirstLoad] = useState(true);
 
     useEffect(() => {
-        // Preload images immediately
+        // Preload images immediately for zero-delay start
         slides.forEach((slide) => {
             const img = new Image();
             img.src = slide.image;
@@ -26,20 +26,23 @@ const HeroSlider = () => {
             setPrevIndex(activeIndex);
             setActiveIndex((current) => (current + 1) % slides.length);
             setIsFirstLoad(false);
-        }, 3000); // 3-second cycle
+        }, 6000); // 6-second cycle for true cinematic feel
 
         return () => clearInterval(interval);
     }, [activeIndex]);
 
     return (
         <div className="hero-slider-container">
-            {/* Film Grain Effect */}
+            {/* Optimized Layer Stack */}
             <div className="film-grain" />
             
             {slides.map((slide, index) => {
                 const isActive = index === activeIndex;
                 const isPrev = index === prevIndex;
                 
+                // PERFORMANCE: Only render active and previous to save GPU memory on mobile
+                if (!isActive && !isPrev && !(isFirstLoad && index === 0)) return null;
+
                 return (
                     <div
                         key={index}
