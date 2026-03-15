@@ -85,16 +85,73 @@
     to { transform: scale(1.12) translate3d(0, 1%, 0); }
 }
 
+/* --- Mobile Specific Animations (3s Cycle) --- */
+
+.mobile-view .hero-slide {
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-view .hero-slide.previous {
+    transition: opacity 1s ease-out;
+}
+
+/* Image 1: scale 100% -> 108% */
+.mobile-view .hero-slide.active .kb-mobile-zoom-in {
+    animation: zoomInMobile 3.5s linear forwards;
+}
+@keyframes zoomInMobile {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+/* Image 2: scale 105%, pan left to right */
+.mobile-view .hero-slide.active .kb-mobile-pan-right {
+    animation: panRightMobile 3.5s linear forwards;
+}
+@keyframes panRightMobile {
+    from { transform: scale(1.05) translate3d(-2%, 0, 0); }
+    to { transform: scale(1.05) translate3d(2%, 0, 0); }
+}
+
+/* Image 3: scale 110% -> 100% */
+.mobile-view .hero-slide.active .kb-mobile-zoom-out {
+    animation: zoomOutMobile 3.5s linear forwards;
+}
+@keyframes zoomOutMobile {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+}
+
+/* Image 4: scale 105% -> 112%, parallax push */
+.mobile-view .hero-slide.active .kb-mobile-parallax-push {
+    animation: parallaxPushMobile 3.5s linear forwards;
+}
+@keyframes parallaxPushMobile {
+    from { transform: scale(1.05) translate3d(0, -1%, 0); }
+    to { transform: scale(1.12) translate3d(0, 1%, 0); }
+}
+
 
 /* --- Content & Overlays --- */
+.film-grain {
+    position: absolute;
+    inset: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.15;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.08;
+}
+
 .hero-overlay-cinematic {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.2) 25%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.2) 75%,
         rgba(0, 0, 0, 0.8) 100%
     );
     z-index: 6;
