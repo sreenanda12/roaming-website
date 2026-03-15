@@ -76,6 +76,18 @@
     color: var(--text-muted);
 }
 
+.search-badge-tag {
+    font-size: 0.7rem;
+    background: var(--gold-400);
+    color: var(--forest-900);
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
 .no-results {
     grid-column: 1 / -1;
     text-align: center;

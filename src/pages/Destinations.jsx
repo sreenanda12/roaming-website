@@ -59,6 +59,7 @@ export default function Destinations() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
+              <span className="search-badge-tag">Latest Update</span>
             </div>
           </div>
 
