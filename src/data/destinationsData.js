@@ -431,27 +431,6 @@ const destinationsData = [
             { name: "Luxury Overwater Retreat", price: "₹1,85,000", duration: "4 Nights / 5 Days" },
             { name: "Honeymoon Island Bliss", price: "₹2,50,000", duration: "5 Nights / 6 Days" }
         ]
-    },
-    {
-        id: "switzerland",
-        name: "Switzerland",
-        tagline: "The Playground of Europe",
-        titleImage: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=1200&q=80",
-        description: "Explore the majestic Alps, crystal-clear lakes, and charming mountain villages in the heart of Europe.",
-        aboutText: "Switzerland is a land of unmatched natural beauty. From the luxury watches of Geneva to the skiing slopes of Zermatt, it offers a refined and breathtaking experience for every traveler.",
-        bestTime: "June to August & December to March",
-        experiences: ["Nature", "Luxury", "Skiing", "Adventure"],
-        activities: ["Mountain Trekking", "Skiing", "Lake Cruises", "Chocolate Tasting"],
-        attractions: [
-            { name: "The Matterhorn", img: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=600&q=80" },
-            { name: "Lake Lucerne", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" }
-        ],
-        gallery: [
-            "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=1200&q=80"
-        ],
-        packages: [
-            { name: "Alpine Luxury Explorer", price: "₹2,10,000", duration: "7 Nights / 8 Days" }
-        ]
     }
 ];
 
