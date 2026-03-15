@@ -47,7 +47,32 @@ export default function Navbar() {
                         </div>
                     </NavLink>
 
-                    {/* Removed Desktop Nav and CTA for pure hamburger menu */}
+                    {/* Desktop Nav */}
+                    <nav className="desktop-nav">
+                        {navLinks.map((link) => (
+                            <NavLink
+                                key={link.path}
+                                to={link.path}
+                                className={({ isActive }) =>
+                                    `nav-link ${isActive ? 'nav-link-active' : ''}`
+                                }
+                                end={link.path === '/'}
+                            >
+                                {link.label}
+                            </NavLink>
+                        ))}
+                    </nav>
+
+                    {/* CTA */}
+                    <div className="navbar-cta">
+                        <a href="tel:+919876543210" className="nav-phone">
+                            <span className="phone-icon"><Compass size={16} /></span>
+                            <span>+91 98765 43210</span>
+                        </a>
+                        <NavLink to="/contact" className="btn-primary nav-btn">
+                            Book Now
+                        </NavLink>
+                    </div>
 
                     {/* Hamburger */}
                     <button
@@ -58,6 +83,7 @@ export default function Navbar() {
                     >
                         {menuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
+
                 </div>
             </header>
 

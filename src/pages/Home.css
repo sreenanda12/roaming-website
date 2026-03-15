@@ -150,63 +150,26 @@
 }
 
 .hero-title {
-    position: relative;
-    color: var(--gold-400);
-    background: linear-gradient(
-        135deg, 
-        var(--gold-300) 0%, 
-        var(--gold-400) 25%, 
-        var(--white) 50%, 
-        var(--gold-400) 75%, 
-        var(--gold-300) 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    text-shadow: 
-        0 10px 20px rgba(0, 0, 0, 0.4),
-        0 0 40px rgba(201, 168, 76, 0.2);
-    margin-bottom: 24px;
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 10vw, 7rem);
     font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
-    animation: 
-        glassFadeIn 1.2s cubic-bezier(0.2, 0, 0.2, 1) both,
-        gentleFloat 6s ease-in-out infinite,
-        shimmerReflection 8s linear infinite;
-}
-
-@keyframes glassFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-        filter: blur(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-    }
-}
-
-@keyframes gentleFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-@keyframes shimmerReflection {
-    to { background-position: 200% center; }
-}
-
-.hero-title-accent {
-    font-style: italic;
     color: var(--white);
-    -webkit-text-fill-color: var(--white);
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
 }
+
+.hero-title span, .hero-title-accent {
+    display: block;
+    font-family: 'Cinzel', serif;
+    color: var(--gold-400);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
 
 .hero-subtitle {
     font-size: 1.1rem;

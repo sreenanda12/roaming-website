@@ -55,9 +55,10 @@ export default function Home() {
         const handleScroll = () => {
             if (!hero) return;
             const scrollY = window.scrollY;
-            const heroBg = hero.querySelector('.hero-bg');
-            if (heroBg) {
-                heroBg.style.transform = `translateY(${scrollY * 0.35}px)`;
+            const heroContent = hero.querySelector('.hero-text-content');
+            if (heroContent) {
+                heroContent.style.transform = `translateY(${scrollY * 0.2}px)`;
+                heroContent.style.opacity = Math.max(0, 1 - scrollY / 600);
             }
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -87,33 +88,6 @@ export default function Home() {
             <section className="hero-section" ref={heroRef} id="hero">
                 <HeroSlider />
 
-                {/* Floating clouds */}
-                <div className="cloud cloud-1" aria-hidden="true" />
-                <div className="cloud cloud-2" aria-hidden="true" />
-                <div className="cloud cloud-3" aria-hidden="true" />
-
-
-                <div className="container hero-content-wrap">
-                    <div className="hero-content">
-                        <h1 className="hero-title">
-                            Discover Your Next Destination
-                        </h1>
-                        <p className="hero-subtitle">
-                            Explore breathtaking places, luxury stays, and unforgettable journeys designed for curious travelers.
-                        </p>
-                        <div className="hero-actions">
-                            <NavLink to="/destinations" className="btn-gold hero-btn-primary">
-                                <span>Explore Destinations</span>
-                                <ArrowRight size={18} />
-                            </NavLink>
-                            <NavLink to="/contact" className="btn-outline">
-                                <span>Book Now</span>
-                            </NavLink>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Scroll indicator */}
                 <a href="#services" className="hero-scroll-indicator" aria-label="Scroll down">
                     <span>Discover More</span>
                     <div className="scroll-icon"><ChevronDown size={18} /></div>
