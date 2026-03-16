@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
+import Preloader from './components/Preloader';
 import './App.css';
 
 const PageTitleHandler = () => {
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <Router>
+      <Preloader />
       <PageTitleHandler />
       <ScrollToTop />
       <div className="app-wrapper">
