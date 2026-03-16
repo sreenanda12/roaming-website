@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -11,6 +11,29 @@ import Contact from './pages/Contact';
 import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
+
+const PageTitleHandler = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const titleMap = {
+      '/': 'Roaming Direction | Explore the World',
+      '/about': 'About Us | Roaming Direction',
+      '/destinations': 'Destinations | Roaming Direction',
+      '/services': 'Travel Services | Roaming Direction',
+      '/contact': 'Contact Us | Roaming Direction'
+    };
+
+    const path = location.pathname;
+    if (path.startsWith('/destinations/')) {
+        document.title = 'Destination Details | Roaming Direction';
+    } else {
+        document.title = titleMap[path] || 'Roaming Direction';
+    }
+  }, [location]);
+
+  return null;
+};
 
 function App() {
   useEffect(() => {
@@ -34,6 +57,7 @@ function App() {
 
   return (
     <Router>
+      <PageTitleHandler />
       <ScrollToTop />
       <div className="app-wrapper">
         <Navbar />

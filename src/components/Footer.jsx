@@ -19,10 +19,10 @@ const services = [
 ];
 
 const socials = [
-    { icon: <Instagram size={18} />, href: '#', label: 'Instagram' },
-    { icon: <Facebook size={18} />, href: '#', label: 'Facebook' },
-    { icon: <Twitter size={18} />, href: '#', label: 'Twitter' },
-    { icon: <Youtube size={18} />, href: '#', label: 'Youtube' },
+    { icon: <Instagram size={18} />, href: 'https://instagram.com/roamingdirection', label: 'Instagram' },
+    { icon: <Facebook size={18} />, href: 'https://facebook.com/roamingdirection', label: 'Facebook' },
+    { icon: <Twitter size={18} />, href: 'https://twitter.com/roamingdir', label: 'Twitter' },
+    { icon: <Youtube size={18} />, href: 'https://youtube.com/@roamingdirection', label: 'Youtube' },
 ];
 
 export default function Footer() {
