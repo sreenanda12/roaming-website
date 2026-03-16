@@ -65,9 +65,9 @@ export default function Navbar() {
 
                     {/* CTA */}
                     <div className="navbar-cta">
-                        <a href="tel:+919876543210" className="nav-phone">
+                        <a href="tel:+917994461415" className="nav-phone">
                             <span className="phone-icon"><Compass size={16} /></span>
-                            <span>+91 98765 43210</span>
+                            <span>+91 79944 61415</span>
                         </a>
                         <NavLink to="/contact" className="btn-primary nav-btn">
                             Book Now
@@ -110,9 +110,9 @@ export default function Navbar() {
                         ))}
                     </ul>
                     <div className="mobile-footer-info">
-                        <a href="tel:+919876543210" className="mobile-phone">
+                        <a href="tel:+917994461415" className="mobile-phone">
                             <Phone size={18} />
-                            <span>+91 98765 43210</span>
+                            <span>+91 79944 61415</span>
                         </a>
                         <NavLink to="/contact" className="btn-gold mobile-cta">
                             Book Now

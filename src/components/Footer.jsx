@@ -111,7 +111,7 @@ export default function Footer() {
                                 </div>
                                 <div className="footer-contact-item">
                                     <Phone size={16} />
-                                    <a href="tel:+919876543210">+91 98765 43210</a>
+                                    <a href="tel:+917994461415">+91 79944 61415</a>
                                 </div>
                                 <div className="footer-contact-item">
                                     <Mail size={16} />

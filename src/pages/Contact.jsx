@@ -15,8 +15,8 @@ const contactInfo = [
     {
         icon: <Phone size={22} strokeWidth={1.5} />,
         title: 'Call Us',
-        lines: ['+91 98765 43210', '+91 11 2345 6789'],
-        href: 'tel:+919876543210',
+        lines: ['+91 79944 61415', '+91 11 2345 6789'],
+        href: 'tel:+917994461415',
     },
     {
         icon: <Mail size={22} strokeWidth={1.5} />,
@@ -210,7 +210,7 @@ export default function Contact() {
                                                 id="phone"
                                                 name="phone"
                                                 type="tel"
-                                                placeholder="+91 98765 43210"
+                                                placeholder="+91 79944 61415"
                                                 value={form.phone}
                                                 onChange={handleChange}
                                             />
@@ -303,7 +303,7 @@ export default function Contact() {
                                     <span>Explore Packages</span>
                                     <ArrowRight size={18} />
                                 </NavLink>
-                                <a href="tel:+919876543210" className="btn-outline">
+                                <a href="tel:+917994461415" className="btn-outline">
                                     <Phone size={16} />
                                     <span>Call Now</span>
                                 </a>
