@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Cinzel:wght@400;700&display=swap');
+
+.hero-slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+    transform: translate3d(0, 0, 0); /* Force GPU */
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 3;
+}
+
+.hero-slide.previous {
+    opacity: 1; 
+    z-index: 2;
+    transition: opacity 2s ease-out; /* Slower fade out for perfect overlap */
+}
+
+.hero-slide.first-load {
+    opacity: 1;
+    z-index: 5;
+    transition: none;
+}
+
+.hero-slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* --- Ken Burns Styles (Optimized for 6s Cycle) --- */
+
+/* Image 1: slow zoom in - 6.5s to ensure overlap */
+.hero-slide.active .kb-zoom-in {
+    animation: zoomInDetailed 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes zoomInDetailed {
+    from { transform: scale(1) translate3d(0,0,0); }
+    to { transform: scale(1.1) translate3d(0,0,0); }
+}
+
+/* Image 2: slow pan right - 6.5s */
+.hero-slide.active .kb-pan-right {
+    animation: panRightDetailed 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes panRightDetailed {
+    from { transform: scale(1.1) translate3d(-3%, 0, 0); }
+    to { transform: scale(1.1) translate3d(3%, 0, 0); }
+}
+
+/* Image 3: slow zoom out - 6.5s */
+.hero-slide.active .kb-zoom-out {
+    animation: zoomOutDetailed 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes zoomOutDetailed {
+    from { transform: scale(1.15) translate3d(0,0,0); }
+    to { transform: scale(1) translate3d(0,0,0); }
+}
+
+/* Image 4: slow parallax push forward - 6.5s */
+.hero-slide.active .kb-parallax-push {
+    animation: parallaxPushDetailed 6.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes parallaxPushDetailed {
+    from { transform: scale(1.05) translate3d(0, -1%, 0); }
+    to { transform: scale(1.12) translate3d(0, 1%, 0); }
+}
+
+/* --- Mobile Specific Animations (3s Cycle) --- */
+
+.mobile-view .hero-slide {
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-view .hero-slide.previous {
+    transition: opacity 1s ease-out;
+}
+
+/* Image 1: scale 100% -> 108% */
+.mobile-view .hero-slide.active .kb-mobile-zoom-in {
+    animation: zoomInMobile 3.5s linear forwards;
+}
+@keyframes zoomInMobile {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+/* Image 2: scale 105%, pan left to right */
+.mobile-view .hero-slide.active .kb-mobile-pan-right {
+    animation: panRightMobile 3.5s linear forwards;
+}
+@keyframes panRightMobile {
+    from { transform: scale(1.05) translate3d(-2%, 0, 0); }
+    to { transform: scale(1.05) translate3d(2%, 0, 0); }
+}
+
+/* Image 3: scale 110% -> 100% */
+.mobile-view .hero-slide.active .kb-mobile-zoom-out {
+    animation: zoomOutMobile 3.5s linear forwards;
+}
+@keyframes zoomOutMobile {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+}
+
+/* Image 4: scale 105% -> 112%, parallax push */
+.mobile-view .hero-slide.active .kb-mobile-parallax-push {
+    animation: parallaxPushMobile 3.5s linear forwards;
+}
+@keyframes parallaxPushMobile {
+    from { transform: scale(1.05) translate3d(0, -1%, 0); }
+    to { transform: scale(1.12) translate3d(0, 1%, 0); }
+}
+
+
+/* --- Content & Overlays --- */
+.film-grain {
+    position: absolute;
+    inset: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.15;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.08;
+}
+
+.hero-overlay-cinematic {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.2) 25%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.2) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 6;
+    pointer-events: none;
+}
+
+.hero-content-fixed {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+}
+
+.hero-text-content {
+    max-width: 900px;
+    padding: 0 20px;
+    pointer-events: auto;
+}
+
+.hero-main-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 5.2rem);
+    font-weight: 800;
+    color: #d4bc8d; /* Exact premium gold from image */
+    margin-bottom: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0, 0.2, 1) 0.5s forwards;
+}
+
+.hero-main-subtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0, 0.2, 1) 0.8s forwards;
+}
+
+.hero-main-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 1.2s cubic-bezier(0.2, 0, 0.2, 1) 1.1s forwards;
+}
+
+.btn-cinematic-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #d4bc8d; /* Solid gold from reference */
+    color: #19351c;
+    padding: 18px 40px;
+    border-radius: 100px; /* Pill shape from reference */
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cinematic-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 188, 141, 0.3);
+    background: #e2cc9e;
+}
+
+.btn-cinematic-secondary {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: #fff;
+    padding: 18px 40px;
+    border-radius: 100px; /* Consistent pill shape */
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.btn-cinematic-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .hero-main-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .btn-cinematic-primary, .btn-cinematic-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
