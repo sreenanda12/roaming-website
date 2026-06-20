@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import {
     Globe, Car, Home as HomeIcon, ArrowRight, Star, MapPin,
     ChevronDown, Users, Award, Shield, Quote
@@ -69,10 +69,20 @@ const reasons = [
 
 /* ---- Component ---- */
 const Home = () => {
+    const navigate = useNavigate();
+    const [activeIndex, setActiveIndex] = useState(0);
+
     const galleryItems = destinationsData.map(dest => ({
         image: dest.titleImage,
         text: dest.name
     }));
+
+    const handleItemClick = (index) => {
+        const dest = destinationsData[index];
+        if (dest) {
+            navigate(`/destinations/${dest.id}`);
+        }
+    };
 
     const ctaRef = useRef(null);
     const photosRef = useRef([]);
@@ -355,8 +365,20 @@ const Home = () => {
                         scrollEase={0.02}
                         fontUrl="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
                         font="bold 24px Orbitron"
+                        onItemClick={handleItemClick}
+                        onActiveIndexChange={setActiveIndex}
                     />
                 </div>
+
+                {/* Active Destination View Button */}
+                {activeIndex !== null && destinationsData[activeIndex] && (
+                    <div className="active-destination-cta aos aos-scale" style={{ textAlign: 'center', marginTop: '-30px', position: 'relative', zIndex: 20 }}>
+                        <NavLink to={`/destinations/${destinationsData[activeIndex].id}`} className="btn-gold" style={{ boxShadow: '0 8px 32px rgba(201, 168, 76, 0.4)' }}>
+                            <span>View Destination</span>
+                            <ArrowRight size={18} />
+                        </NavLink>
+                    </div>
+                )}
             </section>
 
             {/* ===== WHY CHOOSE US ===== */}

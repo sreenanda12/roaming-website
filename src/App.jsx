@@ -13,25 +13,435 @@ import KazakhstanFamilyDetail from './pages/KazakhstanFamilyDetail';
 import KazakhstanGroupDetail from './pages/KazakhstanGroupDetail';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
+import destinationsData from './data/destinationsData';
+import PropertyDetail from './pages/PropertyDetail';
+import OldKentDetail from './pages/OldKentDetail';
+import WhatsAppButton from './components/WhatsAppButton';
 import './App.css';
+
+const seoConfig = {
+  '/': {
+    title: 'Roaming Direction | Premium International Tourism, Property Booking & Car Rentals',
+    description: 'Roaming Direction is your trusted partner for premium international tourism, luxury property booking, and premium car rentals. Start your journey today.',
+    keywords: 'travel agency, international tourism, luxury hotel booking, premium car rental, roaming direction, custom travel packages',
+    canonical: 'https://www.roamingdirection.com/',
+    ogImage: 'https://www.roamingdirection.com/images/roaminglogo_transparent.png',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.roamingdirection.com/#organization",
+        "name": "Roaming Direction",
+        "url": "https://www.roamingdirection.com/",
+        "logo": "https://www.roamingdirection.com/images/roaminglogo_transparent.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-7204370369",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "hi"]
+        },
+        "sameAs": [
+          "https://www.instagram.com/roamingdirection",
+          "https://www.facebook.com/roamingdirection",
+          "https://twitter.com/roamingdirection"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.roamingdirection.com/#website",
+        "name": "Roaming Direction",
+        "url": "https://www.roamingdirection.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.roamingdirection.com/destinations?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.roamingdirection.com/#webpage",
+        "url": "https://www.roamingdirection.com/",
+        "name": "Roaming Direction | Premium International Tourism, Property Booking & Car Rentals",
+        "isPartOf": { "@id": "https://www.roamingdirection.com/#website" }
+      }
+    ]
+  },
+  '/about': {
+    title: 'About Us | Roaming Direction',
+    description: "Discover Roaming Direction's story. Since 2010, we've been crafting extraordinary travel experiences and building a trusted global network of partnerships.",
+    keywords: 'about roaming direction, travel experts, iata certified travel agency, travel planners',
+    canonical: 'https://www.roamingdirection.com/about',
+    ogImage: 'https://www.roamingdirection.com/images/roaminglogo_transparent.png',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.roamingdirection.com/about#webpage",
+        "url": "https://www.roamingdirection.com/about",
+        "name": "About Us | Roaming Direction",
+        "isPartOf": { "@id": "https://www.roamingdirection.com/#website" },
+        "breadcrumb": { "@id": "https://www.roamingdirection.com/about#breadcrumb" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/about#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.roamingdirection.com/about" }
+        ]
+      }
+    ]
+  },
+  '/destinations': {
+    title: 'Explore Extraordinary Destinations | Roaming Direction',
+    description: 'Browse our handpicked international tourism packages, from the Caucasus peaks of Georgia to the pristine shores of the Maldives.',
+    keywords: 'international tour packages, holiday packages, travel destinations, europe packages, asia packages',
+    canonical: 'https://www.roamingdirection.com/destinations',
+    ogImage: 'https://www.roamingdirection.com/images/roaminglogo_transparent.png',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.roamingdirection.com/destinations#webpage",
+        "url": "https://www.roamingdirection.com/destinations",
+        "name": "Explore Extraordinary Destinations | Roaming Direction",
+        "isPartOf": { "@id": "https://www.roamingdirection.com/#website" },
+        "breadcrumb": { "@id": "https://www.roamingdirection.com/destinations#breadcrumb" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/destinations#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Destinations", "item": "https://www.roamingdirection.com/destinations" }
+        ]
+      }
+    ]
+  },
+  '/services': {
+    title: 'Premium Travel Services | Roaming Direction',
+    description: 'Explore our premium travel services: custom international tour packages, luxury property bookings, and premium car rentals designed for comfortable travel.',
+    keywords: 'hotel booking, premium car rentals, visa assistance, travel services, airport taxi service',
+    canonical: 'https://www.roamingdirection.com/services',
+    ogImage: 'https://www.roamingdirection.com/images/roaminglogo_transparent.png',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.roamingdirection.com/services#webpage",
+        "url": "https://www.roamingdirection.com/services",
+        "name": "Premium Travel Services | Roaming Direction",
+        "isPartOf": { "@id": "https://www.roamingdirection.com/#website" },
+        "breadcrumb": { "@id": "https://www.roamingdirection.com/services#breadcrumb" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/services#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.roamingdirection.com/services" }
+        ]
+      }
+    ]
+  },
+  '/contact': {
+    title: 'Contact Us | Plan Your Trip | Roaming Direction',
+    description: "Get in touch with Roaming Direction's travel experts. Plan your next international adventure, property booking, or car rental today.",
+    keywords: 'contact travel agency, travel agent phone number, roaming direction contact, book a trip',
+    canonical: 'https://www.roamingdirection.com/contact',
+    ogImage: 'https://www.roamingdirection.com/images/roaminglogo_transparent.png',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.roamingdirection.com/contact#webpage",
+        "url": "https://www.roamingdirection.com/contact",
+        "name": "Contact Us | Roaming Direction",
+        "isPartOf": { "@id": "https://www.roamingdirection.com/#website" },
+        "breadcrumb": { "@id": "https://www.roamingdirection.com/contact#breadcrumb" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/contact#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://www.roamingdirection.com/contact" }
+        ]
+      }
+    ]
+  },
+  '/international/georgia': {
+    title: 'Enchanting Georgia Escape | Roaming Direction',
+    description: 'Explore Georgia: the crossroads of Europe & Asia. Book custom wine tours, mountain hikes in Caucasus, and Old Tbilisi exploration packages.',
+    keywords: 'georgia tour package, tbilisi travel, kakheti wine tour, gergeti trinity church package, georgia itinerary',
+    canonical: 'https://www.roamingdirection.com/international/georgia',
+    ogImage: 'https://www.roamingdirection.com/images/destinations/georgia.jpg',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.roamingdirection.com/international/georgia#webpage",
+        "url": "https://www.roamingdirection.com/international/georgia",
+        "name": "Enchanting Georgia Escape | Roaming Direction",
+        "isPartOf": { "@id": "https://www.roamingdirection.com/#website" },
+        "breadcrumb": { "@id": "https://www.roamingdirection.com/international/georgia#breadcrumb" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/international/georgia#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.roamingdirection.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Georgia Tour Package", "item": "https://www.roamingdirection.com/international/georgia" }
+        ]
+      }
+    ]
+  },
+  '/international/kazakhstan-family': {
+    title: 'Kazakhstan Family Tour Packages | Roaming Direction',
+    description: 'Enjoy a premium family vacation in Kazakhstan. Explore Almaty, Charyn Canyon, and Ascension Cathedral with custom family travel itineraries.',
+    keywords: 'kazakhstan family package, almaty travel family, charyn canyon family tour, kazakhstan travel itinerary',
+    canonical: 'https://www.roamingdirection.com/international/kazakhstan-family',
+    ogImage: 'https://www.roamingdirection.com/images/destinations/kazakhstan.jpg',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.roamingdirection.com/international/kazakhstan-family#webpage",
+        "url": "https://www.roamingdirection.com/international/kazakhstan-family",
+        "name": "Kazakhstan Family Tour Packages | Roaming Direction",
+        "isPartOf": { "@id": "https://www.roamingdirection.com/#website" },
+        "breadcrumb": { "@id": "https://www.roamingdirection.com/international/kazakhstan-family#breadcrumb" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/international/kazakhstan-family#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.roamingdirection.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Kazakhstan Family Tour", "item": "https://www.roamingdirection.com/international/kazakhstan-family" }
+        ]
+      }
+    ]
+  },
+  '/international/kazakhstan-group': {
+    title: 'Kazakhstan Group Adventure Tour Packages | Roaming Direction',
+    description: 'Embark on a group adventure tour to Kazakhstan. Experience Almaty, Medeu, Shymbulak skiing, and epic mountain trekking packages.',
+    keywords: 'kazakhstan group tour, almaty group package, shymbulak ski package, central asia adventure group',
+    canonical: 'https://www.roamingdirection.com/international/kazakhstan-group',
+    ogImage: 'https://www.roamingdirection.com/images/destinations/kazakhstan.jpg',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.roamingdirection.com/international/kazakhstan-group#webpage",
+        "url": "https://www.roamingdirection.com/international/kazakhstan-group",
+        "name": "Kazakhstan Group Adventure Tour Packages | Roaming Direction",
+        "isPartOf": { "@id": "https://www.roamingdirection.com/#website" },
+        "breadcrumb": { "@id": "https://www.roamingdirection.com/international/kazakhstan-group#breadcrumb" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/international/kazakhstan-group#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.roamingdirection.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Kazakhstan Group Tour", "item": "https://www.roamingdirection.com/international/kazakhstan-group" }
+        ]
+      }
+    ]
+  },
+  '/properties/elam-munnar': {
+    title: 'Élam Munnar | Luxury Mountain Retreat Stay | Roaming Direction',
+    description: 'Perched 1640m above sea level in Munnar, Élam is a luxury eco-conscious sanctuary with breathtaking Western Ghats views, nature trails, and private decks.',
+    keywords: 'elam munnar, luxury stay munnar, glass cabin munnar, pyramid retreat munnar, boutique resort kerala',
+    canonical: 'https://www.roamingdirection.com/properties/elam-munnar',
+    ogImage: 'https://www.roamingdirection.com/images/elam/image24.jpg',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "@id": "https://www.roamingdirection.com/properties/elam-munnar#lodging",
+        "name": "Élam Munnar",
+        "description": "A luxury mountain retreat perched 1640 meters above sea level, surrounded by cardamom and coffee plantations with breathtaking Western Ghats views.",
+        "image": "https://www.roamingdirection.com/images/elam/image24.jpg",
+        "url": "https://www.roamingdirection.com/properties/elam-munnar",
+        "telephone": "+91-7204370369",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Munnar",
+          "addressRegion": "Kerala",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "10.0885",
+          "longitude": "77.0594"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/properties/elam-munnar#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.roamingdirection.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Élam Munnar", "item": "https://www.roamingdirection.com/properties/elam-munnar" }
+        ]
+      }
+    ]
+  },
+  '/properties/old-kent-estates-coorg': {
+    title: 'Old Kent Estates & Spa Coorg | Heritage Plantation Resort | Roaming Direction',
+    description: 'Experience the colonial charm of Old Kent Estates & Spa in Coorg. A historic 200-acre coffee plantation retreat featuring luxury English cottages, vintage suites, and crop-to-cup spa experiences.',
+    keywords: 'old kent estates coorg, heritage stay coorg, luxury coffee plantation resort, madikeri resorts, coorg estate stay',
+    canonical: 'https://www.roamingdirection.com/properties/old-kent-estates-coorg',
+    ogImage: 'https://www.roamingdirection.com/images/oldkent/oldkentestates.jpg',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "@id": "https://www.roamingdirection.com/properties/old-kent-estates-coorg#lodging",
+        "name": "Old Kent Estates & Spa Coorg",
+        "description": "A luxury heritage coffee plantation retreat set within a historic 200-acre estate in Madikeri, Coorg, Karnataka.",
+        "image": "https://www.roamingdirection.com/images/oldkent/oldkentestates.jpg",
+        "url": "https://www.roamingdirection.com/properties/old-kent-estates-coorg",
+        "telephone": "+91-7204370369",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Madikeri, Coorg",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://www.roamingdirection.com/properties/old-kent-estates-coorg#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.roamingdirection.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Old Kent Estates Coorg", "item": "https://www.roamingdirection.com/properties/old-kent-estates-coorg" }
+        ]
+      }
+    ]
+  }
+};
 
 const PageTitleHandler = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const titleMap = {
-      '/': 'Roaming Direction | Explore the World',
-      '/about': 'About Us | Roaming Direction',
-      '/destinations': 'Destinations | Roaming Direction',
-      '/services': 'Travel Services | Roaming Direction',
-      '/contact': 'Contact Us | Roaming Direction'
-    };
-
     const path = location.pathname;
+    let seo = seoConfig[path];
+
     if (path.startsWith('/destinations/')) {
-        document.title = 'Destination Details | Roaming Direction';
+        const destId = path.split('/').pop();
+        const dest = destinationsData.find(d => d.id === destId);
+        if (dest) {
+            seo = {
+                title: `${dest.name} Tour Packages | Roaming Direction`,
+                description: `${dest.tagline} - Explore ${dest.name} with Roaming Direction. Custom tour packages, experiences, and activities.`,
+                keywords: `${dest.name} travel, ${dest.name} tour, visit ${dest.name}, ${dest.name} packages`,
+                canonical: `https://www.roamingdirection.com/destinations/${dest.id}`,
+                ogImage: `https://www.roamingdirection.com${dest.titleImage}`,
+                schema: [
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "WebPage",
+                    "@id": `https://www.roamingdirection.com/destinations/${dest.id}#webpage`,
+                    "url": `https://www.roamingdirection.com/destinations/${dest.id}`,
+                    "name": `${dest.name} Tour Packages | Roaming Direction`,
+                    "isPartOf": { "@id": "https://www.roamingdirection.com/#website" },
+                    "breadcrumb": { "@id": `https://www.roamingdirection.com/destinations/${dest.id}#breadcrumb` }
+                  },
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "@id": `https://www.roamingdirection.com/destinations/${dest.id}#breadcrumb`,
+                    "itemListElement": [
+                      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirection.com/" },
+                      { "@type": "ListItem", "position": 2, "name": "Destinations", "item": "https://www.roamingdirection.com/destinations" },
+                      { "@type": "ListItem", "position": 3, "name": dest.name, "item": `https://www.roamingdirection.com/destinations/${dest.id}` }
+                    ]
+                  }
+                ]
+            };
+        }
+    }
+
+    if (seo) {
+        document.title = seo.title;
+        
+        const updateMeta = (name, content, attr = 'name') => {
+            let el = document.querySelector(`meta[${attr}="${name}"]`);
+            if (!el) {
+                el = document.createElement('meta');
+                el.setAttribute(attr, name);
+                document.head.appendChild(el);
+            }
+            el.setAttribute('content', content);
+        };
+        
+        updateMeta('description', seo.description);
+        updateMeta('keywords', seo.keywords);
+        
+        // Open Graph
+        updateMeta('og:title', seo.title, 'property');
+        updateMeta('og:description', seo.description, 'property');
+        updateMeta('og:url', seo.canonical, 'property');
+        updateMeta('og:image', seo.ogImage, 'property');
+        
+        // Twitter
+        updateMeta('twitter:title', seo.title);
+        updateMeta('twitter:description', seo.description);
+        updateMeta('twitter:image', seo.ogImage);
+        
+        // Canonical
+        const canonicalEl = document.getElementById('canonical-link');
+        if (canonicalEl) {
+            canonicalEl.setAttribute('href', seo.canonical);
+        }
+        
+        // JSON-LD Injection
+        let schemaEl = document.getElementById('json-ld-schema');
+        if (!schemaEl) {
+            schemaEl = document.createElement('script');
+            schemaEl.type = 'application/ld+json';
+            schemaEl.id = 'json-ld-schema';
+            document.head.appendChild(schemaEl);
+        }
+        schemaEl.textContent = JSON.stringify(seo.schema);
+    }
+
+    // Dynamic preloading for above-the-fold Hero banner image on home page
+    if (path === '/') {
+        const isMobile = window.innerWidth <= 768;
+        const heroImage = isMobile ? '/images/pnih1.webp' : '/images/pni1.webp';
+        let link = document.querySelector('link[rel="preload"][as="image"]');
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.setAttribute('fetchpriority', 'high');
+            document.head.appendChild(link);
+        }
+        link.href = heroImage;
     } else {
-        document.title = titleMap[path] || 'Roaming Direction';
+        const link = document.querySelector('link[rel="preload"][as="image"]');
+        if (link && link.parentNode) {
+            link.parentNode.removeChild(link);
+        }
     }
   }, [location]);
 
@@ -76,9 +486,12 @@ function App() {
             <Route path="/international/georgia" element={<GeorgiaDetail />} />
             <Route path="/international/kazakhstan-family" element={<KazakhstanFamilyDetail />} />
             <Route path="/international/kazakhstan-group" element={<KazakhstanGroupDetail />} />
+            <Route path="/properties/elam-munnar" element={<PropertyDetail />} />
+            <Route path="/properties/old-kent-estates-coorg" element={<OldKentDetail />} />
           </Routes>
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </Router>
   );

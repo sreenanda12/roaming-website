@@ -107,7 +107,6 @@ button {
 /* Enable hardware acceleration for smooth scrolling */
 .home-page, .destinations-page, .services-page {
   -webkit-overflow-scrolling: touch;
-  will-change: transform;
 }
 
 /* Reduce Paint load for off-screen sections */

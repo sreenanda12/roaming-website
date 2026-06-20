@@ -11,10 +11,10 @@ const destinationsData = [
         experiences: ["Culture", "Wine", "Mountains", "Nature"],
         activities: ["Hiking", "Wine Tasting", "Old Town Exploration", "Mountain Photography", "Sulphur Baths"],
         attractions: [
-            { name: "Old Tbilisi", img: "https://images.unsplash.com/photo-1595180637175-9e48c9096173?w=600&q=80" },
-            { name: "Uplistsikhe Cave Town", img: "https://images.unsplash.com/photo-1596791039849-cfa09f3ed146?w=600&q=80" },
-            { name: "Gergeti Trinity Church", img: "https://images.unsplash.com/photo-1627051381393-2776c52aefbc?w=600&q=80" },
-            { name: "Batumi Coast", img: "https://images.unsplash.com/photo-1616428766157-5589ddc8430e?w=600&q=80" }
+            { name: "Old Tbilisi", img: "/images/destinations/georgia/old-tbilisi.jpg" },
+            { name: "Uplistsikhe Cave Town", img: "/images/destinations/georgia/uplistsikhe-cave-town.jpg" },
+            { name: "Gergeti Trinity Church", img: "/images/destinations/georgia/gergeti-trinity-church.jpg" },
+            { name: "Batumi Coast", img: "/images/destinations/georgia/batumi-coast.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1527269534026-c86f4009e63d?w=800&q=80",
@@ -38,10 +38,10 @@ const destinationsData = [
         experiences: ["History", "Architecture", "Nature", "Pilgrimage"],
         activities: ["Monastery Tours", "Mountain Trekking", "Craft Market Shopping", "Brandy Tasting"],
         attractions: [
-            { name: "Tatev Monastery", img: "https://images.unsplash.com/photo-1544865866-50a980721c5b?w=600&q=80" },
-            { name: "Lake Sevan", img: "https://images.unsplash.com/photo-1587652750697-393963428801?w=600&q=80" },
-            { name: "Cascade Yerevan", img: "https://images.unsplash.com/photo-1589110756770-438645c06be9?w=600&q=80" },
-            { name: "Garni Temple", img: "https://images.unsplash.com/photo-1596791039849-cfa09f3ed146?w=600&q=80" }
+            { name: "Tatev Monastery", img: "/images/destinations/armenia/tatev-monastery.jpg" },
+            { name: "Lake Sevan", img: "/images/destinations/armenia/lake-sevan.jpg" },
+            { name: "Cascade Yerevan", img: "/images/destinations/armenia/cascade-yerevan.jpg" },
+            { name: "Garni Temple", img: "/images/destinations/georgia/uplistsikhe-cave-town.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1574044536225-1e35d2fd5341?w=800&q=80",
@@ -65,10 +65,10 @@ const destinationsData = [
         experiences: ["Adventure", "Luxury", "History", "Nature"],
         activities: ["Baku Night Tour", "Mud Volcano Visit", "Gobustan Rock Art", "Luxury Shopping"],
         attractions: [
-            { name: "Flame Towers", img: "https://images.unsplash.com/photo-1601614742562-b911762c938c?w=600&q=80" },
-            { name: "Heydar Aliyev Center", img: "https://images.unsplash.com/photo-1595180637175-9e48c9096173?w=600&q=80" },
-            { name: "Ancient Icherisheher", img: "https://images.unsplash.com/photo-1565151610996-857e53f05fca?w=600&q=80" },
-            { name: "Caspian Sea Promenade", img: "https://images.unsplash.com/photo-1611095773163-979929210203?w=600&q=80" }
+            { name: "Flame Towers", img: "/images/destinations/azerbaijan/flame-towers.jpg" },
+            { name: "Heydar Aliyev Center", img: "/images/destinations/georgia/old-tbilisi.jpg" },
+            { name: "Ancient Icherisheher", img: "/images/destinations/azerbaijan/ancient-icherisheher.jpg" },
+            { name: "Caspian Sea Promenade", img: "/images/destinations/azerbaijan/caspian-sea-promenade.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1611095973763-4140195a243b?w=800&q=80",
@@ -85,17 +85,17 @@ const destinationsData = [
         id: "thailand",
         name: "Thailand",
         tagline: "The Land of Smiles",
-        titleImage: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80",
+        titleImage: "/images/destinations/thailand.png",
         description: "From the neon lights of Bangkok to the crystal waters of Phi Phi, Thailand is a paradise of street food, temples, and tropical blisses.",
         aboutText: "Thailand is Southeast Asia's most popular destination for a reason. Its vibrant culture, world-famous cuisine, and diverse landscapes ranging from northern jungles to southern islands make it a traveler's favorite.",
         bestTime: "November to February",
         experiences: ["Food Tourism", "Beaches", "Culture", "Nightlife"],
         activities: ["Island Hopping", "Temple Tours", "Street Food Safari", "Elephant Sanctuary", "Scuba Diving"],
         attractions: [
-            { name: "Grand Palace", img: "https://images.unsplash.com/photo-1510009489794-352fba39acd3?w=600&q=80" },
-            { name: "Wat Arun", img: "https://images.unsplash.com/photo-1528181304800-2f1408198f99?w=600&q=80" },
-            { name: "Phi Phi Islands", img: "https://images.unsplash.com/photo-1537953391147-f459cedd3e11?w=600&q=80" },
-            { name: "Chiang Mai Mountains", img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80" }
+            { name: "Grand Palace", img: "/images/destinations/thailand/grand-palace.jpg" },
+            { name: "Wat Arun", img: "/images/destinations/thailand/wat-arun.jpg" },
+            { name: "Phi Phi Islands", img: "/images/destinations/thailand/phi-phi-islands.jpg" },
+            { name: "Chiang Mai Mountains", img: "/images/destinations/thailand/chiang-mai-mountains.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80",
@@ -119,10 +119,10 @@ const destinationsData = [
         experiences: ["Adventure", "Nature", "Steppe Culture", "Winter Sports"],
         activities: ["Canyon Trekking", "Skiing in Shymbulak", "Lake Kaindy Visit", "Metropolitan City Tour"],
         attractions: [
-            { name: "Almaty Lake", img: "https://images.unsplash.com/photo-1533221971714-f069485cc12d?w=600&q=80" },
-            { name: "Charyn Canyon", img: "https://images.unsplash.com/photo-1582234395701-d816431934c9?w=600&q=80" },
-            { name: "Ascension Cathedral", img: "https://images.unsplash.com/photo-1616428766157-5589ddc8430e?w=600&q=80" },
-            { name: "Bayterek Tower", img: "https://images.unsplash.com/photo-1563810246452-96570fcbb911?w=600&q=80" }
+            { name: "Almaty Lake", img: "/images/destinations/kazakhstan/almaty-lake.jpg" },
+            { name: "Charyn Canyon", img: "/images/destinations/kazakhstan/charyn-canyon.jpg" },
+            { name: "Ascension Cathedral", img: "/images/destinations/georgia/batumi-coast.jpg" },
+            { name: "Bayterek Tower", img: "/images/destinations/kazakhstan/bayterek-tower.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1589110756570-589110756be9?w=800&q=80",
@@ -146,10 +146,10 @@ const destinationsData = [
         experiences: ["Luxury", "Nature", "Wellness", "Beaches"],
         activities: ["Surfing", "Yoga Retreats", "Rice Field Trekking", "Temple Visits", "Waterfall Chasing"],
         attractions: [
-            { name: "Uluwatu Temple", img: "https://images.unsplash.com/photo-1518134701257-2b8347f892a3?w=600&q=80" },
-            { name: "Tegalalang Rice Terrace", img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" },
-            { name: "Nusa Penida", img: "https://images.unsplash.com/photo-1537953391147-f459cedd3e11?w=600&q=80" },
-            { name: "Ubud Monkey Forest", img: "https://images.unsplash.com/photo-1510009489794-352fba39acd3?w=600&q=80" }
+            { name: "Uluwatu Temple", img: "/images/destinations/bali/uluwatu-temple.jpg" },
+            { name: "Tegalalang Rice Terrace", img: "/images/destinations/bali/tegalalang-rice-terrace.jpg" },
+            { name: "Nusa Penida", img: "/images/destinations/thailand/phi-phi-islands.jpg" },
+            { name: "Ubud Monkey Forest", img: "/images/destinations/thailand/grand-palace.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80",
@@ -173,10 +173,10 @@ const destinationsData = [
         experiences: ["Culture", "Nature", "Beaches", "Food Tourism"],
         activities: ["Houseboat Stay", "Paragliding", "Beach Parties", "Heritage Walks", "Yoga & Ayurveda"],
         attractions: [
-            { name: "Alleppey Backwaters", img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" },
-            { name: "Rohtang Pass", img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80" },
-            { name: "Palolem Beach Goa", img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" },
-            { name: "Taj Mahal", img: "https://images.unsplash.com/photo-1548013146-72479768bbaa?w=600&q=80" }
+            { name: "Alleppey Backwaters", img: "/images/destinations/india/alleppey-backwaters.jpg" },
+            { name: "Rohtang Pass", img: "/images/destinations/thailand/chiang-mai-mountains.jpg" },
+            { name: "Palolem Beach Goa", img: "/images/destinations/india/palolem-beach-goa.jpg" },
+            { name: "Taj Mahal", img: "/images/destinations/india/taj-mahal.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1524491991219-0303c72b226d?w=800&q=80",
@@ -193,17 +193,17 @@ const destinationsData = [
         id: "turkey",
         name: "Turkey",
         tagline: "Where East Meets West",
-        titleImage: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1200&q=80",
+        titleImage: "/images/destinations/turkey.png",
         description: "Witness the fairytale chimneys of Cappadocia, the blue domes of Istanbul, and the turquoise waters of the Turkish Riviera.",
         aboutText: "Turkey bridges two continents and thousands of years of history. From the bustling Grand Bazaar to the hot air balloons of Cappadocia, it is a land of vibrant culture and ancient wonders.",
         bestTime: "April, May, September, and October",
         experiences: ["Culture", "Luxury", "History", "Nature"],
         activities: ["Hot Air Ballooning", "Bosphorus Cruise", "Hamam Experience", "Ancient City Tours"],
         attractions: [
-            { name: "Hagia Sophia", img: "https://images.unsplash.com/photo-1541432901042-26210f5bb865?w=600&q=80" },
-            { name: "Cappadocia Valleys", img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80" },
-            { name: "Pamukkale Travertines", img: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=600&q=80" },
-            { name: "Blue Mosque", img: "https://images.unsplash.com/photo-1510009489794-352fba39acd3?w=600&q=80" }
+            { name: "Hagia Sophia", img: "/images/destinations/turkey/hagia-sophia.jpg" },
+            { name: "Cappadocia Valleys", img: "/images/destinations/turkey/cappadocia-valleys.jpg" },
+            { name: "Pamukkale Travertines", img: "/images/destinations/turkey/pamukkale-travertines.jpg" },
+            { name: "Blue Mosque", img: "/images/destinations/thailand/grand-palace.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1510009489794-352fba39acd3?w=800&q=80",
@@ -220,17 +220,17 @@ const destinationsData = [
         id: "kenya",
         name: "Kenya",
         tagline: "The Heart of the Safari",
-        titleImage: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80",
+        titleImage: "/images/destinations/kenya.png",
         description: "Experience the ultimate wildlife adventure in the Maasai Mara, with vast savannahs and the world's most spectacular animal migration.",
         aboutText: "Kenya is synonymous with the classic African safari. It offers diverse landscapes, vibrant tribal cultures, and an incredible concentration of wildlife in world-renowned national parks.",
         bestTime: "July to October",
         experiences: ["Wildlife", "Adventure", "Nature", "Culture"],
         activities: ["Game Drives", "Hot Air Balloon Safari", "Maasai Village Visit", "Nature Photography"],
         attractions: [
-            { name: "Maasai Mara", img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" },
-            { name: "Mount Kenya", img: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&q=80" },
-            { name: "Amboseli Elephants", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" },
-            { name: "Diani Beach", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" }
+            { name: "Maasai Mara", img: "/images/destinations/kenya/maasai-mara.jpg" },
+            { name: "Mount Kenya", img: "/images/destinations/kenya/mount-kenya.jpg" },
+            { name: "Amboseli Elephants", img: "/images/destinations/kenya/amboseli-elephants.jpg" },
+            { name: "Diani Beach", img: "/images/destinations/kenya/diani-beach.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
@@ -247,17 +247,17 @@ const destinationsData = [
         id: "sri-lanka",
         name: "Sri Lanka",
         tagline: "The Pearl of the Indian Ocean",
-        titleImage: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80",
+        titleImage: "/images/destinations/sri-lanka.png",
         description: "Discover mist-covered tea plantations, golden palm-fringed beaches, and ancient ruins that tell stories of thousands of years.",
         aboutText: "Sri Lanka is an island nation of incredible diversity. From the cool highlands of Nuwara Eliya to the wild elephant herds of Minneriya, it is an explorer's paradise packed into a compact and beautiful country.",
         bestTime: "December to April (West/South) & May to September (East)",
         experiences: ["Nature", "Culture", "Beaches", "Food Tourism"],
         activities: ["Train Ride to Ella", "Wildlife Safari", "Temple Exploration", "Surf Lessons", "Tea Factory Tour"],
         attractions: [
-            { name: "Sigiriya Rock", img: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80" },
-            { name: "Ella Gap", img: "https://images.unsplash.com/photo-1589110756770-438645c06be9?w=600&q=80" },
-            { name: "Galle Fort", img: "https://images.unsplash.com/photo-1587652750697-393963428801?w=600&q=80" },
-            { name: "Mirissa Beach", img: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" }
+            { name: "Sigiriya Rock", img: "/images/destinations/sri-lanka/sigiriya-rock.jpg" },
+            { name: "Ella Gap", img: "/images/destinations/armenia/cascade-yerevan.jpg" },
+            { name: "Galle Fort", img: "/images/destinations/armenia/lake-sevan.jpg" },
+            { name: "Mirissa Beach", img: "/images/destinations/sri-lanka/mirissa-beach.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80",
@@ -281,10 +281,10 @@ const destinationsData = [
         experiences: ["Luxury", "Adventure", "City Life", "Desert"],
         activities: ["Skydiving", "Desert Safari", "Burj Khalifa Tour", "Dhow Cruise", "Luxury Shopping"],
         attractions: [
-            { name: "Burj Khalifa", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" },
-            { name: "Palm Jumeirah", img: "https://images.unsplash.com/photo-1533221971714-f069485cc12d?w=600&q=80" },
-            { name: "Dubai Marina", img: "https://images.unsplash.com/photo-1528181304800-2f1408198f99?w=600&q=80" },
-            { name: "Desert Dunes", img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80" }
+            { name: "Burj Khalifa", img: "/images/destinations/kenya/amboseli-elephants.jpg" },
+            { name: "Palm Jumeirah", img: "/images/destinations/kazakhstan/almaty-lake.jpg" },
+            { name: "Dubai Marina", img: "/images/destinations/thailand/wat-arun.jpg" },
+            { name: "Desert Dunes", img: "/images/destinations/dubai/desert-dunes.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
@@ -308,10 +308,10 @@ const destinationsData = [
         experiences: ["History", "Culture", "Adventure", "River Cruise"],
         activities: ["Pyramid Tour", "Nile Cruise", "Cairo Market Walk", "Snorkeling in Sharm"],
         attractions: [
-            { name: "Pyramids of Giza", img: "https://images.unsplash.com/photo-1539419361304-406deac9e96e?w=600&q=80" },
-            { name: "Great Sphinx", img: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=600&q=80" },
-            { name: "Luxor Temple", img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80" },
-            { name: "Nile River", img: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=600&q=80" }
+            { name: "Pyramids of Giza", img: "/images/destinations/egypt/pyramids-of-giza.jpg" },
+            { name: "Great Sphinx", img: "/images/destinations/egypt/great-sphinx.jpg" },
+            { name: "Luxor Temple", img: "/images/destinations/egypt/luxor-temple.jpg" },
+            { name: "Nile River", img: "/images/destinations/egypt/nile-river.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=800&q=80",
@@ -335,10 +335,10 @@ const destinationsData = [
         experiences: ["Food Tourism", "City Life", "Nature", "Beaches"],
         activities: ["KL Tower Visit", "Batu Caves Exploration", "Jungle Trekking", "Street Food Hopping"],
         attractions: [
-            { name: "Petronas Towers", img: "https://images.unsplash.com/photo-1532003885409-ed84d334f6cc?w=600&q=80" },
-            { name: "Batu Caves", img: "https://images.unsplash.com/photo-1524491991219-0303c72b226d?w=600&q=80" },
-            { name: "Langkawi Archipelago", img: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" },
-            { name: "Cameron Highlands", img: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80" }
+            { name: "Petronas Towers", img: "/images/destinations/malaysia/petronas-towers.jpg" },
+            { name: "Batu Caves", img: "/images/destinations/malaysia/batu-caves.jpg" },
+            { name: "Langkawi Archipelago", img: "/images/destinations/sri-lanka/mirissa-beach.jpg" },
+            { name: "Cameron Highlands", img: "/images/destinations/malaysia/cameron-highlands.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1532003885409-ed84d334f6cc?w=800&q=80",
@@ -355,17 +355,17 @@ const destinationsData = [
         id: "russia",
         name: "Russia",
         tagline: "The Empire of the North",
-        titleImage: "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=1200&q=80",
+        titleImage: "/images/destinations/russia.png",
         description: "Experience the imperial glory of St. Petersburg's palaces and the vibrant energy of Moscow's Red Square.",
         aboutText: "Russia is a country of epic proportions and deep history. From the world-class Hermitage Museum to the colorful domes of St. Basil's, it offers a majestic and culturally rich travel experience.",
         bestTime: "June to August",
         experiences: ["History", "Art", "City Life", "Culture"],
         activities: ["Hermitage Museum Tour", "Red Square Walk", "Ballet Performance", "Palace Tours"],
         attractions: [
-            { name: "St. Basil's Cathedral", img: "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&q=80" },
-            { name: "Red Square", img: "https://images.unsplash.com/photo-1549468057-0b168f121df0?w=600&q=80" },
-            { name: "Hermitage Museum", img: "https://images.unsplash.com/photo-1582234395701-d816431934c9?w=600&q=80" },
-            { name: "Gorky Park", img: "https://images.unsplash.com/photo-1616428766157-5589ddc8430e?w=600&q=80" }
+            { name: "St. Basil's Cathedral", img: "/images/destinations/russia/st-basils-cathedral.jpg" },
+            { name: "Red Square", img: "/images/destinations/russia/red-square.jpg" },
+            { name: "Hermitage Museum", img: "/images/destinations/kazakhstan/charyn-canyon.jpg" },
+            { name: "Gorky Park", img: "/images/destinations/georgia/batumi-coast.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=800&q=80",
@@ -382,17 +382,17 @@ const destinationsData = [
         id: "vietnam",
         name: "Vietnam",
         tagline: "Timeless Charm",
-        titleImage: "https://images.unsplash.com/photo-1528127269322-539801943592?w=1200&q=80",
+        titleImage: "/images/destinations/vietnam.png",
         description: "Sail through the limestone towers of Ha Long Bay, explore the lantern-lit streets of Hoi An, and savor the world's best street food.",
         aboutText: "Vietnam is a sensory explosion. From the emerald waters of its iconic bays to the chaotic energy of its cities and the serenity of its terraced rice fields, it offers some of the best travel value in the world.",
         bestTime: "February to April & August to October",
         experiences: ["Nature", "Food Tourism", "Adventure", "History"],
         activities: ["Ha Long Bay Cruise", "Lantern Making", "Cu Chi Tunnels Visit", "Food Walking Tour"],
         attractions: [
-            { name: "Ha Long Bay", img: "https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" },
-            { name: "Hoi An Old Town", img: "https://images.unsplash.com/photo-1589110756770-438645c06be9?w=600&q=80" },
-            { name: "Golden Bridge", img: "https://images.unsplash.com/photo-1587652750697-393963428801?w=600&q=80" },
-            { name: "SaPa Rice Fields", img: "https://images.unsplash.com/photo-1528181304800-2f1408198f99?w=600&q=80" }
+            { name: "Ha Long Bay", img: "/images/destinations/vietnam/ha-long-bay.jpg" },
+            { name: "Hoi An Old Town", img: "/images/destinations/armenia/cascade-yerevan.jpg" },
+            { name: "Golden Bridge", img: "/images/destinations/armenia/lake-sevan.jpg" },
+            { name: "SaPa Rice Fields", img: "/images/destinations/thailand/wat-arun.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80",
@@ -409,17 +409,17 @@ const destinationsData = [
         id: "maldives",
         name: "Maldives",
         tagline: "The Sunny Side of Life",
-        titleImage: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1200&q=80",
+        titleImage: "/images/destinations/maldives.png",
         description: "Wake up in an overwater villa suspended over turquoise lagoons, where the marine life is as colorful as the sunsets.",
         aboutText: "The Maldives is the world's premier beach destination, where luxury meets nature in a way that feels surreal. Every resort is its own private island, offering unparalleled privacy and crystal-clear ocean views.",
         bestTime: "November to April",
         experiences: ["Luxury", "Beaches", "Wellness", "Nature"],
         activities: ["Snorkeling", "Overwater Dinner", "Spa Treatments", "Seaplane Adventure"],
         attractions: [
-            { name: "Male Atoll", img: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80" },
-            { name: "Blue Lagoon", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" },
-            { name: "Underwater Dining", img: "https://images.unsplash.com/photo-1510009489794-352fba39acd3?w=600&q=80" },
-            { name: "Pristine Beaches", img: "https://images.unsplash.com/photo-1528181304800-2f1408198f99?w=600&q=80" }
+            { name: "Male Atoll", img: "/images/destinations/sri-lanka/mirissa-beach.jpg" },
+            { name: "Blue Lagoon", img: "/images/destinations/kenya/diani-beach.jpg" },
+            { name: "Underwater Dining", img: "/images/destinations/thailand/grand-palace.jpg" },
+            { name: "Pristine Beaches", img: "/images/destinations/thailand/wat-arun.jpg" }
         ],
         gallery: [
             "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80",

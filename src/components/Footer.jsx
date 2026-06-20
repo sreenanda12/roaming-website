@@ -65,7 +65,7 @@ export default function Footer() {
                         {/* Brand Column */}
                         <div className="footer-brand">
                             <NavLink to="/" className="footer-logo">
-                                <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="footer-logo-img" />
+                                <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="footer-logo-img" height="48" width="114" />
                             </NavLink>
                             <p className="footer-brand-desc">
                                 Your trusted partner for international tourism, premium property booking, and luxury car rentals. We make every journey unforgettable.
@@ -115,7 +115,7 @@ export default function Footer() {
                             <div className="footer-contact-list">
                                 <div className="footer-contact-item">
                                     <MapPin size={16} />
-                                    <span>123 Travel Lane, New Delhi, India 110001</span>
+                                    <span>Muse Hub Co-Working Space, Marathahalli, Bangalore</span>
                                 </div>
                                 <div className="footer-contact-item">
                                     <Phone size={16} />

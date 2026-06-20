@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import {
     Globe, Car, Home as HomeIcon, Star, MapPin, ArrowRight,
     Clock, Users, Wifi, Coffee, Zap, Shield
@@ -14,78 +14,6 @@ const tabs = [
 
 const packages = [
     {
-        id: 1,
-        name: 'Santorini & Athens',
-        country: 'Greece',
-        price: '₹1,24,999',
-        duration: '8 Days / 7 Nights',
-        rating: 4.8,
-        reviews: 642,
-        tag: 'Best Seller',
-        img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=700&q=80',
-        highlights: ['Hotel Stay', 'Guided Tours', 'Airport Pick', 'Meals'],
-    },
-    {
-        id: 2,
-        name: 'Dubai Luxury Escape',
-        country: 'UAE',
-        price: '₹89,999',
-        duration: '6 Days / 5 Nights',
-        rating: 4.9,
-        reviews: 1024,
-        tag: 'Premium',
-        img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=80',
-        highlights: ['5-Star Hotel', 'Desert Safari', 'Burj Khalifa', 'Dhow Cruise'],
-    },
-    {
-        id: 3,
-        name: 'Bali Paradise',
-        country: 'Indonesia',
-        price: '₹64,999',
-        duration: '7 Days / 6 Nights',
-        rating: 4.9,
-        reviews: 1580,
-        tag: 'Popular',
-        img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=700&q=80',
-        highlights: ['Villa Stay', 'Temple Tours', 'Ubud Trek', 'Beach Day'],
-    },
-    {
-        id: 4,
-        name: 'Thailand Explorer',
-        country: 'Thailand',
-        price: '₹44,999',
-        duration: '5 Days / 4 Nights',
-        rating: 4.7,
-        reviews: 2100,
-        tag: 'Value Pick',
-        img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=700&q=80',
-        highlights: ['Hotel Stay', 'Phi Phi Islands', 'Night Market', 'Spa'],
-    },
-    {
-        id: 5,
-        name: 'Europe Grand Tour',
-        country: 'Multi-Country',
-        price: '₹2,49,999',
-        duration: '15 Days / 14 Nights',
-        rating: 4.9,
-        reviews: 380,
-        tag: 'Signature',
-        img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=700&q=80',
-        highlights: ['5 Countries', 'Rail Pass', 'Guided Tours', 'Premium Hotels'],
-    },
-    {
-        id: 6,
-        name: 'Maldives Overwater',
-        country: 'Maldives',
-        price: '₹1,89,999',
-        duration: '6 Days / 5 Nights',
-        rating: 5.0,
-        reviews: 284,
-        tag: 'Ultra Luxury',
-        img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80',
-        highlights: ['Water Bungalow', 'Snorkeling', 'Spa', 'Sunset Cruise'],
-    },
-    {
         id: 7,
         name: 'Enchanting Georgia Escape',
         country: 'Georgia 🇬🇪',
@@ -96,8 +24,6 @@ const packages = [
         tag: 'NEW',
         img: '/images/destinations/georgia.jpg',
         highlights: ['Tbilisi Tour', 'Mtskheta', 'Kazbegi', 'Wine Tasting', 'Kutaisi', 'Prometheus Cave'],
-        travelerInfo: '6 Adults + 1 Child',
-        accommodation: ['Hotel 21 Tbilisi × 4 Nights', 'Kutaisi Inn × 1 Night'],
         isGeorgia: true,
     },
     {
@@ -160,52 +86,28 @@ const cars = [
 
 const properties = [
     {
-        id: 1,
-        name: 'The Green Valley Resort',
-        location: 'Coorg, India',
-        type: 'Luxury Resort',
-        price: '₹12,999/night',
-        rating: 4.9,
-        reviews: 328,
+        id: 5,
+        name: 'Élam Munnar',
+        location: 'Letchmi Estate, Munnar, Kerala',
+        type: 'LUXURY MOUNTAIN RETREAT',
+        price: 'Contact for Price',
+        rating: '4.9+',
         amenities: [<Wifi size={14} />, <Coffee size={14} />, <Shield size={14} />, <Users size={14} />],
-        img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80',
-        tag: 'Top Rated',
+        img: '/images/elam/p1.jpeg',
+        tag: 'FEATURED',
+        isElam: true,
     },
     {
-        id: 2,
-        name: 'Santorini Cliffside Villa',
-        location: 'Oia, Greece',
-        type: 'Holiday Villa',
-        price: '₹28,999/night',
-        rating: 5.0,
-        reviews: 142,
-        amenities: [<Wifi size={14} />, <Zap size={14} />, <Coffee size={14} />, <Users size={14} />],
-        img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=700&q=80',
-        tag: 'Premium',
-    },
-    {
-        id: 3,
-        name: 'Palm Villas Bali',
-        location: 'Seminyak, Bali',
-        type: 'Private Villa',
-        price: '₹8,999/night',
-        rating: 4.8,
-        reviews: 416,
-        amenities: [<Wifi size={14} />, <Coffee size={14} />, <Users size={14} />, <Zap size={14} />],
-        img: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=700&q=80',
-        tag: 'Best Value',
-    },
-    {
-        id: 4,
-        name: 'Grand Hyatt Dubai',
-        location: 'Dubai, UAE',
-        type: '5-Star Hotel',
-        price: '₹18,999/night',
-        rating: 4.9,
-        reviews: 892,
-        amenities: [<Wifi size={14} />, <Coffee size={14} />, <Shield size={14} />, <Zap size={14} />],
-        img: 'https://images.unsplash.com/photo-1535827841776-24afc1e255ac?w=700&q=80',
-        tag: '5-Star',
+        id: 6,
+        name: 'Old Kent Estates & Spa Coorg',
+        location: 'Madikeri, Coorg, Karnataka',
+        type: 'HERITAGE PLANTATION RESORT',
+        price: 'Contact for Price',
+        rating: '4.9+',
+        amenities: [<Wifi size={14} />, <Coffee size={14} />, <Shield size={14} />, <Users size={14} />],
+        img: '/images/oldkent/oldkentestates.jpg',
+        tag: 'HERITAGE LUXURY',
+        isOldKent: true,
     },
 ];
 
@@ -225,12 +127,24 @@ const tagColors = {
     '5-Star': '#c9a84c',
     'NEW': '#19351c',
     'POPULAR': '#19351c',
+    'FEATURED': '#c9a84c',
+    'HERITAGE LUXURY': '#8f6835',
 };
 
 
 
 export default function Services() {
     const [activeTab, setActiveTab] = useState('tourism');
+    const navigate = useNavigate();
+
+    const handlePropertyClick = (e, prop) => {
+        if (e.target.closest('a') || e.target.closest('button')) return;
+        if (prop.isElam) {
+            navigate('/properties/elam-munnar');
+        } else if (prop.isOldKent) {
+            navigate('/properties/old-kent-estates-coorg');
+        }
+    };
 
     const handleCardClick = (e, pkg) => {
         // Prevent click if we clicked a link or button
@@ -334,22 +248,7 @@ export default function Services() {
                                         </div>
                                         <h3 className="pkg-name">{pkg.name}</h3>
 
-                                        {/* Georgia Extra Info */}
-                                        {pkg.isGeorgia && (
-                                            <div className="pkg-extra-info">
-                                                <div className="pkg-extra-item">
-                                                    <strong>Travelers:</strong> {pkg.travelerInfo}
-                                                </div>
-                                                <div className="pkg-extra-item">
-                                                    <strong>Stay:</strong>
-                                                    <ul>
-                                                        {pkg.accommodation.map((acc, index) => (
-                                                            <li key={index}>{acc}</li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        )}
+
 
                                         <div className="pkg-highlights">
                                             {pkg.highlights.map((h) => (
@@ -477,7 +376,12 @@ export default function Services() {
                         </div>
                         <div className="property-grid">
                             {properties.map((prop, i) => (
-                                <div key={prop.id} className={`property-card aos aos-scale aos-delay-${(i % 2) + 1}`}>
+                                <div 
+                                    key={prop.id} 
+                                    className={`property-card aos aos-scale aos-delay-${(i % 2) + 1}`}
+                                    onClick={(e) => handlePropertyClick(e, prop)}
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     <div className="property-img-wrap">
                                         <img src={prop.img} alt={prop.name} className="property-img" loading="lazy" />
                                         <div className="property-overlay" />
@@ -490,7 +394,9 @@ export default function Services() {
                                         <div className="property-rating">
                                             <Star size={12} fill="#c9a84c" color="#c9a84c" />
                                             <span>{prop.rating}</span>
-                                            <span style={{ opacity: 0.65 }}>({prop.reviews} reviews)</span>
+                                            <span style={{ opacity: 0.65 }}>
+                                                {prop.reviews !== undefined ? ` (${prop.reviews} reviews)` : ''}
+                                            </span>
                                         </div>
                                     </div>
                                     <div className="property-body">
@@ -510,10 +416,18 @@ export default function Services() {
                                                 <div className="property-from">From</div>
                                                 <div className="property-price">{prop.price}</div>
                                             </div>
-                                            <NavLink to="/contact" className="btn-primary property-book-btn">
-                                                <span>Reserve</span>
-                                                <ArrowRight size={14} />
-                                            </NavLink>
+                                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '6px' }}>
+                                                <NavLink 
+                                                    to={prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg"} 
+                                                    className="btn-primary property-book-btn"
+                                                >
+                                                    <span>{prop.isElam ? "Explore Retreat" : "Explore Estate"}</span>
+                                                    <ArrowRight size={14} />
+                                                </NavLink>
+                                                <NavLink to={prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg"} style={{ fontSize: '0.78rem', color: 'var(--gold-400)', textDecoration: 'underline', marginTop: '2px', fontWeight: 600 }}>
+                                                    View Details
+                                                </NavLink>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

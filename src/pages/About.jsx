@@ -15,28 +15,16 @@ const values = [
 
 const team = [
     {
-        name: 'Arjun Nair',
-        role: 'Founder & CEO',
-        img: 'https://i.pravatar.cc/300?img=68',
-        exp: '18 yrs',
+        name: 'Arshed',
     },
     {
-        name: 'Meera Patel',
-        role: 'Head of Packages',
-        img: 'https://i.pravatar.cc/300?img=47',
-        exp: '12 yrs',
+        name: 'Fahad',
     },
     {
-        name: 'Rahul Singh',
-        role: 'Europe & Middle East',
-        img: 'https://i.pravatar.cc/300?img=12',
-        exp: '9 yrs',
+        name: 'Arshed E',
     },
     {
-        name: 'Priya Reddy',
-        role: 'Southeast Asia Expert',
-        img: 'https://i.pravatar.cc/300?img=32',
-        exp: '11 yrs',
+        name: 'Fahad mehfi',
     },
 ];
 
@@ -234,13 +222,18 @@ export default function About() {
                     <div className="team-grid">
                         {team.map((member, i) => (
                             <div key={member.name} className={`team-card aos aos-scale aos-delay-${i + 1}`}>
-                                <div className="team-img-wrap">
-                                    <img src={member.img} alt={member.name} className="team-img" />
-                                    <div className="team-exp-badge">{member.exp}</div>
-                                </div>
-                                <div className="team-info">
-                                    <h4 className="team-name">{member.name}</h4>
-                                    <p className="team-role">{member.role}</p>
+                                <div className="team-info" style={{ padding: '24px' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: member.role ? '8px' : '0' }}>
+                                        <h4 className="team-name" style={{ margin: 0, fontSize: '1.25rem' }}>{member.name}</h4>
+                                        {member.exp && (
+                                            <span className="team-exp-badge" style={{ position: 'static', background: 'var(--gold-400)', color: 'var(--forest-900)', padding: '2px 8px', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700 }}>
+                                                {member.exp}
+                                            </span>
+                                        )}
+                                    </div>
+                                    {member.role && (
+                                        <p className="team-role" style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{member.role}</p>
+                                    )}
                                 </div>
                             </div>
                         ))}

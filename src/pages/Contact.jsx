@@ -7,28 +7,61 @@ import {
 import InfiniteMenu from '../components/InfiniteMenu';
 import './Contact.css';
 
+const WhatsAppIcon = ({ size = 20, ...props }) => (
+    <svg 
+        viewBox="0 0 24 24" 
+        width={size} 
+        height={size} 
+        fill="currentColor" 
+        style={{ display: 'inline-block', verticalAlign: 'middle', ...props.style }}
+        {...props}
+    >
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+);
+
 const contactInfo = [
     {
         icon: <MapPin size={22} strokeWidth={1.5} />,
         title: 'Our Office',
-        lines: ['123 Travel Lane, Connaught Place', 'New Delhi, Delhi 110001, India'],
+        lines: [
+            { text: 'Muse Hub Co-Working Space', href: null },
+            { text: 'Marathahalli, Bangalore', href: null }
+        ],
     },
     {
-        icon: <Phone size={22} strokeWidth={1.5} />,
-        title: 'Call Us',
-        lines: ['+91 72043 70369', '+91 11 2345 6789'],
-        href: 'tel:+917204370369',
+        icon: <WhatsAppIcon size={22} style={{ color: '#25D366' }} />,
+        title: 'WhatsApp & Call',
+        lines: [
+            { 
+                text: '+91 72043 70369', 
+                href: 'https://wa.me/917204370369', 
+                icon: <WhatsAppIcon size={14} style={{ color: '#25D366' }} />,
+                target: '_blank', 
+                rel: 'noopener noreferrer' 
+            },
+            { 
+                text: '+91 72043 70369', 
+                href: 'tel:+917204370369',
+                icon: <Phone size={12} style={{ color: 'var(--forest-600)' }} />
+            }
+        ],
     },
     {
         icon: <Mail size={22} strokeWidth={1.5} />,
         title: 'Email Us',
-        lines: ['hello@roamingdirection.com', 'bookings@roamingdirection.com'],
-        href: 'mailto:hello@roamingdirection.com',
+        lines: [
+            { text: 'hello@roamingdirection.com', href: 'mailto:hello@roamingdirection.com' },
+            { text: 'bookings@roamingdirection.com', href: 'mailto:bookings@roamingdirection.com' }
+        ],
     },
     {
         icon: <Clock size={22} strokeWidth={1.5} />,
         title: 'Office Hours',
-        lines: ['Mon – Sat: 9:00 AM – 7:00 PM', 'Sunday: 10:00 AM – 4:00 PM'],
+        lines: [
+            { text: 'Mon – Sat: 9:00 AM – 7:00 PM', href: null },
+            { text: 'Sunday: 10:00 AM – 4:00 PM', href: null }
+        ],
     },
 ];
 
@@ -145,15 +178,37 @@ export default function Contact() {
                                         <div className="contact-card-icon">{info.icon}</div>
                                         <div>
                                             <div className="contact-card-title">{info.title}</div>
-                                            {info.lines.map((line, li) => (
-                                                info.href && li === 0 ? (
-                                                    <a key={li} href={info.href} className="contact-card-line link">
-                                                        {line}
+                                            {info.lines.map((line, li) => {
+                                                const isObj = typeof line === 'object' && line !== null;
+                                                const text = isObj ? line.text : line;
+                                                const href = isObj ? line.href : null;
+                                                const lineIcon = isObj ? line.icon : null;
+                                                const target = isObj ? line.target : null;
+                                                const rel = isObj ? line.rel : null;
+
+                                                return href ? (
+                                                    <a
+                                                        key={li}
+                                                        href={href}
+                                                        className="contact-card-line link"
+                                                        target={target}
+                                                        rel={rel}
+                                                        style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                                                    >
+                                                        {lineIcon}
+                                                        <span>{text}</span>
                                                     </a>
                                                 ) : (
-                                                    <div key={li} className="contact-card-line">{line}</div>
-                                                )
-                                            ))}
+                                                    <div
+                                                        key={li}
+                                                        className="contact-card-line"
+                                                        style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                                                    >
+                                                        {lineIcon}
+                                                        <span>{text}</span>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 ))}
@@ -164,11 +219,18 @@ export default function Contact() {
                                 <div className="contact-social-label">Follow Our Journey</div>
                                 <div className="contact-socials">
                                     {[
-                                        { icon: <Instagram size={20} />, href: '#', label: 'Instagram' },
+                                        { icon: <Instagram size={20} />, href: 'https://www.instagram.com/roamingdirections?igsh=MWhkd294aHd4cGMweg==', label: 'Instagram' },
                                         { icon: <Facebook size={20} />, href: '#', label: 'Facebook' },
                                         { icon: <Twitter size={20} />, href: '#', label: 'Twitter' },
                                     ].map((s) => (
-                                        <a key={s.label} href={s.href} className="contact-social-btn" aria-label={s.label}>
+                                        <a 
+                                            key={s.label} 
+                                            href={s.href} 
+                                            className="contact-social-btn" 
+                                            aria-label={s.label}
+                                            target={s.href !== '#' ? "_blank" : undefined}
+                                            rel={s.href !== '#' ? "noopener noreferrer" : undefined}
+                                        >
                                             {s.icon}
                                         </a>
                                     ))}
@@ -299,7 +361,7 @@ export default function Contact() {
                 <div className="map-container">
                     <iframe
                         title="Roaming Direction Office Location"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0953898025356!2d77.21540091508238!3d28.629505082417255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1621439567123!5m2!1sen!2sin"
+                        src="https://maps.google.com/maps?q=Muse%20Hub%20Co-Working%20Space%20Marathahalli%20Bangalore&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="450"
                         style={{ border: 0, display: 'block' }}
@@ -329,6 +391,10 @@ export default function Contact() {
                                     <span>Explore Packages</span>
                                     <ArrowRight size={18} />
                                 </NavLink>
+                                <a href="https://wa.me/917204370369" target="_blank" rel="noopener noreferrer" className="btn-outline whatsapp-btn">
+                                    <WhatsAppIcon size={16} />
+                                    <span>WhatsApp Us</span>
+                                </a>
                                 <a href="tel:+917204370369" className="btn-outline">
                                     <Phone size={16} />
                                     <span>Call Now</span>

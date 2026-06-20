@@ -4,14 +4,14 @@ import { ArrowRight } from 'lucide-react';
 import './HeroSlider.css';
 
 const desktopSlides = [
-    { image: '/images/pni1.png', animation: 'kb-zoom-in' },
-    { image: '/images/pni2.png', animation: 'kb-pan-right' },
-    { image: '/images/pni3.png', animation: 'kb-zoom-out' },
-    { image: '/images/pni4.png', animation: 'kb-parallax-push' }
+    { image: '/images/pni1.webp', animation: 'kb-zoom-in' },
+    { image: '/images/pni2.webp', animation: 'kb-pan-right' },
+    { image: '/images/pni3.webp', animation: 'kb-zoom-out' },
+    { image: '/images/pni4.webp', animation: 'kb-parallax-push' }
 ];
 
 const mobileSlides = [
-    { image: '/images/pnih1.jpg', animation: 'kb-mobile-zoom-in' },
+    { image: '/images/pnih1.webp', animation: 'kb-mobile-zoom-in' },
     { image: '/images/pnih2.webp', animation: 'kb-mobile-pan-right' },
     { image: '/images/pnih3.webp', animation: 'kb-mobile-zoom-out' },
     { image: '/images/pnih4.webp', animation: 'kb-mobile-parallax-push' }
@@ -25,27 +25,36 @@ const HeroSlider = () => {
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 768);
-        window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleResize, { passive: true });
         
-        // Preload relevant images
+        // Preload relevant images once when mobile/desktop viewport mode toggles
         const activeSlides = isMobile ? mobileSlides : desktopSlides;
         activeSlides.forEach((slide) => {
             const img = new Image();
             img.src = slide.image;
         });
 
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [isMobile]);
+
+    useEffect(() => {
+        const activeSlides = isMobile ? mobileSlides : desktopSlides;
         const duration = isMobile ? 3000 : 6000;
+        
         const interval = setInterval(() => {
-            setPrevIndex(activeIndex);
-            setActiveIndex((current) => (current + 1) % activeSlides.length);
+            setActiveIndex((current) => {
+                setPrevIndex(current);
+                return (current + 1) % activeSlides.length;
+            });
             setIsFirstLoad(false);
         }, duration);
 
         return () => {
             clearInterval(interval);
-            window.removeEventListener('resize', handleResize);
         };
-    }, [activeIndex, isMobile]);
+    }, [isMobile]);
 
     const currentSlides = isMobile ? mobileSlides : desktopSlides;
 

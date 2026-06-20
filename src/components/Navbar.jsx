@@ -38,7 +38,7 @@ export default function Navbar() {
                 <div className="navbar-inner container-lg">
                     {/* Logo */}
                     <NavLink to="/" className="navbar-logo">
-                        <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="navbar-logo-img" />
+                        <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="navbar-logo-img" height="42" width="100" />
                     </NavLink>
 
                     {/* Desktop Nav */}
@@ -81,7 +81,7 @@ export default function Navbar() {
             <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`}>
                 <nav className="mobile-nav">
                     <div className="mobile-logo">
-                        <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="mobile-logo-img" />
+                        <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="mobile-logo-img" height="48" width="114" />
                     </div>
                     <ul className="mobile-links">
                         {navLinks.map((link, i) => (

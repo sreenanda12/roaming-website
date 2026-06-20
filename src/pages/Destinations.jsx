@@ -6,6 +6,14 @@ import './Destinations.css';
 
 export default function Destinations() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedQuery, setDebouncedQuery] = useState('');
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedQuery(searchQuery);
+    }, 250);
+    return () => clearTimeout(handler);
+  }, [searchQuery]);
 
   useEffect(() => {
     // Scroll observer for animations
@@ -19,12 +27,12 @@ export default function Destinations() {
     );
     document.querySelectorAll('.aos, .aos-left, .aos-right, .aos-scale').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [searchQuery]); // Re-run when search changes to observer new elements
+  }, [debouncedQuery]); // Re-run when debounced search changes to observe new elements
 
   const filteredDestinations = destinationsData.filter(dest => 
-    dest.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    dest.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    dest.description.toLowerCase().includes(searchQuery.toLowerCase())
+    dest.name.toLowerCase().includes(debouncedQuery.toLowerCase()) ||
+    dest.tagline.toLowerCase().includes(debouncedQuery.toLowerCase()) ||
+    dest.description.toLowerCase().includes(debouncedQuery.toLowerCase())
   );
 
   return (

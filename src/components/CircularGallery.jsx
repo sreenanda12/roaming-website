@@ -405,6 +405,7 @@ class App {
     this.onResize();
     this.createGeometry();
     this.createMedias(items, bend, textColor, borderRadius, font);
+    this.lastActiveIndex = -1;
     this.update();
     this.addEventListeners();
   }
@@ -472,16 +473,43 @@ class App {
     this.isDown = true;
     this.scroll.position = this.scroll.current;
     this.start = e.touches ? e.touches[0].clientX : e.clientX;
+    this.startY = e.touches ? e.touches[0].clientY : e.clientY;
+    this.hasMoved = false;
+    
+    // Bind dynamic drag movement and release listeners on window
+    window.addEventListener('mousemove', this.boundOnTouchMove, { passive: true });
+    window.addEventListener('mouseup', this.boundOnTouchUp, { passive: true });
+    window.addEventListener('touchmove', this.boundOnTouchMove, { passive: true });
+    window.addEventListener('touchend', this.boundOnTouchUp, { passive: true });
   }
   onTouchMove(e) {
     if (!this.isDown) return;
     const x = e.touches ? e.touches[0].clientX : e.clientX;
+    const y = e.touches ? e.touches[0].clientY : e.clientY;
+    
+    if (Math.abs(x - this.start) > 6 || Math.abs(y - this.startY) > 6) {
+      this.hasMoved = true;
+    }
+    
     const distance = (this.start - x) * (this.scrollSpeed * 0.025);
     this.scroll.target = this.scroll.position + distance;
   }
-  onTouchUp() {
+  onTouchUp(e) {
+    if (!this.isDown) return;
     this.isDown = false;
     this.onCheck();
+    
+    // Unbind dynamic drag movement and release listeners from window
+    window.removeEventListener('mousemove', this.boundOnTouchMove);
+    window.removeEventListener('mouseup', this.boundOnTouchUp);
+    window.removeEventListener('touchmove', this.boundOnTouchMove);
+    window.removeEventListener('touchend', this.boundOnTouchUp);
+    
+    if (!this.hasMoved && e) {
+      const clientX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+      const clientY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+      this.handleCanvasClick(clientX, clientY);
+    }
   }
   onWheel(e) {
     const delta = e.deltaY || e.wheelDelta || e.detail;
@@ -537,6 +565,57 @@ class App {
       this.medias.forEach(media => media.onResize({ screen: this.screen, viewport: this.viewport }));
     }
   }
+  handleCanvasClick(clientX, clientY) {
+    if (!this.medias || !this.medias[0]) return;
+    const rect = this.renderer.gl.canvas.getBoundingClientRect();
+    const canvasX = clientX - rect.left;
+    const canvasY = clientY - rect.top;
+
+    const ndcX = (canvasX / rect.width) * 2 - 1;
+    const ndcY = -((canvasY / rect.height) * 2 - 1);
+
+    const clickX = ndcX * (this.viewport.width / 2);
+    const clickY = ndcY * (this.viewport.height / 2);
+
+    for (let media of this.medias) {
+      const halfWidth = media.plane.scale.x / 2;
+      const halfHeight = media.plane.scale.y / 2;
+      const xMatch = clickX >= media.plane.position.x - halfWidth && clickX <= media.plane.position.x + halfWidth;
+      const yMatch = clickY >= media.plane.position.y - halfHeight && clickY <= media.plane.position.y + halfHeight;
+
+      if (xMatch && yMatch) {
+        const originalIndex = media.index % (this.mediasImages.length / 2);
+        if (this.onItemClick) {
+          this.onItemClick(originalIndex);
+        }
+        break;
+      }
+    }
+  }
+
+  reportActiveIndex() {
+    if (!this.medias || !this.medias[0] || !this.onActiveIndexChange) return;
+    
+    let closestMedia = null;
+    let minDistance = Infinity;
+    
+    for (let media of this.medias) {
+      const distance = Math.abs(media.plane.position.x);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestMedia = media;
+      }
+    }
+    
+    if (closestMedia) {
+      const originalIndex = closestMedia.index % (this.mediasImages.length / 2);
+      if (originalIndex !== this.lastActiveIndex) {
+        this.lastActiveIndex = originalIndex;
+        this.onActiveIndexChange(originalIndex);
+      }
+    }
+  }
+
   update() {
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
@@ -545,6 +624,9 @@ class App {
     }
     this.renderer.render({ scene: this.scene, camera: this.camera });
     this.scroll.last = this.scroll.current;
+    
+    this.reportActiveIndex();
+    
     this.raf = window.requestAnimationFrame(this.update.bind(this));
   }
   addEventListeners() {
@@ -555,35 +637,36 @@ class App {
     this.boundOnTouchUp = this.onTouchUp.bind(this);
     this.boundOnKeyDown = this.onKeyDown.bind(this);
 
-    window.addEventListener('resize', this.boundOnResize);
-    window.addEventListener('mousewheel', this.boundOnWheel);
-    window.addEventListener('wheel', this.boundOnWheel);
-    window.addEventListener('mousedown', this.boundOnTouchDown);
-    window.addEventListener('mousemove', this.boundOnTouchMove);
-    window.addEventListener('mouseup', this.boundOnTouchUp);
-    window.addEventListener('touchstart', this.boundOnTouchDown);
-    window.addEventListener('touchmove', this.boundOnTouchMove);
-    window.addEventListener('touchend', this.boundOnTouchUp);
-
-    this.container?.addEventListener('keydown', this.boundOnKeyDown);
+    window.addEventListener('resize', this.boundOnResize, { passive: true });
+    
+    if (this.container) {
+      this.container.addEventListener('mousewheel', this.boundOnWheel, { passive: true });
+      this.container.addEventListener('wheel', this.boundOnWheel, { passive: true });
+      this.container.addEventListener('mousedown', this.boundOnTouchDown, { passive: true });
+      this.container.addEventListener('touchstart', this.boundOnTouchDown, { passive: true });
+      this.container.addEventListener('keydown', this.boundOnKeyDown);
+    }
   }
   destroy() {
     window.cancelAnimationFrame(this.raf);
     window.removeEventListener('resize', this.boundOnResize);
-    window.removeEventListener('mousewheel', this.boundOnWheel);
-    window.removeEventListener('wheel', this.boundOnWheel);
-    window.removeEventListener('mousedown', this.boundOnTouchDown);
+    
+    // Ensure all dynamic listeners are cleaned up
     window.removeEventListener('mousemove', this.boundOnTouchMove);
     window.removeEventListener('mouseup', this.boundOnTouchUp);
-    window.removeEventListener('touchstart', this.boundOnTouchDown);
     window.removeEventListener('touchmove', this.boundOnTouchMove);
     window.removeEventListener('touchend', this.boundOnTouchUp);
-    if (this.renderer && this.renderer.gl && this.renderer.gl.canvas.parentNode) {
-      this.renderer.gl.canvas.parentNode.removeChild(this.renderer.gl.canvas);
+    
+    if (this.container) {
+      this.container.removeEventListener('mousewheel', this.boundOnWheel);
+      this.container.removeEventListener('wheel', this.boundOnWheel);
+      this.container.removeEventListener('mousedown', this.boundOnTouchDown);
+      this.container.removeEventListener('touchstart', this.boundOnTouchDown);
+      this.container.removeEventListener('keydown', this.boundOnKeyDown);
     }
 
-    if (this.container) {
-      this.container.removeEventListener('keydown', this.boundOnKeyDown);
+    if (this.renderer && this.renderer.gl && this.renderer.gl.canvas.parentNode) {
+      this.renderer.gl.canvas.parentNode.removeChild(this.renderer.gl.canvas);
     }
   }
 }
@@ -596,7 +679,9 @@ export default function CircularGallery({
   font = 'bold 30px Figtree',
   fontUrl,
   scrollSpeed = 2,
-  scrollEase = 0.05
+  scrollEase = 0.05,
+  onItemClick,
+  onActiveIndexChange
 }) {
   const containerRef = useRef(null);
   useEffect(() => {
@@ -614,13 +699,15 @@ export default function CircularGallery({
         scrollSpeed,
         scrollEase
       });
+      app.onItemClick = onItemClick;
+      app.onActiveIndexChange = onActiveIndexChange;
     });
 
     return () => {
       isMounted = false;
       if (app) app.destroy();
     };
-  }, [items, bend, textColor, borderRadius, font, fontUrl, scrollSpeed, scrollEase]);
+  }, [items, bend, textColor, borderRadius, font, fontUrl, scrollSpeed, scrollEase, onItemClick, onActiveIndexChange]);
   return (
     <div
       className="circular-gallery"
