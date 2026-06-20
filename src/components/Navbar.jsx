@@ -38,7 +38,7 @@ export default function Navbar() {
                 <div className="navbar-inner container-lg">
                     {/* Logo */}
                     <NavLink to="/" className="navbar-logo">
-                        <img src="/images/roaminglogo.png" alt="Roaming Direction Logo" className="navbar-logo-img" />
+                        <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="navbar-logo-img" />
                     </NavLink>
 
                     {/* Desktop Nav */}
@@ -59,10 +59,6 @@ export default function Navbar() {
 
                     {/* CTA */}
                     <div className="navbar-cta">
-                        <a href="tel:+917994461415" className="nav-phone">
-                            <span className="phone-icon"><Compass size={16} /></span>
-                            <span>+91 79944 61415</span>
-                        </a>
                         <NavLink to="/contact" className="btn-primary nav-btn">
                             Book Now
                         </NavLink>
@@ -85,7 +81,7 @@ export default function Navbar() {
             <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`}>
                 <nav className="mobile-nav">
                     <div className="mobile-logo">
-                        <img src="/images/roaminglogo.png" alt="Roaming Direction Logo" className="mobile-logo-img" />
+                        <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="mobile-logo-img" />
                     </div>
                     <ul className="mobile-links">
                         {navLinks.map((link, i) => (
@@ -103,10 +99,6 @@ export default function Navbar() {
                         ))}
                     </ul>
                     <div className="mobile-footer-info">
-                        <a href="tel:+917994461415" className="mobile-phone">
-                            <Phone size={18} />
-                            <span>+91 79944 61415</span>
-                        </a>
                         <NavLink to="/contact" className="btn-gold mobile-cta">
                             Book Now
                         </NavLink>

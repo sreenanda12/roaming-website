@@ -18,7 +18,7 @@
 }
 
 .destinations-hero h1 {
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(3rem, 10vw, 6rem);
     font-weight: 800;
     color: #d4bc8d;
@@ -229,7 +229,43 @@
 
 /* Global Reach CTA Section */
 .global-reach {
-    padding-bottom: 80px;
+    background-color: #FAF7F2; /* Warm luxury travel background */
+    padding: 80px 0;
+    border-top: 1px solid rgba(25, 53, 28, 0.06);
+}
+
+.global-reach .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.global-reach h2 {
+    color: #102213; /* Premium dark forest green */
+    margin-bottom: 12px;
+}
+
+.global-reach p {
+    color: rgba(25, 53, 28, 0.75); /* Dark green with opacity */
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Premium Forest Green Button for Light CTA Section */
+.global-reach .btn-gold {
+    background: #19351c; /* Solid brand green */
+    color: #FAF7F2; /* Light text */
+    box-shadow: 0 8px 24px rgba(25, 53, 28, 0.15);
+    transition: all 0.3s ease;
+}
+
+.global-reach .btn-gold:hover {
+    background: #102213;
+    color: #FAF7F2;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(25, 53, 28, 0.25);
 }
 
 /* Base AOS Scale for Grid Items */

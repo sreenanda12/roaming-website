@@ -193,7 +193,7 @@ export default function KazakhstanFamilyDetail() {
                                         Book Now
                                     </NavLink>
                                     <a 
-                                        href="https://wa.me/917994461415?text=Hi%2C%20I%20am%20interested%20in%20booking%20the%20Kazakhstan%20Family%20Adventure%20(1150%20USD)." 
+                                        href="https://wa.me/917204370369?text=Hi%2C%20I%20am%20interested%20in%20booking%20the%20Kazakhstan%20Family%20Adventure%20(1150%20USD)." 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
                                         className="int-btn-wa"

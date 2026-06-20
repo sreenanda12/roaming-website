@@ -161,7 +161,7 @@
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: rgba(58, 133, 69, 0.07);
+    background: rgba(25, 53, 28, 0.07);
     pointer-events: none;
 }
 
@@ -186,7 +186,7 @@
     width: 56px;
     height: 56px;
     border-radius: 14px;
-    background: rgba(58, 133, 69, 0.3);
+    background: rgba(25, 53, 28, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -344,17 +344,19 @@
 
 /* About CTA */
 .about-cta-section {
-    background: linear-gradient(135deg, var(--forest-800), var(--forest-700));
+    background: #FAF7F2; /* Warm luxury travel background */
     padding: 100px 0;
     text-align: center;
+    border-top: 1px solid rgba(25, 53, 28, 0.06);
 }
 
 .about-cta-inner h2 {
+    color: #102213; /* Premium dark forest green */
     margin-bottom: 16px;
 }
 
 .about-cta-inner p {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(25, 53, 28, 0.75); /* Dark green text with opacity */
     font-size: 1.1rem;
     margin-bottom: 36px;
 }
@@ -364,6 +366,35 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+/* Make buttons look premium on light background */
+.about-cta-section .btn-gold {
+    background: #19351c; /* Solid brand green */
+    color: #FAF7F2;
+    box-shadow: 0 8px 24px rgba(25, 53, 28, 0.15);
+}
+
+.about-cta-section .btn-gold:hover {
+    background: #102213;
+    color: #FAF7F2;
+    box-shadow: 0 12px 32px rgba(25, 53, 28, 0.25);
+    transform: translateY(-2px);
+}
+
+.about-cta-section .btn-outline {
+    background: rgba(25, 53, 28, 0.02);
+    color: #19351c; /* Brand forest green */
+    border: 1.5px solid rgba(25, 53, 28, 0.35);
+    box-shadow: 0 8px 24px rgba(25, 53, 28, 0.05);
+}
+
+.about-cta-section .btn-outline:hover {
+    background: rgba(25, 53, 28, 0.08);
+    border-color: #19351c;
+    color: #19351c;
+    box-shadow: 0 12px 32px rgba(25, 53, 28, 0.1);
+    transform: translateY(-2px);
 }
 
 /* Responsive */

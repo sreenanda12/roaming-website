@@ -166,12 +166,14 @@
     border-radius: 15px;
     color: white;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(25, 53, 28, 0.2);
 }
 
 .book-btn:hover {
-    background: #19351c;
-    transform: translateX(5px);
+    background: #254d2a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(25, 53, 28, 0.35);
 }
 
 .carousel-controls {

@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
     MapPin, Phone, Mail, Clock, Send, CheckCircle,
     Instagram, Facebook, Twitter, ArrowRight
 } from 'lucide-react';
+import InfiniteMenu from '../components/InfiniteMenu';
 import './Contact.css';
 
 const contactInfo = [
@@ -15,8 +16,8 @@ const contactInfo = [
     {
         icon: <Phone size={22} strokeWidth={1.5} />,
         title: 'Call Us',
-        lines: ['+91 79944 61415', '+91 11 2345 6789'],
-        href: 'tel:+917994461415',
+        lines: ['+91 72043 70369', '+91 11 2345 6789'],
+        href: 'tel:+917204370369',
     },
     {
         icon: <Mail size={22} strokeWidth={1.5} />,
@@ -40,7 +41,20 @@ const travelInterests = [
     'Group Travel',
 ];
 
+const travelImages = [
+    { image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', title: 'Maldives', description: 'Beaches' },
+    { image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80', title: 'Swiss Alps', description: 'Mountains' },
+    { image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80', title: 'Amalfi Coast', description: 'Resorts' },
+    { image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80', title: 'Paris', description: 'Cities' },
+    { image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&q=80', title: 'Kyoto', description: 'Nature' },
+    { image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=600&q=80', title: 'Sahara', description: 'Deserts' },
+    { image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&q=80', title: 'Taj Mahal', description: 'Heritage' },
+    { image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80', title: 'Yosemite', description: 'Valleys' }
+];
+
 export default function Contact() {
+    const heroRef = useRef(null);
+    const [isHeroVisible, setIsHeroVisible] = useState(true);
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -50,6 +64,19 @@ export default function Contact() {
     });
     const [submitted, setSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsHeroVisible(entry.isIntersecting);
+            },
+            { threshold: 0.05 }
+        );
+        if (heroRef.current) {
+            observer.observe(heroRef.current);
+        }
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -80,20 +107,19 @@ export default function Contact() {
     return (
         <div className="contact-page">
             {/* Hero */}
-            <section className="page-hero contact-hero">
+            <section className="page-hero contact-hero" ref={heroRef}>
                 <div className="page-hero-overlay" />
                 <div className="container page-hero-content">
-                    <div className="breadcrumb">
-                        <NavLink to="/">Home</NavLink>
-                        <span>›</span>
-                        <span>Contact</span>
-                    </div>
                     <div className="section-badge light">Get In Touch</div>
                     <h1>Plan Your Next Adventure</h1>
                     <p>
                         Ready to explore the world? Get in touch and let our travel experts craft
                         the perfect journey for you.
                     </p>
+                </div>
+                {/* Small floating 3D travel gallery in the bottom right corner */}
+                <div className="floating-gallery-wrap">
+                    <InfiniteMenu items={travelImages} scale={0.95} isPlaying={isHeroVisible} />
                 </div>
             </section>
 
@@ -210,7 +236,7 @@ export default function Contact() {
                                                 id="phone"
                                                 name="phone"
                                                 type="tel"
-                                                placeholder="+91 79944 61415"
+                                                placeholder="+91 72043 70369"
                                                 value={form.phone}
                                                 onChange={handleChange}
                                             />
@@ -290,8 +316,8 @@ export default function Contact() {
                     <div className="adventure-cta-inner aos">
                         <div className="adv-cta-bg" />
                         <div className="adv-cta-content">
-                            <div className="section-badge light">Let's Go</div>
-                            <h2 className="heading-lg" style={{ color: 'var(--white)' }}>
+                            <div className="section-badge">Let's Go</div>
+                            <h2 className="heading-lg">
                                 Plan Your Next Adventure<br />with Roaming Direction
                             </h2>
                             <p>
@@ -303,7 +329,7 @@ export default function Contact() {
                                     <span>Explore Packages</span>
                                     <ArrowRight size={18} />
                                 </NavLink>
-                                <a href="tel:+917994461415" className="btn-outline">
+                                <a href="tel:+917204370369" className="btn-outline">
                                     <Phone size={16} />
                                     <span>Call Now</span>
                                 </a>

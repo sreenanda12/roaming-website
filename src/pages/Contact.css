@@ -305,13 +305,15 @@
 
 .adventure-cta-inner {
     position: relative;
-    background: var(--forest-800);
+    background: #FAF7F2; /* Warm luxury travel background */
+    border: 1px solid rgba(25, 53, 28, 0.08);
     border-radius: var(--radius-xl);
     overflow: hidden;
     padding: 80px 60px;
     display: flex;
     justify-content: center;
     text-align: center;
+    box-shadow: var(--shadow-sm);
 }
 
 .adv-cta-bg {
@@ -320,7 +322,7 @@
     background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=80');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 0.03; /* Lower opacity for light theme */
 }
 
 .adv-cta-content {
@@ -330,12 +332,13 @@
 }
 
 .adv-cta-content h2 {
+    color: #102213; /* Premium dark forest green */
     margin-bottom: 16px;
 }
 
 .adv-cta-content p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.15rem;
+    color: rgba(25, 53, 28, 0.75); /* Dark green text with opacity */
+    font-size: 1.1rem;
     margin-bottom: 40px;
     line-height: 1.8;
 }
@@ -345,6 +348,35 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+/* Premium Forest Green Button for Light CTA section */
+.adventure-cta-section .btn-gold {
+    background: #19351c; /* Solid brand green */
+    color: #FAF7F2;
+    box-shadow: 0 8px 24px rgba(25, 53, 28, 0.15);
+}
+
+.adventure-cta-section .btn-gold:hover {
+    background: #102213;
+    color: #FAF7F2;
+    box-shadow: 0 12px 32px rgba(25, 53, 28, 0.25);
+    transform: translateY(-2px);
+}
+
+.adventure-cta-section .btn-outline {
+    background: rgba(25, 53, 28, 0.02);
+    color: #19351c; /* Brand forest green */
+    border: 1.5px solid rgba(25, 53, 28, 0.35);
+    box-shadow: 0 8px 24px rgba(25, 53, 28, 0.05);
+}
+
+.adventure-cta-section .btn-outline:hover {
+    background: rgba(25, 53, 28, 0.08);
+    border-color: #19351c;
+    color: #19351c;
+    box-shadow: 0 12px 32px rgba(25, 53, 28, 0.1);
+    transform: translateY(-2px);
 }
 
 /* Responsive */
@@ -371,5 +403,87 @@
 
     .adventure-cta-inner {
         padding: 60px 24px;
+    }
+}
+
+/* Floating 3D Travel Gallery styles */
+.floating-gallery-wrap {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    width: 260px;
+    height: 260px;
+    z-index: 10;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        0 24px 48px rgba(0, 0, 0, 0.3),
+        inset 0 0 24px rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: floatGallery 6s ease-in-out infinite;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+}
+
+@keyframes floatGallery {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Responsiveness for floating gallery on tablet and mobile */
+@media (max-width: 1024px) {
+    .floating-gallery-wrap {
+        right: 40px;
+        bottom: 40px;
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-gallery-wrap {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin: 32px auto 0;
+        width: 200px;
+        height: 200px;
+        animation: floatGalleryMobile 5s ease-in-out infinite;
+    }
+    
+    .contact-hero {
+        padding-bottom: 40px;
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@keyframes floatGalleryMobile {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.02);
+    }
+    100% {
+        transform: translateY(0) scale(1);
     }
 }

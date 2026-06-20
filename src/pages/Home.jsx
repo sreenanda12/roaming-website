@@ -4,9 +4,31 @@ import {
     Globe, Car, Home as HomeIcon, ArrowRight, Star, MapPin,
     ChevronDown, Users, Award, Shield, Quote
 } from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Home.css';
-import LevitatingCarousel from '../components/LevitatingCarousel';
+import CircularGallery from '../components/CircularGallery';
 import HeroSlider from '../components/HeroSlider';
+import destinationsData from '../data/destinationsData';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const travelPhotos = [
+    { url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&q=80', aspect: 'portrait', destId: 'india', caption: 'Kerala Backwaters' },
+    { url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=80', aspect: 'landscape', destId: 'maldives', caption: 'Maldives Paradise' },
+    { url: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500&q=80', aspect: 'portrait', destId: 'georgia', caption: 'Georgia Old Tbilisi' },
+    { url: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=500&q=80', aspect: 'landscape', destId: 'turkey', caption: 'Cappadocia, Turkey' },
+    { url: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&q=80', aspect: 'square', destId: 'bali', caption: 'Ubud, Bali' },
+    { url: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&q=80', aspect: 'landscape', destId: 'dubai', caption: 'Dubai Deserts' },
+    { url: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=500&q=80', aspect: 'portrait', destId: 'egypt', caption: 'Pyramids of Egypt' },
+    { url: 'https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=500&q=80', aspect: 'square', destId: 'thailand', caption: 'Phi Phi, Thailand' },
+    { url: 'https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=500&q=80', aspect: 'portrait', destId: 'kazakhstan', caption: 'Almaty, Kazakhstan' },
+    { url: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=500&q=80', aspect: 'landscape', destId: 'malaysia', caption: 'Batu Caves, Malaysia' },
+    { url: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?w=500&q=80', aspect: 'square', destId: 'vietnam', caption: 'Ha Long Bay, Vietnam' },
+    { url: 'https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?w=500&q=80', aspect: 'portrait', destId: 'sri-lanka', caption: 'Ella, Sri Lanka' },
+    { url: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=500&q=80', aspect: 'landscape', destId: 'kenya', caption: 'Maasai Mara, Kenya' },
+    { url: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=500&q=80', aspect: 'square', destId: 'azerbaijan', caption: 'Baku, Azerbaijan' }
+];
 
 /* ---- Data ---- */
 
@@ -47,6 +69,173 @@ const reasons = [
 
 /* ---- Component ---- */
 const Home = () => {
+    const galleryItems = destinationsData.map(dest => ({
+        image: dest.titleImage,
+        text: dest.name
+    }));
+
+    const ctaRef = useRef(null);
+    const photosRef = useRef([]);
+    const floatTweens = useRef([]);
+    const targetsRef = useRef([]);
+
+    const handleMouseEnter = (e, index) => {
+        if (floatTweens.current[index]) {
+            floatTweens.current[index].pause();
+        }
+
+        gsap.to(e.currentTarget, {
+            rotation: 0,
+            scale: 1.1,
+            z: 50,
+            boxShadow: "0 22px 45px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0, 0, 0, 0.12)",
+            duration: 0.4,
+            ease: "power2.out",
+            overwrite: "auto"
+        });
+    };
+
+    const handleMouseLeave = (e, index) => {
+        const targetRot = targetsRef.current[index]?.rotation || 0;
+        gsap.to(e.currentTarget, {
+            rotation: targetRot,
+            scale: 1,
+            z: 0,
+            boxShadow: "0 12px 35px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06)",
+            duration: 0.4,
+            ease: "power2.out",
+            onComplete: () => {
+                if (floatTweens.current[index]) {
+                    floatTweens.current[index].resume();
+                }
+            }
+        });
+    };
+
+    useEffect(() => {
+        if (!ctaRef.current) return;
+
+        // Clear and resize refs array
+        photosRef.current = photosRef.current.slice(0, travelPhotos.length);
+        floatTweens.current = [];
+
+        // Precompute target locations relative to section center
+        const targets = travelPhotos.map(() => {
+            const angle = gsap.utils.random(-15, 15);
+            const xOffset = gsap.utils.random(-38, 38);
+            const yOffset = gsap.utils.random(-22, 22);
+            return {
+                x: `${xOffset}vw`,
+                y: `${yOffset}vh`,
+                rotation: angle,
+                opacity: 1,
+                scale: 1,
+                zIndex: gsap.utils.random(1, 9),
+            };
+        });
+        targetsRef.current = targets;
+
+        const startFloat = (el, index) => {
+            if (floatTweens.current[index]) {
+                floatTweens.current[index].kill();
+            }
+
+            const randomY = gsap.utils.random(8, 15);
+            const randomRot = gsap.utils.random(1.5, 3);
+            const randomDur = gsap.utils.random(2.5, 4.5);
+
+            floatTweens.current[index] = gsap.to(el, {
+                y: `+=${randomY}`,
+                rotation: `+=${randomRot}`,
+                duration: randomDur,
+                yoyo: true,
+                repeat: -1,
+                ease: "sine.inOut",
+                delay: gsap.utils.random(0, 1.5)
+            });
+        };
+
+        const ctx = gsap.context(() => {
+            const resetPhotos = () => {
+                photosRef.current.forEach((photo, index) => {
+                    if (!photo) return;
+                    gsap.set(photo, {
+                        x: targets[index].x,
+                        y: '-100vh',
+                        rotation: gsap.utils.random(-45, 45),
+                        opacity: 0,
+                        scale: 0.8,
+                        z: 0,
+                        boxShadow: "0 12px 35px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06)"
+                    });
+                });
+            };
+
+            // Set initial state
+            resetPhotos();
+
+            // Landing animation timeline
+            const tl = gsap.timeline({ paused: true });
+
+            tl.to(photosRef.current, {
+                x: (i) => targets[i].x,
+                y: (i) => targets[i].y,
+                rotation: (i) => targets[i].rotation,
+                opacity: (i) => targets[i].opacity,
+                scale: (i) => targets[i].scale,
+                zIndex: (i) => targets[i].zIndex,
+                duration: 1.8,
+                ease: 'power3.out',
+                stagger: {
+                    amount: 0.9,
+                    from: 'random',
+                },
+                onComplete: () => {
+                    // Start floating movement after landing
+                    photosRef.current.forEach((photo, idx) => {
+                        if (photo) startFloat(photo, idx);
+                    });
+                }
+            });
+
+            const playCascade = () => {
+                floatTweens.current.forEach(t => t && t.kill());
+                floatTweens.current = [];
+                resetPhotos();
+                tl.play(0);
+            };
+
+            const resetCascade = () => {
+                floatTweens.current.forEach(t => t && t.kill());
+                floatTweens.current = [];
+                tl.pause(0);
+                photosRef.current.forEach((photo) => {
+                    if (photo) {
+                        gsap.set(photo, { clearProps: "all" });
+                    }
+                });
+                resetPhotos();
+            };
+
+            // ScrollTrigger to animate and replay
+            ScrollTrigger.create({
+                trigger: ctaRef.current,
+                start: 'top 85%',
+                end: 'bottom 15%',
+                onEnter: playCascade,
+                onLeave: resetCascade,
+                onEnterBack: playCascade,
+                onLeaveBack: resetCascade,
+            });
+
+        }, ctaRef);
+
+        return () => {
+            ctx.revert();
+            floatTweens.current.forEach(t => t && t.kill());
+        };
+    }, []);
+
     useEffect(() => {
         // Optimized parallax using requestAnimationFrame
         let ticking = false;
@@ -93,11 +282,6 @@ const Home = () => {
             {/* ===== HERO ===== */}
             <section className="hero-section" id="hero">
                 <HeroSlider />
-
-                <a href="#services" className="hero-scroll-indicator" aria-label="Scroll down">
-                    <span>Discover More</span>
-                    <div className="scroll-icon"><ChevronDown size={18} /></div>
-                </a>
             </section>
 
 
@@ -129,25 +313,49 @@ const Home = () => {
             </section>
 
             {/* ===== FEATURED DESTINATIONS ===== */}
-            <section className="section destinations-section" id="destinations" style={{ padding: '0', background: 'transparent' }}>
-                <div className="container" style={{ position: 'relative', zIndex: 10, paddingTop: '100px' }}>
-                    <div className="section-header aos">
-                        <div className="section-badge">Featured Packages</div>
-                        <h2 className="heading-lg">Popular Destinations</h2>
-                        <div className="section-divider" />
-                        <p>Handpicked travel packages designed for unforgettable experiences.</p>
-                    </div>
+            <section className="section destinations-section" id="destinations">
+                {/* Cinematic Background Glows */}
+                <div className="luxury-glow-1"></div>
+                <div className="luxury-glow-2"></div>
+
+                {/* Subtle Floating Particles */}
+                <div className="luxury-particles">
+                    <span className="particle p-1"></span>
+                    <span className="particle p-2"></span>
+                    <span className="particle p-3"></span>
+                    <span className="particle p-4"></span>
+                    <span className="particle p-5"></span>
+                    <span className="particle p-6"></span>
                 </div>
 
-                {/* Levitating Glassmorphism Carousel */}
-                <LevitatingCarousel />
-
-                <div className="container">
-                    <div className="text-center" style={{ marginTop: '0', paddingBottom: '100px' }}>
-                        <NavLink to="/services" className="btn-outline-green aos">
-                            View All Packages <ArrowRight size={16} />
-                        </NavLink>
+                {/* Animated Floating Background Tags */}
+                <div className="floating-tags-container">
+                    <span className="floating-tag tag-1">Amalfi Coast</span>
+                    <span className="floating-tag tag-2">Kyoto</span>
+                    <span className="floating-tag tag-3">Swiss Alps</span>
+                    <span className="floating-tag tag-4">Serengeti</span>
+                </div>
+                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                    <div className="section-header aos" style={{ marginBottom: '40px' }}>
+                        <div className="section-badge light">FEATURED DESTINATIONS</div>
+                        <h2 className="heading-lg" style={{ color: 'var(--white)' }}>Explore Extraordinary Destinations</h2>
+                        <div className="section-divider" />
+                        <p style={{ color: 'rgba(255, 255, 255, 0.75)' }}>Handpicked travel packages designed for unforgettable experiences.</p>
                     </div>
+
+                </div>
+
+                {/* Circular Image Gallery */}
+                <div style={{ height: '600px', position: 'relative', overflow: 'hidden', zIndex: 10 }}>
+                    <CircularGallery
+                        items={galleryItems}
+                        bend={3}
+                        textColor="#ffffff"
+                        borderRadius={0.05}
+                        scrollEase={0.02}
+                        fontUrl="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+                        font="bold 24px Orbitron"
+                    />
                 </div>
             </section>
 
@@ -203,24 +411,39 @@ const Home = () => {
             {/* Removed Testimonials Section */}
 
             {/* ===== CTA SECTION ===== */}
-            <section className="cta-section">
-                <div className="container" id="contact">
-                    <div className="cta-inner aos">
-                        <div className="cta-content">
-                            <div className="section-badge">Get Started</div>
-                            <h2 className="heading-lg" style={{ color: 'var(--white)' }}>
-                                Start Your Journey Today
-                            </h2>
-                            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', maxWidth: '520px' }}>
-                                Ready to explore the world? Let our experts craft your perfect travel experience. No dream is too big.
-                            </p>
-                        </div>
-                        <div className="cta-actions">
-                            <NavLink to="/services" className="btn-gold">
+            <section className="cta-section" ref={ctaRef}>
+                {/* Photo Cascade Wrapper */}
+                <div className="photo-cascade-wrap">
+                    {travelPhotos.map((photo, i) => (
+                        <NavLink 
+                            key={i} 
+                            to={`/destinations/${photo.destId}`}
+                            ref={(el) => (photosRef.current[i] = el)} 
+                            className={`polaroid-photo aspect-${photo.aspect}`}
+                            onMouseEnter={(e) => handleMouseEnter(e, i)}
+                            onMouseLeave={(e) => handleMouseLeave(e, i)}
+                        >
+                            <img src={photo.url} alt={photo.caption} loading="lazy" />
+                            <div className="polaroid-caption">{photo.caption}</div>
+                        </NavLink>
+                    ))}
+                </div>
+
+                <div className="container" id="contact" style={{ position: 'relative', zIndex: 10 }}>
+                    <div className="cta-inner-centered">
+                        <div className="section-badge">Get Started</div>
+                        <h2 className="cta-centered-title">
+                            Start Your Journey Today
+                        </h2>
+                        <p className="cta-centered-subtitle">
+                            Ready to explore the world? Let our experts craft your perfect travel experience. No dream is too big.
+                        </p>
+                        <div className="cta-centered-actions">
+                            <NavLink to="/services" className="btn-cinematic-primary">
                                 <span>Explore Packages</span>
                                 <ArrowRight size={18} />
                             </NavLink>
-                            <NavLink to="/contact" className="btn-outline">
+                            <NavLink to="/contact" className="btn-cinematic-secondary">
                                 <span>Talk to Us</span>
                             </NavLink>
                         </div>

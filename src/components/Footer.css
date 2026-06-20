@@ -6,10 +6,12 @@
 
 /* CTA Banner */
 .footer-cta-banner {
-    background: linear-gradient(135deg, var(--forest-700) 0%, var(--forest-600) 100%);
-    padding: 48px 0;
+    background: #FAF7F2; /* Warm luxury travel background */
+    padding: 56px 0;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid rgba(25, 53, 28, 0.06);
+    border-bottom: 1px solid rgba(25, 53, 28, 0.06);
 }
 
 .footer-cta-banner::before {
@@ -20,7 +22,7 @@
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(25, 53, 28, 0.02); /* Very soft green tint */
 }
 
 .footer-cta-inner {
@@ -33,15 +35,35 @@
 
 .footer-cta-text h3 {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 6px;
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+    font-weight: 500;
+    color: #102213; /* Premium dark forest green */
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
 }
 
 .footer-cta-text p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
+    color: rgba(25, 53, 28, 0.75); /* Soft dark green text */
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+/* Premium Forest Green Button for Light CTA Banner */
+.footer-cta-banner .footer-cta-btn {
+    background: #19351c; /* Signature brand forest green */
+    color: #FAF7F2; /* Warm off-white */
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(25, 53, 28, 0.15);
+    transition: all 0.3s ease;
+}
+
+.footer-cta-banner .footer-cta-btn:hover {
+    background: #102213;
+    color: #FAF7F2;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(25, 53, 28, 0.25);
 }
 
 .footer-cta-btn {

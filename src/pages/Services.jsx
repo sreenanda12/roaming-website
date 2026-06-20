@@ -259,11 +259,6 @@ export default function Services() {
             <section className="page-hero services-hero">
                 <div className="page-hero-overlay" />
                 <div className="container page-hero-content">
-                    <div className="breadcrumb">
-                        <NavLink to="/">Home</NavLink>
-                        <span>›</span>
-                        <span>Services</span>
-                    </div>
                     <div className="section-badge light">What We Offer</div>
                     <h1>Our Premium Services</h1>
                     <p>
@@ -533,10 +528,10 @@ export default function Services() {
                 <div className="container">
                     <div className="svc-cta-inner aos">
                         <div>
-                            <h3 className="heading-md" style={{ color: 'var(--white)' }}>
+                            <h3 className="heading-md">
                                 Need a Custom Package?
                             </h3>
-                            <p style={{ color: 'rgba(255,255,255,0.65)', marginTop: '8px' }}>
+                            <p>
                                 Tell us your dream destination and budget — we'll craft the perfect plan.
                             </p>
                         </div>

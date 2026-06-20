@@ -31,9 +31,9 @@
   --text-muted: #19351c;
   --text-light: #f5f0e8;
 
-  --font-heading: 'Outfit', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
-  --font-accent: 'Cinzel', serif;
+  --font-accent: 'Cormorant Garamond', serif;
 
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -189,8 +189,8 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, rgba(58, 133, 69, 0.1), rgba(201, 168, 76, 0.1));
-  border: 1px solid rgba(58, 133, 69, 0.2);
+  background: linear-gradient(135deg, rgba(25, 53, 28, 0.1), rgba(201, 168, 76, 0.1));
+  border: 1px solid rgba(25, 53, 28, 0.2);
   color: var(--forest-600);
   padding: 6px 16px;
   border-radius: 100px;

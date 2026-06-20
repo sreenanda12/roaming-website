@@ -72,11 +72,6 @@ export default function About() {
             <section className="page-hero about-hero">
                 <div className="page-hero-overlay" />
                 <div className="container page-hero-content">
-                    <div className="breadcrumb">
-                        <NavLink to="/">Home</NavLink>
-                        <span>›</span>
-                        <span>About Us</span>
-                    </div>
                     <div className="section-badge light">Our Story</div>
                     <h1>About Roaming Direction</h1>
                     <p>
@@ -257,7 +252,7 @@ export default function About() {
             <section className="about-cta-section">
                 <div className="container">
                     <div className="about-cta-inner aos">
-                        <h2 className="heading-lg" style={{ color: 'var(--white)' }}>
+                        <h2 className="heading-lg">
                             Ready to Start Your Adventure?
                         </h2>
                         <p>Join 50,000+ travelers who trust Roaming Direction with their journeys.</p>

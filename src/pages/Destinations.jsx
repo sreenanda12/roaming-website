@@ -33,11 +33,6 @@ export default function Destinations() {
       <section className="page-hero destinations-hero">
         <div className="page-hero-overlay" />
         <div className="container page-hero-content destinations-hero-content">
-          <div className="breadcrumb aos">
-            <NavLink to="/">Home</NavLink>
-            <span>›</span>
-            <span>Destinations</span>
-          </div>
           <div className="section-badge light aos">Our Footprint</div>
           <h1 className="aos">Explore the World</h1>
           <p className="aos aos-delay-1" style={{ textAlign: 'center', maxWidth: '700px' }}>
@@ -118,8 +113,8 @@ export default function Destinations() {
         <div className="container">
           <div className="cta-inner aos">
             <div className="cta-content">
-              <h2 className="heading-lg" style={{ color: 'var(--white)' }}>Didn't Find Your Dream Place?</h2>
-              <p style={{ color: 'rgba(255,255,255,0.7)' }}>
+              <h2 className="heading-lg">Didn't Find Your Dream Place?</h2>
+              <p>
                 We customize packages for over 100+ locations worldwide. 
                 Talk to our travel experts to craft your unique journey.
               </p>

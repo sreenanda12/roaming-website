@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import {
     Compass, MapPin, Phone, Mail, Instagram, Facebook,
     Twitter, Youtube, ArrowRight, Globe, Car, Home as HomeIcon
@@ -26,23 +26,37 @@ const socials = [
 ];
 
 export default function Footer() {
+    const location = useLocation();
+    const pathname = location.pathname;
+    
+    // Hide duplicate CTA banner on main pages which have their own CTA, or where it's redundant
+    const shouldHideCTABanner = 
+        pathname === '/' || 
+        pathname === '/about' || 
+        pathname === '/destinations' || 
+        pathname === '/services' || 
+        pathname === '/contact' || 
+        pathname.startsWith('/destinations/');
+
     return (
         <footer className="footer">
             {/* CTA Banner */}
-            <div className="footer-cta-banner">
-                <div className="container">
-                    <div className="footer-cta-inner">
-                        <div className="footer-cta-text">
-                            <h3>Ready to Explore the World?</h3>
-                            <p>Let Roaming Direction craft your perfect travel experience.</p>
+            {!shouldHideCTABanner && (
+                <div className="footer-cta-banner">
+                    <div className="container">
+                        <div className="footer-cta-inner">
+                            <div className="footer-cta-text">
+                                <h3>Ready to Explore the World?</h3>
+                                <p>Let Roaming Direction craft your perfect travel experience.</p>
+                            </div>
+                            <NavLink to="/contact" className="btn-gold footer-cta-btn">
+                                <span>Plan My Trip</span>
+                                <ArrowRight size={18} />
+                            </NavLink>
                         </div>
-                        <NavLink to="/contact" className="btn-gold footer-cta-btn">
-                            <span>Plan My Trip</span>
-                            <ArrowRight size={18} />
-                        </NavLink>
                     </div>
                 </div>
-            </div>
+            )}
 
             {/* Main Footer */}
             <div className="footer-main">
@@ -51,7 +65,7 @@ export default function Footer() {
                         {/* Brand Column */}
                         <div className="footer-brand">
                             <NavLink to="/" className="footer-logo">
-                                <img src="/images/roaminglogo.png" alt="Roaming Direction Logo" className="footer-logo-img" />
+                                <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="footer-logo-img" />
                             </NavLink>
                             <p className="footer-brand-desc">
                                 Your trusted partner for international tourism, premium property booking, and luxury car rentals. We make every journey unforgettable.
@@ -105,7 +119,7 @@ export default function Footer() {
                                 </div>
                                 <div className="footer-contact-item">
                                     <Phone size={16} />
-                                    <a href="tel:+917994461415">+91 79944 61415</a>
+                                    <a href="tel:+917204370369">+91 72043 70369</a>
                                 </div>
                                 <div className="footer-contact-item">
                                     <Mail size={16} />

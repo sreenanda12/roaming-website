@@ -11,7 +11,6 @@ import Contact from './pages/Contact';
 import GeorgiaDetail from './pages/GeorgiaDetail';
 import KazakhstanFamilyDetail from './pages/KazakhstanFamilyDetail';
 import KazakhstanGroupDetail from './pages/KazakhstanGroupDetail';
-import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
 import './App.css';
@@ -79,7 +78,6 @@ function App() {
             <Route path="/international/kazakhstan-group" element={<KazakhstanGroupDetail />} />
           </Routes>
         </main>
-        <WhatsAppButton />
         <Footer />
       </div>
     </Router>

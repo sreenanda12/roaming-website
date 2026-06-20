@@ -21,6 +21,7 @@
 
 .tabs-wrap {
     display: flex;
+    justify-content: center;
     gap: 0;
     overflow-x: auto;
     scrollbar-width: none;
@@ -497,7 +498,9 @@
 
 /* Bottom CTA */
 .services-bottom-cta {
-    background: linear-gradient(135deg, var(--forest-800), var(--forest-700));
+    background-color: #FAF7F2; /* Warm luxury travel background */
+    padding: 80px 0;
+    border-top: 1px solid rgba(25, 53, 28, 0.06);
 }
 
 .svc-cta-inner {
@@ -506,6 +509,33 @@
     justify-content: space-between;
     gap: 32px;
     flex-wrap: wrap;
+}
+
+.services-bottom-cta h3 {
+    color: #102213; /* Premium dark forest green */
+    margin-bottom: 12px;
+}
+
+.services-bottom-cta p {
+    color: rgba(25, 53, 28, 0.75); /* Dark green with opacity */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 8px 0 0 0;
+}
+
+/* Premium Forest Green Button for Light CTA Section */
+.services-bottom-cta .btn-gold {
+    background: #19351c; /* Solid brand green */
+    color: #FAF7F2; /* Light text */
+    box-shadow: 0 8px 24px rgba(25, 53, 28, 0.15);
+    transition: all 0.3s ease;
+}
+
+.services-bottom-cta .btn-gold:hover {
+    background: #102213;
+    color: #FAF7F2;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(25, 53, 28, 0.25);
 }
 
 /* Responsive */
