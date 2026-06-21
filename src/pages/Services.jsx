@@ -155,6 +155,50 @@ export default function Services() {
         }
     };
 
+    const handleTabClick = (id) => {
+        setActiveTab(id);
+        const el = document.getElementById(id);
+        if (el) {
+            const offset = window.innerWidth <= 768 ? 140 : 130;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = el.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    useEffect(() => {
+        const sections = ['tourism', 'cars', 'property'];
+        const handleScroll = () => {
+            // Force property active if near the bottom of the page
+            if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+                setActiveTab('property');
+                return;
+            }
+            const scrollPosition = window.scrollY + 180;
+            for (const sectionId of sections) {
+                const el = document.getElementById(sectionId);
+                if (el) {
+                    const top = el.offsetTop;
+                    const height = el.offsetHeight;
+                    if (scrollPosition >= top && scrollPosition < top + height) {
+                        setActiveTab(sectionId);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => entries.forEach((e) => {
@@ -165,7 +209,7 @@ export default function Services() {
         document.querySelectorAll('.aos, .aos-left, .aos-right, .aos-scale')
             .forEach((el) => observer.observe(el));
         return () => observer.disconnect();
-    }, [activeTab]);
+    }, []);
 
     return (
         <div className="services-page">
@@ -190,252 +234,252 @@ export default function Services() {
                             <button
                                 key={tab.id}
                                 className={`tab-btn ${activeTab === tab.id ? 'tab-active' : ''}`}
-                                onClick={() => setActiveTab(tab.id)}
+                                onClick={() => handleTabClick(tab.id)}
                             >
-                                {tab.icon}
-                                {tab.label}
+                                <span className="tab-icon">{tab.icon}</span>
+                                <span className="tab-label">
+                                    <span className="desktop-only">{tab.label}</span>
+                                    <span className="mobile-only">
+                                        {tab.id === 'tourism' ? 'Tourism' : tab.id === 'property' ? 'Property' : tab.label}
+                                    </span>
+                                </span>
                             </button>
+                        ))}
+                        <div className={`tab-indicator indicator-${activeTab}`} />
+                    </div>
+                </div>
+            </section>
+
+             {/* ===== TOURISM ===== */}
+            <section id="tourism" className="section content-section scroll-section">
+                <div className="container">
+                    <div className="section-header aos">
+                        <div className="section-badge">🌍 Signature International Experiences</div>
+                        <h2 className="heading-lg">International Tourism Packages</h2>
+                        <div className="section-divider" />
+                        <p>
+                            Discover extraordinary journeys across breathtaking landscapes, rich cultures, and unforgettable adventures with our handpicked international tour packages.
+                        </p>
+                    </div>
+                    <div className="packages-grid">
+                        {packages.map((pkg, i) => (
+                            <div 
+                                key={pkg.id} 
+                                className={`pkg-card aos aos-scale aos-delay-${(i % 3) + 1}`}
+                                onClick={(e) => handleCardClick(e, pkg)}
+                                style={{ cursor: pkg.isGeorgia ? 'pointer' : 'default' }}
+                            >
+                                <div className="pkg-img-wrap">
+                                    <img src={pkg.img} alt={pkg.name} className="pkg-img" loading="lazy" />
+                                    <div className="pkg-overlay" />
+                                    <div
+                                        className="pkg-tag"
+                                        style={{ background: tagColors[pkg.tag] || '#19351c' }}
+                                    >
+                                        {pkg.tag}
+                                    </div>
+                                    <div className="pkg-rating">
+                                        <Star size={12} fill="#c9a84c" color="#c9a84c" />
+                                        <span>{pkg.rating}</span>
+                                        <span style={{ opacity: 0.65 }}>({pkg.reviews})</span>
+                                    </div>
+                                </div>
+                                <div className="pkg-body">
+                                    <div className="pkg-meta-top">
+                                        <div className="pkg-location">
+                                            <MapPin size={13} />
+                                            <span>{pkg.country}</span>
+                                        </div>
+                                        <div className="pkg-duration">
+                                            <Clock size={13} />
+                                            <span>{pkg.duration}</span>
+                                        </div>
+                                    </div>
+                                    <h3 className="pkg-name">{pkg.name}</h3>
+
+
+
+                                    <div className="pkg-highlights">
+                                        {pkg.highlights.map((h) => (
+                                            <span key={h} className="pkg-highlight-tag">{h}</span>
+                                        ))}
+                                    </div>
+
+                                    {/* Dynamic Footer / Buttons */}
+                                    {pkg.isKazakhstan ? (
+                                        <div className="pkg-footer" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '10px' }}>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                <div className="pkg-from" style={{ fontWeight: 600 }}>Choose Package</div>
+                                            </div>
+                                            <div className="pkg-kazakhstan-btns" style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
+                                                <NavLink to="/international/kazakhstan-family" target="_blank" className="btn-primary" style={{ padding: '10px 14px', fontSize: '0.82rem', justifyContent: 'center', fontWeight: '700' }}>
+                                                    Kazakhstan 2 Adult + 1 Kid
+                                                </NavLink>
+                                                <NavLink to="/international/kazakhstan-group" target="_blank" className="btn-outline-green" style={{ padding: '9px 14px', fontSize: '0.82rem', justifyContent: 'center', fontWeight: '700', borderColor: 'var(--forest-600)', color: 'var(--forest-600)', background: 'transparent' }}>
+                                                    Kazakhstan 4 Adult + 3 Kids
+                                                </NavLink>
+                                            </div>
+                                        </div>
+                                    ) : pkg.isGeorgia ? (
+                                        <div className="pkg-footer" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '10px' }}>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                <div>
+                                                    <div className="pkg-from">Starting from</div>
+                                                    <div className="pkg-price">{pkg.price}</div>
+                                                </div>
+                                            </div>
+                                            <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
+                                                <NavLink to="/contact" className="btn-primary" style={{ flex: 1, padding: '10px', fontSize: '0.8rem', justifyContent: 'center', fontWeight: '700' }}>
+                                                    Book Now
+                                                </NavLink>
+                                                <NavLink to="/international/georgia" target="_blank" className="btn-outline-green" style={{ flex: 1, padding: '9px', fontSize: '0.8rem', justifyContent: 'center', fontWeight: '700', borderColor: 'var(--forest-600)', color: 'var(--forest-600)', background: 'transparent' }}>
+                                                    View Details
+                                                </NavLink>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="pkg-footer">
+                                            <div>
+                                                <div className="pkg-from">Starting from</div>
+                                                <div className="pkg-price">{pkg.price}</div>
+                                            </div>
+                                            <NavLink to="/contact" className="btn-primary pkg-book-btn">
+                                                <span>Book Now</span>
+                                                <ArrowRight size={14} />
+                                            </NavLink>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* ===== TOURISM ===== */}
-            {activeTab === 'tourism' && (
-                <section className="section content-section" key="tourism">
-                    <div className="container">
-                        <div className="section-header aos">
-                            <div className="section-badge">🌍 Signature International Experiences</div>
-                            <h2 className="heading-lg">International Tourism Packages</h2>
-                            <div className="section-divider" />
-                            <p>
-                                Discover extraordinary journeys across breathtaking landscapes, rich cultures, and unforgettable adventures with our handpicked international tour packages.
-                            </p>
-                        </div>
-                        <div className="packages-grid">
-                            {packages.map((pkg, i) => (
-                                <div 
-                                    key={pkg.id} 
-                                    className={`pkg-card aos aos-scale aos-delay-${(i % 3) + 1}`}
-                                    onClick={(e) => handleCardClick(e, pkg)}
-                                    style={{ cursor: pkg.isGeorgia ? 'pointer' : 'default' }}
-                                >
-                                    <div className="pkg-img-wrap">
-                                        <img src={pkg.img} alt={pkg.name} className="pkg-img" loading="lazy" />
-                                        <div className="pkg-overlay" />
-                                        <div
-                                            className="pkg-tag"
-                                            style={{ background: tagColors[pkg.tag] || '#19351c' }}
-                                        >
-                                            {pkg.tag}
-                                        </div>
-                                        <div className="pkg-rating">
-                                            <Star size={12} fill="#c9a84c" color="#c9a84c" />
-                                            <span>{pkg.rating}</span>
-                                            <span style={{ opacity: 0.65 }}>({pkg.reviews})</span>
-                                        </div>
-                                    </div>
-                                    <div className="pkg-body">
-                                        <div className="pkg-meta-top">
-                                            <div className="pkg-location">
-                                                <MapPin size={13} />
-                                                <span>{pkg.country}</span>
-                                            </div>
-                                            <div className="pkg-duration">
-                                                <Clock size={13} />
-                                                <span>{pkg.duration}</span>
-                                            </div>
-                                        </div>
-                                        <h3 className="pkg-name">{pkg.name}</h3>
-
-
-
-                                        <div className="pkg-highlights">
-                                            {pkg.highlights.map((h) => (
-                                                <span key={h} className="pkg-highlight-tag">{h}</span>
-                                            ))}
-                                        </div>
-
-                                        {/* Dynamic Footer / Buttons */}
-                                        {pkg.isKazakhstan ? (
-                                            <div className="pkg-footer" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '10px' }}>
-                                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                    <div className="pkg-from" style={{ fontWeight: 600 }}>Choose Package</div>
-                                                </div>
-                                                <div className="pkg-kazakhstan-btns" style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%' }}>
-                                                    <NavLink to="/international/kazakhstan-family" target="_blank" className="btn-primary" style={{ padding: '10px 14px', fontSize: '0.82rem', justifyContent: 'center', fontWeight: '700' }}>
-                                                        Kazakhstan 2 Adult + 1 Kid
-                                                    </NavLink>
-                                                    <NavLink to="/international/kazakhstan-group" target="_blank" className="btn-outline-green" style={{ padding: '9px 14px', fontSize: '0.82rem', justifyContent: 'center', fontWeight: '700', borderColor: 'var(--forest-600)', color: 'var(--forest-600)', background: 'transparent' }}>
-                                                        Kazakhstan 4 Adult + 3 Kids
-                                                    </NavLink>
-                                                </div>
-                                            </div>
-                                        ) : pkg.isGeorgia ? (
-                                            <div className="pkg-footer" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '10px' }}>
-                                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                    <div>
-                                                        <div className="pkg-from">Starting from</div>
-                                                        <div className="pkg-price">{pkg.price}</div>
-                                                    </div>
-                                                </div>
-                                                <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
-                                                    <NavLink to="/contact" className="btn-primary" style={{ flex: 1, padding: '10px', fontSize: '0.8rem', justifyContent: 'center', fontWeight: '700' }}>
-                                                        Book Now
-                                                    </NavLink>
-                                                    <NavLink to="/international/georgia" target="_blank" className="btn-outline-green" style={{ flex: 1, padding: '9px', fontSize: '0.8rem', justifyContent: 'center', fontWeight: '700', borderColor: 'var(--forest-600)', color: 'var(--forest-600)', background: 'transparent' }}>
-                                                        View Details
-                                                    </NavLink>
-                                                </div>
-                                            </div>
-                                        ) : (
-                                            <div className="pkg-footer">
-                                                <div>
-                                                    <div className="pkg-from">Starting from</div>
-                                                    <div className="pkg-price">{pkg.price}</div>
-                                                </div>
-                                                <NavLink to="/contact" className="btn-primary pkg-book-btn">
-                                                    <span>Book Now</span>
-                                                    <ArrowRight size={14} />
-                                                </NavLink>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
             {/* ===== CARS ===== */}
-            {activeTab === 'cars' && (
-                <section className="section content-section" key="cars">
-                    <div className="container">
-                        <div className="section-header aos">
-                            <div className="section-badge">Fleet</div>
-                            <h2 className="heading-lg">Premium Car Rentals</h2>
-                            <div className="section-divider" />
-                            <p>
-                                Airport pickups, luxury chauffeur rides, family SUVs, and self-drive options.
-                                Every car serviced to the highest standard.
-                            </p>
-                        </div>
-                        <div className="cars-grid">
-                            {cars.map((car, i) => (
-                                <div key={car.id} className={`car-card aos aos-scale aos-delay-${(i % 2) + 1}`}>
-                                    <div className="car-img-wrap">
-                                        <img src={car.img} alt={car.name} className="car-img" loading="lazy" />
-                                        <div
-                                            className="car-tag"
-                                            style={{ background: tagColors[car.tag] || '#19351c' }}
-                                        >
-                                            {car.tag}
-                                        </div>
+            <section id="cars" className="section content-section scroll-section">
+                <div className="container">
+                    <div className="section-header aos">
+                        <div className="section-badge">Fleet</div>
+                        <h2 className="heading-lg">Premium Car Rentals</h2>
+                        <div className="section-divider" />
+                        <p>
+                            Airport pickups, luxury chauffeur rides, family SUVs, and self-drive options.
+                            Every car serviced to the highest standard.
+                        </p>
+                    </div>
+                    <div className="cars-grid">
+                        {cars.map((car, i) => (
+                            <div key={car.id} className={`car-card aos aos-scale aos-delay-${(i % 2) + 1}`}>
+                                <div className="car-img-wrap">
+                                    <img src={car.img} alt={car.name} className="car-img" loading="lazy" />
+                                    <div
+                                        className="car-tag"
+                                        style={{ background: tagColors[car.tag] || '#19351c' }}
+                                    >
+                                        {car.tag}
                                     </div>
-                                    <div className="car-body">
-                                        <div className="car-type">{car.type}</div>
-                                        <h3 className="car-name">{car.name}</h3>
-                                        <div className="car-features">
-                                            {car.features.map((f) => (
-                                                <span key={f} className="car-feature">{f}</span>
-                                            ))}
+                                </div>
+                                <div className="car-body">
+                                    <div className="car-type">{car.type}</div>
+                                    <h3 className="car-name">{car.name}</h3>
+                                    <div className="car-features">
+                                        {car.features.map((f) => (
+                                            <span key={f} className="car-feature">{f}</span>
+                                        ))}
+                                    </div>
+                                    <div className="car-footer">
+                                        <div className="car-capacity">
+                                            <Users size={15} />
+                                            <span>{car.capacity}</span>
                                         </div>
-                                        <div className="car-footer">
-                                            <div className="car-capacity">
-                                                <Users size={15} />
-                                                <span>{car.capacity}</span>
-                                            </div>
-                                            <div className="car-price-wrap">
-                                                <div className="car-price">{car.price}</div>
-                                                <NavLink to="/contact" className="btn-primary car-book-btn">
-                                                    Book <ArrowRight size={13} />
-                                                </NavLink>
-                                            </div>
+                                        <div className="car-price-wrap">
+                                            <div className="car-price">{car.price}</div>
+                                            <NavLink to="/contact" className="btn-primary car-book-btn">
+                                                Book <ArrowRight size={13} />
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
-                </section>
-            )}
+                </div>
+            </section>
 
             {/* ===== PROPERTY ===== */}
-            {activeTab === 'property' && (
-                <section className="section content-section" key="property">
-                    <div className="container">
-                        <div className="section-header aos">
-                            <div className="section-badge">Accommodations</div>
-                            <h2 className="heading-lg">Property Booking</h2>
-                            <div className="section-divider" />
-                            <p>
-                                Curated stays from boutique resorts and luxury villas to 5-star hotels
-                                and private vacation homes worldwide.
-                            </p>
-                        </div>
-                        <div className="property-grid">
-                            {properties.map((prop, i) => (
-                                <div 
-                                    key={prop.id} 
-                                    className={`property-card aos aos-scale aos-delay-${(i % 2) + 1}`}
-                                    onClick={(e) => handlePropertyClick(e, prop)}
-                                    style={{ cursor: 'pointer' }}
-                                >
-                                    <div className="property-img-wrap">
-                                        <img src={prop.img} alt={prop.name} className="property-img" loading="lazy" />
-                                        <div className="property-overlay" />
-                                        <div
-                                            className="property-tag"
-                                            style={{ background: tagColors[prop.tag] || '#19351c' }}
-                                        >
-                                            {prop.tag}
-                                        </div>
-                                        <div className="property-rating">
-                                            <Star size={12} fill="#c9a84c" color="#c9a84c" />
-                                            <span>{prop.rating}</span>
-                                            <span style={{ opacity: 0.65 }}>
-                                                {prop.reviews !== undefined ? ` (${prop.reviews} reviews)` : ''}
-                                            </span>
-                                        </div>
+            <section id="property" className="section content-section scroll-section">
+                <div className="container">
+                    <div className="section-header aos">
+                        <div className="section-badge">Accommodations</div>
+                        <h2 className="heading-lg">Property Booking</h2>
+                        <div className="section-divider" />
+                        <p>
+                            Curated stays from boutique resorts and luxury villas to 5-star hotels
+                            and private vacation homes worldwide.
+                        </p>
+                    </div>
+                    <div className="property-grid">
+                        {properties.map((prop, i) => (
+                            <div 
+                                key={prop.id} 
+                                className={`property-card aos aos-scale aos-delay-${(i % 2) + 1}`}
+                                onClick={(e) => handlePropertyClick(e, prop)}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <div className="property-img-wrap">
+                                    <img src={prop.img} alt={prop.name} className="property-img" loading="lazy" />
+                                    <div className="property-overlay" />
+                                    <div
+                                        className="property-tag"
+                                        style={{ background: tagColors[prop.tag] || '#19351c' }}
+                                    >
+                                        {prop.tag}
                                     </div>
-                                    <div className="property-body">
-                                        <div className="property-type">{prop.type}</div>
-                                        <h3 className="property-name">{prop.name}</h3>
-                                        <div className="property-location">
-                                            <MapPin size={13} />
-                                            <span>{prop.location}</span>
+                                    <div className="property-rating">
+                                        <Star size={12} fill="#c9a84c" color="#c9a84c" />
+                                        <span>{prop.rating}</span>
+                                        <span style={{ opacity: 0.65 }}>
+                                            {prop.reviews !== undefined ? ` (${prop.reviews} reviews)` : ''}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="property-body">
+                                    <div className="property-type">{prop.type}</div>
+                                    <h3 className="property-name">{prop.name}</h3>
+                                    <div className="property-location">
+                                        <MapPin size={13} />
+                                        <span>{prop.location}</span>
+                                    </div>
+                                    <div className="property-amenities">
+                                        {prop.amenities.map((a, ai) => (
+                                            <span key={ai} className="property-amenity">{a}</span>
+                                        ))}
+                                    </div>
+                                    <div className="property-footer">
+                                        <div>
+                                            <div className="property-from">From</div>
+                                            <div className="property-price">{prop.price}</div>
                                         </div>
-                                        <div className="property-amenities">
-                                            {prop.amenities.map((a, ai) => (
-                                                <span key={ai} className="property-amenity">{a}</span>
-                                            ))}
-                                        </div>
-                                        <div className="property-footer">
-                                            <div>
-                                                <div className="property-from">From</div>
-                                                <div className="property-price">{prop.price}</div>
-                                            </div>
-                                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '6px' }}>
-                                                <NavLink 
-                                                    to={prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg"} 
-                                                    className="btn-primary property-book-btn"
-                                                >
-                                                    <span>{prop.isElam ? "Explore Retreat" : "Explore Estate"}</span>
-                                                    <ArrowRight size={14} />
-                                                </NavLink>
-                                                <NavLink to={prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg"} style={{ fontSize: '0.78rem', color: 'var(--gold-400)', textDecoration: 'underline', marginTop: '2px', fontWeight: 600 }}>
-                                                    View Details
-                                                </NavLink>
-                                            </div>
+                                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '6px' }}>
+                                            <NavLink 
+                                                to={prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg"} 
+                                                className="btn-primary property-book-btn"
+                                            >
+                                                <span>{prop.isElam ? "Explore Retreat" : "Explore Estate"}</span>
+                                                <ArrowRight size={14} />
+                                            </NavLink>
+                                            <NavLink to={prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg"} style={{ fontSize: '0.78rem', color: 'var(--gold-400)', textDecoration: 'underline', marginTop: '2px', fontWeight: 600 }}>
+                                                View Details
+                                            </NavLink>
                                         </div>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
-                </section>
-            )}
+                </div>
+            </section>
 
             {/* Bottom CTA */}
             <section className="services-bottom-cta section-sm">

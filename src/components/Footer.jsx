@@ -123,7 +123,7 @@ export default function Footer() {
                                 </div>
                                 <div className="footer-contact-item">
                                     <Mail size={16} />
-                                    <a href="mailto:hello@roamingdirection.com">hello@roamingdirection.com</a>
+                                    <a href="mailto:roamingdirections@gmail.com">roamingdirections@gmail.com</a>
                                 </div>
                             </div>
                         </div>

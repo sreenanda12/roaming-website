@@ -17,50 +17,82 @@
     top: 72px;
     z-index: 100;
     box-shadow: var(--shadow-sm);
+    content-visibility: visible !important;
 }
 
 .tabs-wrap {
     display: flex;
     justify-content: center;
     gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.tabs-wrap::-webkit-scrollbar {
-    display: none;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .tab-btn {
+    flex: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     padding: 18px 28px;
     background: transparent;
     border: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-muted);
     cursor: pointer;
     white-space: nowrap;
-    transition: var(--transition);
-    border-bottom: 2px solid transparent;
-    position: relative;
+    transition: all 0.3s ease;
+    z-index: 2;
 }
 
 .tab-btn:hover {
     color: var(--forest-700);
-    background: var(--beige-100);
 }
 
 .tab-active {
     color: var(--forest-700);
-    border-bottom-color: var(--forest-600);
     font-weight: 600;
 }
 
 .tab-active svg {
     color: var(--forest-600);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.tab-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--forest-600);
+    border-radius: 2px 2px 0 0;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    width: 33.333%;
+    box-shadow: 0 -2px 10px rgba(25, 53, 28, 0.15);
+}
+
+.indicator-tourism {
+    transform: translateX(0);
+}
+
+.indicator-cars {
+    transform: translateX(100%);
+}
+
+.indicator-property {
+    transform: translateX(200%);
+}
+
+.desktop-only {
+    display: inline;
+}
+
+.mobile-only {
+    display: none;
 }
 
 /* Content section */
@@ -550,28 +582,137 @@
 }
 
 @media (max-width: 768px) {
+    .tabs-section {
+        position: sticky;
+        top: 80px;
+        z-index: 100;
+        background: transparent;
+        border-bottom: none;
+        box-shadow: none;
+        padding: 10px 16px;
+        content-visibility: visible !important;
+    }
+
+    .tabs-wrap {
+        background: rgba(250, 247, 242, 0.85);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(25, 53, 28, 0.08);
+        border-radius: 100px;
+        padding: 4px;
+        box-shadow: 0 8px 32px rgba(25, 53, 28, 0.08);
+        max-width: 480px;
+        margin: 0 auto;
+        gap: 0;
+    }
+
+    .tab-btn {
+        padding: 12px 6px;
+        font-size: 0.8rem;
+        gap: 4px;
+    }
+
+    .tab-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .tab-indicator {
+        bottom: 4px;
+        left: 4px;
+        height: calc(100% - 8px);
+        background: rgba(25, 53, 28, 0.06);
+        border: 1px solid rgba(25, 53, 28, 0.1);
+        border-radius: 100px;
+        width: calc(33.333% - 8px);
+        box-shadow: none;
+    }
+
+    .indicator-tourism {
+        transform: translateX(0);
+    }
+
+    .indicator-cars {
+        transform: translateX(calc(100% + 8px));
+    }
+
+    .indicator-property {
+        transform: translateX(calc(200% + 16px));
+    }
+
+    .tab-active {
+        color: var(--forest-800);
+        font-weight: 600;
+    }
+
+    .tab-active svg {
+        color: var(--forest-600);
+        transform: scale(1.1);
+    }
+
+    /* Swipeable horizontal carousel for International Tourism */
     .packages-grid {
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding: 10px 20px 24px;
+        margin: 0 -20px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .packages-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .pkg-card {
+        flex: 0 0 82%;
+        scroll-snap-align: center;
+        margin-bottom: 0;
+        box-shadow: 0 8px 24px rgba(25, 53, 28, 0.05);
+    }
+
+    /* Spacing and typography changes for property section */
+    .property-grid {
+        gap: 24px;
+    }
+
+    .property-card {
         grid-template-columns: 1fr;
+        border-radius: var(--radius-lg);
+        box-shadow: 0 8px 24px rgba(25, 53, 28, 0.05);
+    }
+
+    .property-body {
+        padding: 24px 20px;
+    }
+
+    .property-location {
+        margin-bottom: 12px;
+    }
+
+    .property-footer {
+        padding-top: 12px;
     }
 
     .cars-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .car-card {
         grid-template-columns: 1fr;
     }
 
-    .property-card {
-        grid-template-columns: 1fr;
-    }
-
-    .tabs-wrap {
-        gap: 0;
+    .car-body {
+        padding: 24px 20px;
     }
 
     .svc-cta-inner {
         flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 }
 

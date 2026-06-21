@@ -123,7 +123,7 @@ const Home = () => {
     };
 
     useEffect(() => {
-        if (!ctaRef.current) return;
+        if (!ctaRef.current || window.innerWidth <= 768) return;
 
         // Clear and resize refs array
         photosRef.current = photosRef.current.slice(0, travelPhotos.length);
@@ -434,8 +434,8 @@ const Home = () => {
 
             {/* ===== CTA SECTION ===== */}
             <section className="cta-section" ref={ctaRef}>
-                {/* Photo Cascade Wrapper */}
-                <div className="photo-cascade-wrap">
+                {/* Photo Cascade Wrapper (Desktop Only) */}
+                <div className="photo-cascade-wrap desktop-only">
                     {travelPhotos.map((photo, i) => (
                         <NavLink 
                             key={i} 
@@ -460,6 +460,21 @@ const Home = () => {
                         <p className="cta-centered-subtitle">
                             Ready to explore the world? Let our experts craft your perfect travel experience. No dream is too big.
                         </p>
+
+                        {/* Photo Carousel (Mobile Only) */}
+                        <div className="photo-cascade-wrap mobile-only">
+                            {travelPhotos.map((photo, i) => (
+                                <NavLink 
+                                    key={i} 
+                                    to={`/destinations/${photo.destId}`}
+                                    className={`polaroid-photo aspect-${photo.aspect}`}
+                                >
+                                    <img src={photo.url} alt={photo.caption} loading="lazy" />
+                                    <div className="polaroid-caption">{photo.caption}</div>
+                                </NavLink>
+                            ))}
+                        </div>
+
                         <div className="cta-centered-actions">
                             <NavLink to="/services" className="btn-cinematic-primary">
                                 <span>Explore Packages</span>

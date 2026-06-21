@@ -51,8 +51,7 @@ const contactInfo = [
         icon: <Mail size={22} strokeWidth={1.5} />,
         title: 'Email Us',
         lines: [
-            { text: 'hello@roamingdirection.com', href: 'mailto:hello@roamingdirection.com' },
-            { text: 'bookings@roamingdirection.com', href: 'mailto:bookings@roamingdirection.com' }
+            { text: 'roamingdirections@gmail.com', href: 'mailto:roamingdirections@gmail.com' }
         ],
     },
     {
