@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
     Globe, Shield, Award, Users, Heart, Target, Eye, ArrowRight,
-    CheckCircle, MapPin
+    CheckCircle, MapPin, Instagram
 } from 'lucide-react';
 import './About.css';
 
@@ -15,16 +15,12 @@ const values = [
 
 const team = [
     {
-        name: 'Arshed',
-    },
-    {
-        name: 'Fahad',
-    },
-    {
         name: 'Arshed E',
+        instagram: 'https://www.instagram.com/arshddx?igsh=bTF4dTVyaW9vMXNq',
     },
     {
         name: 'Fahad mehfi',
+        instagram: 'https://www.instagram.com/fahadmehfil?igsh=MTBpMWpiZ2YxOWJ4bA==',
     },
 ];
 
@@ -223,17 +219,20 @@ export default function About() {
                         {team.map((member, i) => (
                             <div key={member.name} className={`team-card aos aos-scale aos-delay-${i + 1}`}>
                                 <div className="team-info" style={{ padding: '24px' }}>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: member.role ? '8px' : '0' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <h4 className="team-name" style={{ margin: 0, fontSize: '1.25rem' }}>{member.name}</h4>
-                                        {member.exp && (
-                                            <span className="team-exp-badge" style={{ position: 'static', background: 'var(--gold-400)', color: 'var(--forest-900)', padding: '2px 8px', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 700 }}>
-                                                {member.exp}
-                                            </span>
+                                        {member.instagram && (
+                                            <a 
+                                                href={member.instagram} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="team-instagram-link"
+                                                title={`Follow ${member.name} on Instagram`}
+                                            >
+                                                <Instagram size={18} />
+                                            </a>
                                         )}
                                     </div>
-                                    {member.role && (
-                                        <p className="team-role" style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{member.role}</p>
-                                    )}
                                 </div>
                             </div>
                         ))}
