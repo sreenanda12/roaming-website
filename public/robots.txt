@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.roamingdirection.com/sitemap.xml
+Sitemap: https://www.roamingdirections.com/sitemap.xml

@@ -15,11 +15,11 @@ const values = [
 
 const team = [
     {
-        name: 'Arshed E',
+        name: 'Arshad E',
         instagram: 'https://www.instagram.com/arshddx?igsh=bTF4dTVyaW9vMXNq',
     },
     {
-        name: 'Fahad mehfi',
+        name: 'Fahad Mehfil',
         instagram: 'https://www.instagram.com/fahadmehfil?igsh=MTBpMWpiZ2YxOWJ4bA==',
     },
 ];
@@ -57,9 +57,9 @@ export default function About() {
                 <div className="page-hero-overlay" />
                 <div className="container page-hero-content">
                     <div className="section-badge light">Our Story</div>
-                    <h1>About Roaming Direction</h1>
+                    <h1>About Roaming Directions</h1>
                     <p>
-                        Born from a passion for exploration, Roaming Direction has been crafting
+                        Born from a passion for exploration, Roaming Directions has been crafting
                         extraordinary travel experiences since 2010. We are not just a travel agency
                         — we are your journey architects.
                     </p>
@@ -95,7 +95,7 @@ export default function About() {
                             </h2>
                             <div className="section-divider" style={{ margin: '20px 0' }} />
                             <p className="body-lg" style={{ color: 'var(--text-secondary)', marginBottom: '20px' }}>
-                                Founded in 2010, Roaming Direction was built on a simple belief — that every
+                                Founded in 2010, Roaming Directions was built on a simple belief — that every
                                 person deserves to experience the magic of the world without the stress of planning.
                             </p>
                             <p style={{ color: 'var(--text-secondary)', marginBottom: '28px', lineHeight: '1.8' }}>
@@ -247,7 +247,7 @@ export default function About() {
                         <h2 className="heading-lg">
                             Ready to Start Your Adventure?
                         </h2>
-                        <p>Join 50,000+ travelers who trust Roaming Direction with their journeys.</p>
+                        <p>Join 50,000+ travelers who trust Roaming Directions with their journeys.</p>
                         <div className="about-cta-btns">
                             <NavLink to="/services" className="btn-gold">
                                 <span>View Packages</span>

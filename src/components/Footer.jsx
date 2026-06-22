@@ -19,10 +19,10 @@ const services = [
 ];
 
 const socials = [
-    { icon: <Instagram size={18} />, href: 'https://instagram.com/roamingdirection', label: 'Instagram' },
-    { icon: <Facebook size={18} />, href: 'https://facebook.com/roamingdirection', label: 'Facebook' },
+    { icon: <Instagram size={18} />, href: 'https://instagram.com/roamingdirections', label: 'Instagram' },
+    { icon: <Facebook size={18} />, href: 'https://facebook.com/roamingdirections', label: 'Facebook' },
     { icon: <Twitter size={18} />, href: 'https://twitter.com/roamingdir', label: 'Twitter' },
-    { icon: <Youtube size={18} />, href: 'https://youtube.com/@roamingdirection', label: 'Youtube' },
+    { icon: <Youtube size={18} />, href: 'https://youtube.com/@roamingdirections', label: 'Youtube' },
 ];
 
 export default function Footer() {
@@ -47,7 +47,7 @@ export default function Footer() {
                         <div className="footer-cta-inner">
                             <div className="footer-cta-text">
                                 <h3>Ready to Explore the World?</h3>
-                                <p>Let Roaming Direction craft your perfect travel experience.</p>
+                                <p>Let Roaming Directions craft your perfect travel experience.</p>
                             </div>
                             <NavLink to="/contact" className="btn-gold footer-cta-btn">
                                 <span>Plan My Trip</span>
@@ -65,7 +65,7 @@ export default function Footer() {
                         {/* Brand Column */}
                         <div className="footer-brand">
                             <NavLink to="/" className="footer-logo">
-                                <img src="/images/roaminglogo_transparent.png" alt="Roaming Direction Logo" className="footer-logo-img" height="48" width="114" />
+                                <img src="/images/roaminglogo_transparent.png" alt="Roaming Directions Logo" className="footer-logo-img" height="48" width="114" />
                             </NavLink>
                             <p className="footer-brand-desc">
                                 Your trusted partner for international tourism, premium property booking, and luxury car rentals. We make every journey unforgettable.
@@ -123,7 +123,7 @@ export default function Footer() {
                                 </div>
                                 <div className="footer-contact-item">
                                     <Mail size={16} />
-                                    <a href="mailto:roamingdirections@gmail.com">roamingdirections@gmail.com</a>
+                                    <a href="mailto:roamingdirectionss@gmail.com">roamingdirectionss@gmail.com</a>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ export default function Footer() {
                 <div className="container">
                     <div className="footer-bottom-inner">
                         <div className="footer-copyright-group">
-                            <p>© {new Date().getFullYear()} Roaming Direction. All rights reserved.</p>
+                            <p>© {new Date().getFullYear()} Roaming Directions. All rights reserved.</p>
                             <a href="https://instagram.com/sreenand.h" target="_blank" rel="noopener noreferrer" className="developer-link">
                                 Meet the Developers
                             </a>

@@ -51,7 +51,7 @@ const contactInfo = [
         icon: <Mail size={22} strokeWidth={1.5} />,
         title: 'Email Us',
         lines: [
-            { text: 'roamingdirections@gmail.com', href: 'mailto:roamingdirections@gmail.com' }
+            { text: 'roamingdirectionss@gmail.com', href: 'mailto:roamingdirectionss@gmail.com' }
         ],
     },
     {
@@ -218,7 +218,7 @@ export default function Contact() {
                                 <div className="contact-social-label">Follow Our Journey</div>
                                 <div className="contact-socials">
                                     {[
-                                        { icon: <Instagram size={20} />, href: 'https://www.instagram.com/roamingdirections?igsh=MWhkd294aHd4cGMweg==', label: 'Instagram' },
+                                        { icon: <Instagram size={20} />, href: 'https://www.instagram.com/roamingdirectionss?igsh=MWhkd294aHd4cGMweg==', label: 'Instagram' },
                                         { icon: <Facebook size={20} />, href: '#', label: 'Facebook' },
                                         { icon: <Twitter size={20} />, href: '#', label: 'Twitter' },
                                     ].map((s) => (
@@ -270,7 +270,6 @@ export default function Contact() {
                                                 id="name"
                                                 name="name"
                                                 type="text"
-                                                placeholder="Rajesh Kumar"
                                                 value={form.name}
                                                 onChange={handleChange}
                                                 required
@@ -282,7 +281,6 @@ export default function Contact() {
                                                 id="email"
                                                 name="email"
                                                 type="email"
-                                                placeholder="rajesh@example.com"
                                                 value={form.email}
                                                 onChange={handleChange}
                                                 required
@@ -297,7 +295,6 @@ export default function Contact() {
                                                 id="phone"
                                                 name="phone"
                                                 type="tel"
-                                                placeholder="+91 72043 70369"
                                                 value={form.phone}
                                                 onChange={handleChange}
                                             />
@@ -359,7 +356,7 @@ export default function Contact() {
             <section className="map-section">
                 <div className="map-container">
                     <iframe
-                        title="Roaming Direction Office Location"
+                        title="Roaming Directions Office Location"
                         src="https://maps.google.com/maps?q=Muse%20Hub%20Co-Working%20Space%20Marathahalli%20Bangalore&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="450"
@@ -379,7 +376,7 @@ export default function Contact() {
                         <div className="adv-cta-content">
                             <div className="section-badge">Let's Go</div>
                             <h2 className="heading-lg">
-                                Plan Your Next Adventure<br />with Roaming Direction
+                                Plan Your Next Adventure<br />with Roaming Directions
                             </h2>
                             <p>
                                 Your next extraordinary journey is just one message away.

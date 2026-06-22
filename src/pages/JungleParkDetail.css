@@ -1,0 +1,27 @@
+/* JungleParkDetail.css */
+@import './PropertyDetail.css';
+
+/* Custom Dining Styles */
+.dining-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.dining-feat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Theme color modifications if needed to highlight rainforest theme */
+.text-brand-green {
+    color: var(--forest-900);
+}
+
+.text-muted-green {
+    color: #2c4c30;
+}

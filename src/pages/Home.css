@@ -896,14 +896,6 @@
 }
 
 /* Photo Cascade Wrapper & Polaroids */
-.desktop-only {
-    display: block;
-}
-
-.mobile-only {
-    display: none !important;
-}
-
 .photo-cascade-wrap {
     position: absolute;
     inset: 0;
@@ -970,86 +962,31 @@
 
 /* Mobile Responsive Polaroid sizes */
 @media (max-width: 768px) {
-    .desktop-only {
-        display: none !important;
+    .polaroid-photo.aspect-portrait {
+        width: 110px;
+        height: 150px;
+        padding: 6px 6px 18px 6px;
     }
 
-    .mobile-only {
-        display: flex !important;
+    .polaroid-photo.aspect-landscape {
+        width: 140px;
+        height: 110px;
+        padding: 6px 6px 18px 6px;
+    }
+
+    .polaroid-photo.aspect-square {
+        width: 120px;
+        height: 120px;
+        padding: 6px 6px 18px 6px;
+    }
+    
+    .polaroid-caption {
+        font-size: 0.6rem;
+        margin-top: 4px;
     }
 
     .cta-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 60px 0;
-        min-height: auto;
-    }
-
-    .cta-inner-centered {
-        order: 1;
-        width: 100%;
-        padding: 0 20px;
-        margin-bottom: 32px;
-    }
-
-    .photo-cascade-wrap {
-        order: 2;
-        position: relative;
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 16px;
-        padding: 20px 20px 30px;
-        margin: 0;
-        pointer-events: auto;
-        z-index: 10;
-        scrollbar-width: none;
-        width: 100%;
-    }
-
-    .photo-cascade-wrap::-webkit-scrollbar {
-        display: none;
-    }
-
-    .polaroid-photo {
-        position: static !important;
-        flex: 0 0 140px;
-        height: 180px !important;
-        scroll-snap-align: center;
-        transform: none !important;
-        opacity: 1 !important;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        padding: 8px 8px 24px 8px;
-    }
-
-    .polaroid-photo img {
-        height: 128px !important;
-        width: 100% !important;
-        object-fit: cover;
-    }
-
-    .polaroid-caption {
-        font-size: 0.75rem;
-        margin-top: 6px;
-    }
-
-    .cta-centered-actions {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 12px;
-        margin-top: 8px;
-    }
-
-    .cta-section .btn-cinematic-primary,
-    .cta-section .btn-cinematic-secondary {
-        width: 100%;
-        border-radius: 100px;
-        justify-content: center;
-        padding: 16px 24px;
-        box-shadow: 0 4px 15px rgba(25, 53, 28, 0.1);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 100px 0;
     }
 }
 

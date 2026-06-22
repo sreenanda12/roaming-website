@@ -95,6 +95,8 @@ const properties = [
         amenities: [<Wifi size={14} />, <Coffee size={14} />, <Shield size={14} />, <Users size={14} />],
         img: '/images/elam/p1.jpeg',
         tag: 'FEATURED',
+        link: '/properties/elam-munnar',
+        exploreText: 'Explore Retreat',
         isElam: true,
     },
     {
@@ -107,7 +109,23 @@ const properties = [
         amenities: [<Wifi size={14} />, <Coffee size={14} />, <Shield size={14} />, <Users size={14} />],
         img: '/images/oldkent/oldkentestates.jpg',
         tag: 'HERITAGE LUXURY',
+        link: '/properties/old-kent-estates-coorg',
+        exploreText: 'Explore Estate',
         isOldKent: true,
+    },
+    {
+        id: 9,
+        name: 'Jungle Park Resort',
+        location: 'Wayanad, Kerala',
+        type: 'LUXURY RAINFOREST EXPERIENCE',
+        price: 'Contact for Price',
+        rating: '4.9+',
+        amenities: [<Wifi size={14} />, <Coffee size={14} />, <Shield size={14} />, <Users size={14} />],
+        img: '/images/junglepark/p20.png',
+        tag: 'RAINFOREST LUXURY',
+        link: '/properties/jungle-park-wayanad',
+        exploreText: 'Explore Resort',
+        isJunglePark: true,
     },
 ];
 
@@ -129,6 +147,7 @@ const tagColors = {
     'POPULAR': '#19351c',
     'FEATURED': '#c9a84c',
     'HERITAGE LUXURY': '#8f6835',
+    'RAINFOREST LUXURY': '#2e5d32',
 };
 
 
@@ -139,7 +158,9 @@ export default function Services() {
 
     const handlePropertyClick = (e, prop) => {
         if (e.target.closest('a') || e.target.closest('button')) return;
-        if (prop.isElam) {
+        if (prop.link) {
+            navigate(prop.link);
+        } else if (prop.isElam) {
             navigate('/properties/elam-munnar');
         } else if (prop.isOldKent) {
             navigate('/properties/old-kent-estates-coorg');
@@ -463,13 +484,13 @@ export default function Services() {
                                         </div>
                                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '6px' }}>
                                             <NavLink 
-                                                to={prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg"} 
+                                                to={prop.link || (prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg")} 
                                                 className="btn-primary property-book-btn"
                                             >
-                                                <span>{prop.isElam ? "Explore Retreat" : "Explore Estate"}</span>
+                                                <span>{prop.exploreText || (prop.isElam ? "Explore Retreat" : "Explore Estate")}</span>
                                                 <ArrowRight size={14} />
                                             </NavLink>
-                                            <NavLink to={prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg"} style={{ fontSize: '0.78rem', color: 'var(--gold-400)', textDecoration: 'underline', marginTop: '2px', fontWeight: 600 }}>
+                                            <NavLink to={prop.link || (prop.isElam ? "/properties/elam-munnar" : "/properties/old-kent-estates-coorg")} style={{ fontSize: '0.78rem', color: 'var(--gold-400)', textDecoration: 'underline', marginTop: '2px', fontWeight: 600 }}>
                                                 View Details
                                             </NavLink>
                                         </div>

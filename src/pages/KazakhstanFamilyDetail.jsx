@@ -6,7 +6,7 @@ import './InternationalDetail.css';
 export default function KazakhstanFamilyDetail() {
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = 'Majestic Kazakhstan Family Adventure | Roaming Direction';
+        document.title = 'Majestic Kazakhstan Family Adventure | Roaming Directions';
     }, []);
 
     const itinerary = [

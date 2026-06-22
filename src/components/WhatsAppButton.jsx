@@ -2,7 +2,7 @@ import './WhatsAppButton.css';
 
 export default function WhatsAppButton() {
     const phoneNumber = "917204370369"; 
-    const message = encodeURIComponent("Hello! I'm interested in booking a trip with Roaming Direction.");
+    const message = encodeURIComponent("Hello! I'm interested in booking a trip with Roaming Directions.");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     return (

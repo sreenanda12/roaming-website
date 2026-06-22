@@ -123,7 +123,7 @@ const Home = () => {
     };
 
     useEffect(() => {
-        if (!ctaRef.current || window.innerWidth <= 768) return;
+        if (!ctaRef.current) return;
 
         // Clear and resize refs array
         photosRef.current = photosRef.current.slice(0, travelPhotos.length);
@@ -387,7 +387,7 @@ const Home = () => {
                     <div className="why-inner">
                         <div className="why-left aos-left aos">
                             <div className="section-badge">Why Us</div>
-                            <h2 className="heading-lg">Why Choose<br />Roaming Direction?</h2>
+                            <h2 className="heading-lg">Why Choose<br />Roaming Directions?</h2>
                             <div className="section-divider" style={{ margin: '20px 0' }} />
                             <p className="body-lg" style={{ color: 'var(--text-secondary)', maxWidth: '440px' }}>
                                 We don't just plan trips — we engineer extraordinary experiences with meticulous care and passion for travel.
@@ -434,8 +434,8 @@ const Home = () => {
 
             {/* ===== CTA SECTION ===== */}
             <section className="cta-section" ref={ctaRef}>
-                {/* Photo Cascade Wrapper (Desktop Only) */}
-                <div className="photo-cascade-wrap desktop-only">
+                {/* Photo Cascade Wrapper */}
+                <div className="photo-cascade-wrap">
                     {travelPhotos.map((photo, i) => (
                         <NavLink 
                             key={i} 
@@ -460,21 +460,6 @@ const Home = () => {
                         <p className="cta-centered-subtitle">
                             Ready to explore the world? Let our experts craft your perfect travel experience. No dream is too big.
                         </p>
-
-                        {/* Photo Carousel (Mobile Only) */}
-                        <div className="photo-cascade-wrap mobile-only">
-                            {travelPhotos.map((photo, i) => (
-                                <NavLink 
-                                    key={i} 
-                                    to={`/destinations/${photo.destId}`}
-                                    className={`polaroid-photo aspect-${photo.aspect}`}
-                                >
-                                    <img src={photo.url} alt={photo.caption} loading="lazy" />
-                                    <div className="polaroid-caption">{photo.caption}</div>
-                                </NavLink>
-                            ))}
-                        </div>
-
                         <div className="cta-centered-actions">
                             <NavLink to="/services" className="btn-cinematic-primary">
                                 <span>Explore Packages</span>

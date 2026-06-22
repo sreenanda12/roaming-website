@@ -6,7 +6,7 @@ import './InternationalDetail.css';
 export default function GeorgiaDetail() {
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = 'Enchanting Georgia Escape | Roaming Direction';
+        document.title = 'Enchanting Georgia Escape | Roaming Directions';
     }, []);
 
     const itinerary = [

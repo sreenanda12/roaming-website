@@ -50,7 +50,7 @@ const Preloader = () => {
         <div className="preloader-text">
           <h1 className="brand-name">
             <span className="word">Roaming</span>
-            <span className="word">Direction</span>
+            <span className="word">Directions</span>
           </h1>
           <div className="loading-bar-container">
             <div className="loading-bar"></div>
