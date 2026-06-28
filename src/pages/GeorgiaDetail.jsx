@@ -64,7 +64,7 @@ export default function GeorgiaDetail() {
     return (
         <div className="int-detail-page">
             {/* Hero */}
-            <section className="int-hero" style={{ backgroundImage: "url('/images/destinations/georgia.jpg')" }}>
+            <section className="int-hero" style={{ backgroundImage: "url('/images/destinations/georgia.webp')" }}>
                 <div className="int-hero-overlay" />
                 <div className="container">
                     <div className="int-hero-content">

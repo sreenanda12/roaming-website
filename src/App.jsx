@@ -183,7 +183,7 @@ const seoConfig = {
     description: 'Explore Georgia: the crossroads of Europe & Asia. Book custom wine tours, mountain hikes in Caucasus, and Old Tbilisi exploration packages.',
     keywords: 'georgia tour package, tbilisi travel, kakheti wine tour, gergeti trinity church package, georgia itinerary',
     canonical: 'https://www.roamingdirections.com/international/georgia',
-    ogImage: 'https://www.roamingdirections.com/images/destinations/georgia.jpg',
+    ogImage: 'https://www.roamingdirections.com/images/destinations/georgia.webp',
     schema: [
       {
         "@context": "https://schema.org",
@@ -211,7 +211,7 @@ const seoConfig = {
     description: 'Enjoy a premium family vacation in Kazakhstan. Explore Almaty, Charyn Canyon, and Ascension Cathedral with custom family travel itineraries.',
     keywords: 'kazakhstan family package, almaty travel family, charyn canyon family tour, kazakhstan travel itinerary',
     canonical: 'https://www.roamingdirections.com/international/kazakhstan-family',
-    ogImage: 'https://www.roamingdirections.com/images/destinations/kazakhstan.jpg',
+    ogImage: 'https://www.roamingdirections.com/images/destinations/kazakhstan.webp',
     schema: [
       {
         "@context": "https://schema.org",
@@ -239,7 +239,7 @@ const seoConfig = {
     description: 'Embark on a group adventure tour to Kazakhstan. Experience Almaty, Medeu, Shymbulak skiing, and epic mountain trekking packages.',
     keywords: 'kazakhstan group tour, almaty group package, shymbulak ski package, central asia adventure group',
     canonical: 'https://www.roamingdirections.com/international/kazakhstan-group',
-    ogImage: 'https://www.roamingdirections.com/images/destinations/kazakhstan.jpg',
+    ogImage: 'https://www.roamingdirections.com/images/destinations/kazakhstan.webp',
     schema: [
       {
         "@context": "https://schema.org",
@@ -307,7 +307,7 @@ const seoConfig = {
     description: 'Experience the colonial charm of Old Kent Estates & Spa in Coorg. A historic 200-acre coffee plantation retreat featuring luxury English cottages, vintage suites, and crop-to-cup spa experiences.',
     keywords: 'old kent estates coorg, heritage stay coorg, luxury coffee plantation resort, madikeri resorts, coorg estate stay',
     canonical: 'https://www.roamingdirections.com/properties/old-kent-estates-coorg',
-    ogImage: 'https://www.roamingdirections.com/images/oldkent/oldkentestates.jpg',
+    ogImage: 'https://www.roamingdirections.com/images/oldkent/oldkentestates.webp',
     schema: [
       {
         "@context": "https://schema.org",
@@ -315,7 +315,7 @@ const seoConfig = {
         "@id": "https://www.roamingdirections.com/properties/old-kent-estates-coorg#lodging",
         "name": "Old Kent Estates & Spa Coorg",
         "description": "A luxury heritage coffee plantation retreat set within a historic 200-acre estate in Madikeri, Coorg, Karnataka.",
-        "image": "https://www.roamingdirections.com/images/oldkent/oldkentestates.jpg",
+        "image": "https://www.roamingdirections.com/images/oldkent/oldkentestates.webp",
         "url": "https://www.roamingdirections.com/properties/old-kent-estates-coorg",
         "telephone": "+91-7204370369",
         "address": {
@@ -342,7 +342,7 @@ const seoConfig = {
     description: 'Nestled 7 km deep inside the reserve forests of Wayanad, Jungle Park Resort offers a premium eco-conscious sanctuary with breathtaking valley views, private lake views, and duplex suites.',
     keywords: 'jungle park resort wayanad, luxury stay wayanad, reserve forest stay kerala, lake view duplex suite wayanad, eco resort wayanad',
     canonical: 'https://www.roamingdirections.com/properties/jungle-park-wayanad',
-    ogImage: 'https://www.roamingdirections.com/images/junglepark/p20.png',
+    ogImage: 'https://www.roamingdirections.com/images/junglepark/p20.webp',
     schema: [
       {
         "@context": "https://schema.org",
@@ -350,7 +350,7 @@ const seoConfig = {
         "@id": "https://www.roamingdirections.com/properties/jungle-park-wayanad#lodging",
         "name": "Jungle Park Resort",
         "description": "Nestled 7 km deep inside the forests of Wayanad, Jungle Park Resort offers a rare luxury rainforest experience surrounded by 900 acres of pristine wilderness.",
-        "image": "https://www.roamingdirections.com/images/junglepark/p20.png",
+        "image": "https://www.roamingdirections.com/images/junglepark/p20.webp",
         "url": "https://www.roamingdirections.com/properties/jungle-park-wayanad",
         "telephone": "+91-7204370369",
         "address": {

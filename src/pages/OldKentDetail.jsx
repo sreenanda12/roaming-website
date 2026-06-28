@@ -19,32 +19,32 @@ const amenityList = [
 const galleryCategories = ['All', 'Estate', 'Cottages', 'Suites', 'Coffee Plantation', 'Dining', 'Spa', 'Nature', 'Experiences'];
 
 const galleryImages = [
-  { src: '/images/oldkent/oldkentestates.jpg', category: ['Estate', 'Nature'], title: 'Historic Colonial Bungalow' },
-  { src: '/images/oldkent/oldkentestates2.jpg', category: ['Cottages', 'Estate'], title: 'English Cottage Pathway' },
-  { src: '/images/oldkent/oldkentestates3.jpg', category: ['Cottages', 'Suites'], title: 'Vintage Heritage Bedroom' },
+  { src: '/images/oldkent/oldkentestates.webp', category: ['Estate', 'Nature'], title: 'Historic Colonial Bungalow' },
+  { src: '/images/oldkent/oldkentestates2.webp', category: ['Cottages', 'Estate'], title: 'English Cottage Pathway' },
+  { src: '/images/oldkent/oldkentestates3.webp', category: ['Cottages', 'Suites'], title: 'Vintage Heritage Bedroom' },
   { src: '/images/oldkent/oldkentestates4.jpg', category: ['Cottages', 'Nature'], title: 'Lush Gardens Outside Cottages' },
   { src: '/images/oldkent/oldkentestates5.jpg', category: ['Nature', 'Experiences'], title: 'Scenic Misty Morning View' },
   { src: '/images/oldkent/oldkentestates6.jpg', category: ['Coffee Plantation', 'Experiences'], title: 'Crop-to-Cup Coffee Harvest' },
-  { src: '/images/oldkent/oldkentestates7.jpg', category: ['Dining', 'Experiences'], title: 'Heritage Dining Room Feast' },
-  { src: '/images/oldkent/oldkentestates8.jpg', category: ['Suites', 'Cottages'], title: 'Period Furnishings Bed Setup' },
-  { src: '/images/oldkent/oldkentestates8.png', category: ['Suites', 'Cottages'], title: 'Vintage Master Suite' },
-  { src: '/images/oldkent/oldkentestates9.jpg', category: ['Spa', 'Dining'], title: 'Estate Fresh Brewed Coffee' },
-  { src: '/images/oldkent/oldkentestates9.png', category: ['Spa', 'Experiences'], title: 'Relaxing Spa & Wellness Therapy' },
-  { src: '/images/oldkent/oldkentestates10.jpg', category: ['Estate', 'Suites'], title: 'English Garden & Main Bungalow' },
-  { src: '/images/oldkent/oldkentestates11.jpg', category: ['Nature', 'Experiences'], title: 'Misty Plantation Trail Walk' }
+  { src: '/images/oldkent/oldkentestates7.webp', category: ['Dining', 'Experiences'], title: 'Heritage Dining Room Feast' },
+  { src: '/images/oldkent/oldkentestates8.webp', category: ['Suites', 'Cottages'], title: 'Period Furnishings Bed Setup' },
+  { src: '/images/oldkent/oldkentestates8.webp', category: ['Suites', 'Cottages'], title: 'Vintage Master Suite' },
+  { src: '/images/oldkent/oldkentestates9.webp', category: ['Spa', 'Dining'], title: 'Estate Fresh Brewed Coffee' },
+  { src: '/images/oldkent/oldkentestates9.webp', category: ['Spa', 'Experiences'], title: 'Relaxing Spa & Wellness Therapy' },
+  { src: '/images/oldkent/oldkentestates10.webp', category: ['Estate', 'Suites'], title: 'English Garden & Main Bungalow' },
+  { src: '/images/oldkent/oldkentestates11.webp', category: ['Nature', 'Experiences'], title: 'Misty Plantation Trail Walk' }
 ];
 
 const cottageImages = [
-  '/images/oldkent/oldkentestates2.jpg',
-  '/images/oldkent/oldkentestates3.jpg',
+  '/images/oldkent/oldkentestates2.webp',
+  '/images/oldkent/oldkentestates3.webp',
   '/images/oldkent/oldkentestates4.jpg',
-  '/images/oldkent/oldkentestates8.jpg'
+  '/images/oldkent/oldkentestates8.webp'
 ];
 
 const suiteImages = [
-  '/images/oldkent/oldkentestates8.png',
-  '/images/oldkent/oldkentestates10.jpg',
-  '/images/oldkent/oldkentestates3.jpg'
+  '/images/oldkent/oldkentestates8.webp',
+  '/images/oldkent/oldkentestates10.webp',
+  '/images/oldkent/oldkentestates3.webp'
 ];
 
 const experiences = [
@@ -132,7 +132,7 @@ export default function OldKentDetail() {
       <section 
         className="property-hero" 
         ref={heroRef}
-        style={{ backgroundImage: `url('/images/oldkent/oldkentestates.jpg')` }}
+        style={{ backgroundImage: `url('/images/oldkent/oldkentestates.webp')` }}
       >
         <div className="property-hero-overlay" />
         <div className="container property-hero-container">
@@ -212,7 +212,7 @@ export default function OldKentDetail() {
             </div>
             <div className="story-right aos-right">
               <div className="story-image-overlap">
-                <img src="/images/oldkent/oldkentestates10.jpg" alt="Old Kent Estates Bungalow" className="story-img-main-large" />
+                <img src="/images/oldkent/oldkentestates10.webp" alt="Old Kent Estates Bungalow" className="story-img-main-large" />
                 <div className="story-badge-highlight">
                   <Sparkles size={20} />
                   <span>Heritage Luxury Resort</span>
@@ -381,7 +381,7 @@ export default function OldKentDetail() {
           <div className="story-layout-grid reverse">
             <div className="story-right aos-left">
               <div className="story-image-overlap">
-                <img src="/images/oldkent/oldkentestates7.jpg" alt="Heritage Dining at Old Kent" className="story-img-main-large" />
+                <img src="/images/oldkent/oldkentestates7.webp" alt="Heritage Dining at Old Kent" className="story-img-main-large" />
                 <div className="story-badge-highlight">
                   <Utensils size={20} />
                   <span>Fine Colonial Dining</span>
@@ -426,7 +426,7 @@ export default function OldKentDetail() {
           </div>
           <div className="spa-layout-grid">
             <div className="spa-image-box aos-left">
-              <img src="/images/oldkent/oldkentestates9.png" alt="Spa and Wellness Therapy" className="spa-hero-image" />
+              <img src="/images/oldkent/oldkentestates9.webp" alt="Spa and Wellness Therapy" className="spa-hero-image" />
             </div>
             <div className="spa-details-box aos-right">
               <div className="spa-treatments-grid">

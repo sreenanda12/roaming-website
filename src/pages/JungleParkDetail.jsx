@@ -22,78 +22,78 @@ const amenityList = [
 const galleryCategories = ['All', 'Suites', 'Experiences', 'Lakeside', 'Forest Views'];
 
 const galleryImages = [
-  { src: '/images/junglepark/p2.png', category: ['Suites'], title: 'Duplex Suite Bedroom' },
-  { src: '/images/junglepark/p3.png', category: ['Suites'], title: 'Duplex Suite Living Room' },
-  { src: '/images/junglepark/p4.png', category: ['Suites'], title: 'Suite Panoramic Window' },
-  { src: '/images/junglepark/p5.png', category: ['Suites'], title: 'Duplex Attic Space' },
-  { src: '/images/junglepark/p6.png', category: ['Suites'], title: 'Duplex Suite Balcony View' },
-  { src: '/images/junglepark/p7.png', category: ['Suites'], title: 'Premium Suite Entrance' },
-  { src: '/images/junglepark/p8.png', category: ['Suites'], title: 'Premium Suite Bedding' },
-  { src: '/images/junglepark/p9.png', category: ['Suites'], title: 'Premium Suite Washroom' },
-  { src: '/images/junglepark/p10.png', category: ['Suites'], title: 'Duplex Suite Modern Bath' },
-  { src: '/images/junglepark/p11.png', category: ['Suites'], title: 'Suite Interior Cozy Seating' },
-  { src: '/images/junglepark/p12.png', category: ['Experiences', 'Forest Views'], title: 'Forest Safari Jeep Ride' },
-  { src: '/images/junglepark/p13.png', category: ['Experiences', 'Forest Views'], title: 'Guided Viewpoint Trekking' },
-  { src: '/images/junglepark/p14.png', category: ['Experiences', 'Lakeside'], title: 'Kayaking in Mist Lake' },
-  { src: '/images/junglepark/p15.png', category: ['Experiences', 'Forest Views'], title: 'Early Morning Bird Watching' },
-  { src: '/images/junglepark/p16.png', category: ['Experiences'], title: 'Archery & Shooting Range' },
-  { src: '/images/junglepark/p17.png', category: ['Experiences'], title: 'Evening Campfire & BBQ Session' },
-  { src: '/images/junglepark/p18.png', category: ['Experiences', 'Forest Views'], title: 'Forest Waterfall Expedition' },
-  { src: '/images/junglepark/p19.png', category: ['Forest Views'], title: 'Resort Drone Landscape' },
-  { src: '/images/junglepark/p20.png', category: ['Lakeside', 'Forest Views'], title: 'Mist-Covered Lake View' },
-  { src: '/images/junglepark/p21.png', category: ['Forest Views'], title: '900 Acres Pristine Wilderness' },
-  { src: '/images/junglepark/p22.png', category: ['Forest Views'], title: 'Resort Canopy Walkways' },
-  { src: '/images/junglepark/p23.png', category: ['Forest Views'], title: 'Presidential Award Winning Layout' },
-  { src: '/images/junglepark/p24.png', category: ['Experiences', 'Lakeside'], title: 'Fishing Excursion Lakeside' }
+  { src: '/images/junglepark/p2.webp', category: ['Suites'], title: 'Duplex Suite Bedroom' },
+  { src: '/images/junglepark/p3.webp', category: ['Suites'], title: 'Duplex Suite Living Room' },
+  { src: '/images/junglepark/p4.webp', category: ['Suites'], title: 'Suite Panoramic Window' },
+  { src: '/images/junglepark/p5.webp', category: ['Suites'], title: 'Duplex Attic Space' },
+  { src: '/images/junglepark/p6.webp', category: ['Suites'], title: 'Duplex Suite Balcony View' },
+  { src: '/images/junglepark/p7.webp', category: ['Suites'], title: 'Premium Suite Entrance' },
+  { src: '/images/junglepark/p8.webp', category: ['Suites'], title: 'Premium Suite Bedding' },
+  { src: '/images/junglepark/p9.webp', category: ['Suites'], title: 'Premium Suite Washroom' },
+  { src: '/images/junglepark/p10.webp', category: ['Suites'], title: 'Duplex Suite Modern Bath' },
+  { src: '/images/junglepark/p11.webp', category: ['Suites'], title: 'Suite Interior Cozy Seating' },
+  { src: '/images/junglepark/p12.webp', category: ['Experiences', 'Forest Views'], title: 'Forest Safari Jeep Ride' },
+  { src: '/images/junglepark/p13.webp', category: ['Experiences', 'Forest Views'], title: 'Guided Viewpoint Trekking' },
+  { src: '/images/junglepark/p14.webp', category: ['Experiences', 'Lakeside'], title: 'Kayaking in Mist Lake' },
+  { src: '/images/junglepark/p15.webp', category: ['Experiences', 'Forest Views'], title: 'Early Morning Bird Watching' },
+  { src: '/images/junglepark/p16.webp', category: ['Experiences'], title: 'Archery & Shooting Range' },
+  { src: '/images/junglepark/p17.webp', category: ['Experiences'], title: 'Evening Campfire & BBQ Session' },
+  { src: '/images/junglepark/p18.webp', category: ['Experiences', 'Forest Views'], title: 'Forest Waterfall Expedition' },
+  { src: '/images/junglepark/p19.webp', category: ['Forest Views'], title: 'Resort Drone Landscape' },
+  { src: '/images/junglepark/p20.webp', category: ['Lakeside', 'Forest Views'], title: 'Mist-Covered Lake View' },
+  { src: '/images/junglepark/p21.webp', category: ['Forest Views'], title: '900 Acres Pristine Wilderness' },
+  { src: '/images/junglepark/p22.webp', category: ['Forest Views'], title: 'Resort Canopy Walkways' },
+  { src: '/images/junglepark/p23.webp', category: ['Forest Views'], title: 'Presidential Award Winning Layout' },
+  { src: '/images/junglepark/p24.webp', category: ['Experiences', 'Lakeside'], title: 'Fishing Excursion Lakeside' }
 ];
 
 const luxurySuiteImages = [
-  '/images/junglepark/p2.png',
-  '/images/junglepark/p3.png',
-  '/images/junglepark/p4.png',
-  '/images/junglepark/p5.png',
-  '/images/junglepark/p6.png',
-  '/images/junglepark/p10.png'
+  '/images/junglepark/p2.webp',
+  '/images/junglepark/p3.webp',
+  '/images/junglepark/p4.webp',
+  '/images/junglepark/p5.webp',
+  '/images/junglepark/p6.webp',
+  '/images/junglepark/p10.webp'
 ];
 
 const premiumSuiteImages = [
-  '/images/junglepark/p7.png',
-  '/images/junglepark/p8.png',
-  '/images/junglepark/p9.png',
-  '/images/junglepark/p11.png',
-  '/images/junglepark/p20.png'
+  '/images/junglepark/p7.webp',
+  '/images/junglepark/p8.webp',
+  '/images/junglepark/p9.webp',
+  '/images/junglepark/p11.webp',
+  '/images/junglepark/p20.webp'
 ];
 
 const experiences = [
   {
     title: 'Forest Safari Transfer',
     desc: 'Embark on a thrilling forest safari drive through rugged terrain to reach the resort, 7 km deep inside the wilderness.',
-    img: '/images/junglepark/p12.png'
+    img: '/images/junglepark/p12.webp'
   },
   {
     title: 'Kayaking Experience',
     desc: 'Glide gracefully across the mist-covered lake situated inside the resort property, surrounded by 900 acres of trees.',
-    img: '/images/junglepark/p14.png'
+    img: '/images/junglepark/p14.webp'
   },
   {
     title: 'Waterfall Expedition',
     desc: 'Follow the cascading sound of wilderness and explore beautiful waterfalls hidden deep inside the private rainforest.',
-    img: '/images/junglepark/p18.png'
+    img: '/images/junglepark/p18.webp'
   },
   {
     title: 'Guided Viewpoint Trek',
     desc: 'Trek to scenic peaks and watch the clouds sweep across Wayanad’s highest peaks in a breathtaking panoramic showcase.',
-    img: '/images/junglepark/p13.png'
+    img: '/images/junglepark/p13.webp'
   },
   {
     title: 'Bird Watching Walk',
     desc: 'Join our experienced naturalists for an early morning stroll to spot and identify rare endemic bird species in the canopy.',
-    img: '/images/junglepark/p15.png'
+    img: '/images/junglepark/p15.webp'
   },
   {
     title: 'Campfire & BBQ',
     desc: 'Relax as the sun dips below the mountains. Gather around the warmth of the fire for a premium BBQ session under the stars.',
-    img: '/images/junglepark/p17.png'
+    img: '/images/junglepark/p17.webp'
   }
 ];
 
@@ -172,7 +172,7 @@ export default function JungleParkDetail() {
       <section 
         className="property-hero" 
         ref={heroRef}
-        style={{ backgroundImage: `url('/images/junglepark/p20.png')` }}
+        style={{ backgroundImage: `url('/images/junglepark/p20.webp')` }}
       >
         <div className="property-hero-overlay" />
         <div className="container property-hero-container">
@@ -252,7 +252,7 @@ export default function JungleParkDetail() {
             </div>
             <div className="story-right aos-right">
               <div className="story-image-overlap">
-                <img src="/images/junglepark/p22.png" alt="Jungle Park Resort canopy" className="story-img-main-large" />
+                <img src="/images/junglepark/p22.webp" alt="Jungle Park Resort canopy" className="story-img-main-large" />
                 <div className="story-badge-highlight">
                   <Sparkles size={20} />
                   <span>Award-Winning Rainforest Retreat</span>

@@ -56,7 +56,7 @@ export default function KazakhstanGroupDetail() {
     return (
         <div className="int-detail-page">
             {/* Hero */}
-            <section className="int-hero" style={{ backgroundImage: "url('/images/destinations/kazakhstan.jpg')" }}>
+            <section className="int-hero" style={{ backgroundImage: "url('/images/destinations/kazakhstan.webp')" }}>
                 <div className="int-hero-overlay" />
                 <div className="container">
                     <div className="int-hero-content">
