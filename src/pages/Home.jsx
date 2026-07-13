@@ -304,20 +304,86 @@ const Home = () => {
                         <div className="section-divider" />
                         <p>From dream destinations to luxury rides — we handle every aspect of your travel.</p>
                     </div>
-                    <div className="grid-3">
-                        {services.map((svc, i) => (
-                            <div key={svc.title} className={`service-card aos aos-delay-${i + 1}`}>
-                                <div className="service-icon-wrap" style={{ color: svc.color }}>
-                                    {svc.icon}
-                                    <div className="service-icon-ring" style={{ borderColor: svc.color + '33' }} />
-                                </div>
-                                <h3 className="heading-sm service-card-title">{svc.title}</h3>
-                                <p className="service-card-desc">{svc.desc}</p>
-                                <NavLink to={svc.link} className="service-card-link">
-                                    Explore <ArrowRight size={14} />
-                                </NavLink>
+                    <div className="services-asymmetric-layout">
+                        {/* Featured Service Card: International Tourism */}
+                        <div className="service-card-featured aos">
+                            <div className="service-card-bg-wrap">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1200&q=80" 
+                                    alt="International Tourism" 
+                                    className="service-card-bg" 
+                                    loading="lazy"
+                                />
+                                <div className="service-card-overlay" />
                             </div>
-                        ))}
+                            <div className="service-card-content">
+                                <div className="service-icon-luxury">
+                                    <Globe size={32} strokeWidth={1.2} />
+                                </div>
+                                <div className="service-text-wrap">
+                                    <span className="service-tag">Featured Service</span>
+                                    <h3 className="heading-md service-title">{services[0].title}</h3>
+                                    <p className="service-desc">{services[0].desc}</p>
+                                    <NavLink to={services[0].link} className="service-link-premium">
+                                        <span>Explore Destinations</span>
+                                        <ArrowRight size={16} className="arrow-icon" />
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Supporting Services Column */}
+                        <div className="services-supporting-column">
+                            {/* Card 2: Property Booking */}
+                            <div className="service-card-supporting property-card aos">
+                                <div className="service-card-content">
+                                    <div className="service-icon-luxury">
+                                        <HomeIcon size={28} strokeWidth={1.2} />
+                                    </div>
+                                    <div className="service-text-wrap">
+                                        <h3 className="heading-sm service-title">{services[1].title}</h3>
+                                        <p className="service-desc">{services[1].desc}</p>
+                                        <NavLink to={services[1].link} className="service-link-premium">
+                                            <span>Book a Property</span>
+                                            <ArrowRight size={14} className="arrow-icon" />
+                                        </NavLink>
+                                    </div>
+                                </div>
+                                <div className="service-card-img-wrap">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" 
+                                        alt="Property Booking" 
+                                        className="service-card-img" 
+                                        loading="lazy"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Card 3: Premium Car Rentals */}
+                            <div className="service-card-supporting car-card aos">
+                                <div className="service-card-img-wrap">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" 
+                                        alt="Premium Car Rentals" 
+                                        className="service-card-img" 
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div className="service-card-content">
+                                    <div className="service-icon-luxury">
+                                        <Car size={28} strokeWidth={1.2} />
+                                    </div>
+                                    <div className="service-text-wrap">
+                                        <h3 className="heading-sm service-title">{services[2].title}</h3>
+                                        <p className="service-desc">{services[2].desc}</p>
+                                        <NavLink to={services[2].link} className="service-link-premium">
+                                            <span>Rent Luxury Ride</span>
+                                            <ArrowRight size={14} className="arrow-icon" />
+                                        </NavLink>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
