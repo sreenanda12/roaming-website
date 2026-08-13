@@ -13,6 +13,47 @@ const tabs = [
 ];
 
 const packages = [
+    // ── AFRICA ──────────────────────────────────────────────────────────
+    {
+        id: 1,
+        name: 'Kenya Safari',
+        country: 'Kenya 🇰🇪',
+        price: '₹2,58,000',
+        duration: '6 Nights / 7 Days',
+        rating: 4.8,
+        reviews: 142,
+        tag: 'POPULAR',
+        category: 'Africa',
+        img: '/images/destinations/kenya.webp',
+        highlights: ['Nairobi', 'Amboseli', 'Lake Nakuru', 'Maasai Mara'],
+    },
+    // ── CIS COUNTRIES ────────────────────────────────────────────────────
+    {
+        id: 2,
+        name: 'Armenia Discovery',
+        country: 'Armenia 🇦🇲',
+        price: '₹46,000',
+        duration: '5 Nights / 6 Days',
+        rating: 4.7,
+        reviews: 98,
+        tag: 'NEW',
+        category: 'CIS Countries',
+        img: '/images/destinations/armenia.webp',
+        highlights: ['Yerevan', 'Geghard Monastery', 'Lake Sevan', 'Khor Virap'],
+    },
+    {
+        id: 3,
+        name: 'Azerbaijan Escape',
+        country: 'Azerbaijan 🇦🇿',
+        price: '₹36,000',
+        duration: '6 Nights / 7 Days',
+        rating: 4.7,
+        reviews: 113,
+        tag: 'NEW',
+        category: 'CIS Countries',
+        img: '/images/destinations/azerbaijan.webp',
+        highlights: ['Baku Old City', 'Flame Towers', 'Gobustan', 'Mud Volcanoes'],
+    },
     {
         id: 7,
         name: 'Enchanting Georgia Escape',
@@ -22,6 +63,7 @@ const packages = [
         rating: 4.9,
         reviews: 184,
         tag: 'NEW',
+        category: 'CIS Countries',
         img: '/images/destinations/georgia.webp',
         highlights: ['Tbilisi Tour', 'Mtskheta', 'Kazbegi', 'Wine Tasting', 'Kutaisi', 'Prometheus Cave'],
         isGeorgia: true,
@@ -35,9 +77,180 @@ const packages = [
         rating: 4.8,
         reviews: 216,
         tag: 'POPULAR',
+        category: 'CIS Countries',
         img: '/images/destinations/kazakhstan.webp',
         highlights: ['Charyn Canyon', 'Kolsai Lake', 'Kaindy Lake', 'Shymbulak', 'Koktobe', 'Almarasan Gorge'],
         isKazakhstan: true,
+    },
+    {
+        id: 6,
+        name: 'Uzbekistan Heritage Tour',
+        country: 'Uzbekistan 🇺🇿',
+        price: '₹53,000',
+        duration: '5 Nights / 6 Days',
+        rating: 4.7,
+        reviews: 87,
+        tag: 'NEW',
+        category: 'CIS Countries',
+        img: '/images/destinations/uzbekistan.webp',
+        highlights: ['Samarkand', 'Registan Square', 'Bukhara', 'Khiva'],
+    },
+    // ── EUROPE ───────────────────────────────────────────────────────────
+    {
+        id: 10,
+        name: 'Austria Alpine Escape',
+        country: 'Austria 🇦🇹',
+        price: '₹98,000',
+        duration: '7 Nights / 8 Days',
+        rating: 4.8,
+        reviews: 104,
+        tag: 'POPULAR',
+        category: 'Europe',
+        img: '/images/destinations/austria.webp',
+        highlights: ['Vienna', 'Salzburg', 'Hallstatt', 'Innsbruck'],
+    },
+    {
+        id: 11,
+        name: 'Belgium Highlights',
+        country: 'Belgium 🇧🇪',
+        price: '₹67,000',
+        duration: '5 Nights / 6 Days',
+        rating: 4.6,
+        reviews: 76,
+        tag: 'NEW',
+        category: 'Europe',
+        img: '/images/destinations/belgium.webp',
+        highlights: ['Brussels', 'Bruges', 'Ghent', 'Antwerp'],
+    },
+    {
+        id: 12,
+        name: 'Czech Republic Explorer',
+        country: 'Czech Republic 🇨🇿',
+        price: '₹57,000',
+        duration: '5 Nights / 6 Days',
+        rating: 4.7,
+        reviews: 91,
+        tag: 'POPULAR',
+        category: 'Europe',
+        img: '/images/destinations/czech_republic.webp',
+        highlights: ['Prague', 'Charles Bridge', 'Prague Castle', 'Cesky Krumlov'],
+    },
+    {
+        id: 13,
+        name: 'Denmark City Break',
+        country: 'Denmark 🇩🇰',
+        price: '₹66,000',
+        duration: '4 Nights / 5 Days',
+        rating: 4.6,
+        reviews: 68,
+        tag: 'NEW',
+        category: 'Europe',
+        img: '/images/destinations/denmark.webp',
+        highlights: ['Copenhagen', 'Nyhavn', 'Tivoli Gardens', 'The Little Mermaid'],
+    },
+    {
+        id: 14,
+        name: 'Finland Arctic Adventure',
+        country: 'Finland 🇫🇮',
+        price: '₹2,39,500',
+        duration: '9 Nights / 10 Days',
+        rating: 4.9,
+        reviews: 153,
+        tag: 'POPULAR',
+        category: 'Europe',
+        img: '/images/destinations/finland.webp',
+        highlights: ['Helsinki', 'Ivalo (Igloo)', 'Rovaniemi', 'Northern Lights'],
+    },
+    {
+        id: 15,
+        name: 'France Grand Tour',
+        country: 'France 🇫🇷',
+        price: '₹1,92,000',
+        duration: '11 Nights / 12 Days',
+        rating: 4.9,
+        reviews: 201,
+        tag: 'POPULAR',
+        category: 'Europe',
+        img: '/images/paris_night_4k.webp',
+        highlights: ['Paris', 'Lyon', 'Marseille', 'Nice', 'Eiffel Tower'],
+    },
+    {
+        id: 16,
+        name: 'Hungary City Experience',
+        country: 'Hungary 🇭🇺',
+        price: '₹57,700',
+        duration: '4 Nights / 5 Days',
+        rating: 4.6,
+        reviews: 72,
+        tag: 'NEW',
+        category: 'Europe',
+        img: '/images/destinations/hungary.webp',
+        highlights: ['Budapest', 'Buda Castle', 'Chain Bridge', 'Thermal Baths'],
+    },
+    {
+        id: 17,
+        name: 'Greece Island Escape',
+        country: 'Greece 🇬🇷',
+        price: '₹1,57,335',
+        duration: '7 Nights / 8 Days',
+        rating: 4.9,
+        reviews: 189,
+        tag: 'POPULAR',
+        category: 'Europe',
+        img: '/images/destinations/greece.webp',
+        highlights: ['Athens', 'Mykonos', 'Santorini', 'Acropolis'],
+    },
+    {
+        id: 18,
+        name: 'Italy Grand Journey',
+        country: 'Italy 🇮🇹',
+        price: '₹1,46,000',
+        duration: '9 Nights / 10 Days',
+        rating: 4.9,
+        reviews: 224,
+        tag: 'POPULAR',
+        category: 'Europe',
+        img: '/images/destinations/italy.webp',
+        highlights: ['Milan', 'Venice', 'Florence', 'Rome', 'Colosseum'],
+    },
+    {
+        id: 19,
+        name: 'Netherlands Discovery',
+        country: 'Netherlands 🇳🇱',
+        price: '₹59,000',
+        duration: '4 Nights / 5 Days',
+        rating: 4.7,
+        reviews: 83,
+        tag: 'NEW',
+        category: 'Europe',
+        img: '/images/destinations/netherlands.webp',
+        highlights: ['Amsterdam', 'Keukenhof', 'Windmills', 'Anne Frank House'],
+    },
+    {
+        id: 20,
+        name: 'Norway Fjords Tour',
+        country: 'Norway 🇳🇴',
+        price: '₹89,000',
+        duration: '6 Nights / 7 Days',
+        rating: 4.8,
+        reviews: 117,
+        tag: 'POPULAR',
+        category: 'Europe',
+        img: '/images/destinations/norway.webp',
+        highlights: ['Oslo', 'Bergen', 'Geirangerfjord', 'Northern Lights'],
+    },
+    {
+        id: 21,
+        name: 'Germany Grand Circuit',
+        country: 'Germany 🇩🇪',
+        price: '₹3,40,000',
+        duration: '22 Nights / 23 Days',
+        rating: 4.8,
+        reviews: 145,
+        tag: 'POPULAR',
+        category: 'Europe',
+        img: '/images/destinations/germany.webp',
+        highlights: ['Berlin', 'Hamburg', 'Cologne', 'Munich', 'Dresden', 'Nuremberg'],
     },
 ];
 
@@ -154,6 +367,7 @@ const tagColors = {
 
 export default function Services() {
     const [activeTab, setActiveTab] = useState('tourism');
+    const [activeCat, setActiveCat] = useState('All');
     const navigate = useNavigate();
 
     const handlePropertyClick = (e, prop) => {
@@ -220,17 +434,48 @@ export default function Services() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // General AOS observer — runs once for static elements (headers, filter bar, etc.)
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => entries.forEach((e) => {
                 if (e.isIntersecting) e.target.classList.add('aos-animate');
             }),
-            { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+            { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
         );
         document.querySelectorAll('.aos, .aos-left, .aos-right, .aos-scale')
             .forEach((el) => observer.observe(el));
         return () => observer.disconnect();
     }, []);
+
+    // Re-observe pkg-cards after filter change so newly rendered cards
+    // get aos-animate added (they start at opacity:0 from .aos-scale CSS).
+    useEffect(() => {
+        // Use rAF to wait for React to flush the DOM with new cards.
+        const raf = requestAnimationFrame(() => {
+            const cardObserver = new IntersectionObserver(
+                (entries) => entries.forEach((e) => {
+                    if (e.isIntersecting) e.target.classList.add('aos-animate');
+                }),
+                { threshold: 0, rootMargin: '0px 0px 0px 0px' }
+            );
+            document.querySelectorAll('.pkg-card')
+                .forEach((el) => {
+                    // If already animated, skip (keeps existing visible cards stable)
+                    if (!el.classList.contains('aos-animate')) {
+                        cardObserver.observe(el);
+                    }
+                });
+            // Also immediately animate any card that is already in viewport
+            document.querySelectorAll('.pkg-card').forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.classList.add('aos-animate');
+                }
+            });
+            return () => cardObserver.disconnect();
+        });
+        return () => cancelAnimationFrame(raf);
+    }, [activeCat]);
 
     return (
         <div className="services-page">
@@ -278,15 +523,32 @@ export default function Services() {
                         <div className="section-badge">🌍 Signature International Experiences</div>
                         <h2 className="heading-lg">International Tourism Packages</h2>
                         <div className="section-divider" />
-                        <p>
-                            Discover extraordinary journeys across breathtaking landscapes, rich cultures, and unforgettable adventures with our handpicked international tour packages.
+                        <p className="pkg-subtitle-main">Explore the World &bull; Discover New Experiences &bull; Create Unforgettable Memories</p>
+                        <p className="pkg-subtitle-sub">
+                            Discover extraordinary journeys across breathtaking destinations with our handpicked international travel packages.
                         </p>
                     </div>
+
+                    {/* ── Category Filter ── */}
+                    <div className="pkg-filter-bar aos">
+                        {['All', 'Africa', 'CIS Countries', 'Europe'].map((cat) => (
+                            <button
+                                key={cat}
+                                className={`pkg-filter-btn${activeCat === cat ? ' pkg-filter-active' : ''}`}
+                                onClick={() => setActiveCat(cat)}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+
                     <div className="packages-grid">
-                        {packages.map((pkg, i) => (
-                            <div 
-                                key={pkg.id} 
-                                className={`pkg-card aos aos-scale aos-delay-${(i % 3) + 1}`}
+                        {packages
+                            .filter((pkg) => activeCat === 'All' || pkg.category === activeCat)
+                            .map((pkg, i) => (
+                            <div
+                                key={pkg.id}
+                                className={`pkg-card aos aos-scale aos-delay-${(i % 4) + 1}`}
                                 onClick={(e) => handleCardClick(e, pkg)}
                                 style={{ cursor: pkg.isGeorgia ? 'pointer' : 'default' }}
                             >
@@ -318,8 +580,6 @@ export default function Services() {
                                     </div>
                                     <h3 className="pkg-name">{pkg.name}</h3>
 
-
-
                                     <div className="pkg-highlights">
                                         {pkg.highlights.map((h) => (
                                             <span key={h} className="pkg-highlight-tag">{h}</span>
@@ -339,6 +599,16 @@ export default function Services() {
                                                 <NavLink to="/international/kazakhstan-group" target="_blank" className="btn-outline-green" style={{ padding: '9px 14px', fontSize: '0.82rem', justifyContent: 'center', fontWeight: '700', borderColor: 'var(--forest-600)', color: 'var(--forest-600)', background: 'transparent' }}>
                                                     Kazakhstan 4 Adult + 3 Kids
                                                 </NavLink>
+                                                <a
+                                                    href={`https://wa.me/917204370369?text=${encodeURIComponent('Hello, I am interested in the Majestic Kazakhstan Adventure international tourism package. Could you please share more details?')}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="pkg-wa-standalone-btn"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                >
+                                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style={{ flexShrink: 0 }}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                                    ENQUIRE ON WHATSAPP
+                                                </a>
                                             </div>
                                         </div>
                                     ) : pkg.isGeorgia ? (
@@ -357,17 +627,33 @@ export default function Services() {
                                                     View Details
                                                 </NavLink>
                                             </div>
+                                            <a
+                                                href={`https://wa.me/917204370369?text=${encodeURIComponent('Hello, I am interested in the Enchanting Georgia Escape international tourism package. Could you please share more details?')}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="pkg-wa-standalone-btn"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style={{ flexShrink: 0 }}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                                ENQUIRE ON WHATSAPP
+                                            </a>
                                         </div>
                                     ) : (
-                                        <div className="pkg-footer">
+                                        <div className="pkg-footer pkg-footer-wa">
                                             <div>
                                                 <div className="pkg-from">Starting from</div>
                                                 <div className="pkg-price">{pkg.price}</div>
                                             </div>
-                                            <NavLink to="/contact" className="btn-primary pkg-book-btn">
-                                                <span>Book Now</span>
+                                            <a
+                                                href={`https://wa.me/917204370369?text=${encodeURIComponent(`Hello, I am interested in the ${pkg.name} international tourism package. Could you please share more details?`)}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn-primary pkg-book-btn pkg-wa-btn"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <span>ENQUIRE ON WHATSAPP</span>
                                                 <ArrowRight size={14} />
-                                            </NavLink>
+                                            </a>
                                         </div>
                                     )}
                                 </div>

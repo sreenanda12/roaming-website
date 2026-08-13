@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
     Globe, Car, Home as HomeIcon, ArrowRight, Star, MapPin,
@@ -72,17 +72,17 @@ const Home = () => {
     const navigate = useNavigate();
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const galleryItems = destinationsData.map(dest => ({
+    const galleryItems = useMemo(() => destinationsData.map(dest => ({
         image: dest.titleImage,
         text: dest.name
-    }));
+    })), []);
 
-    const handleItemClick = (index) => {
+    const handleItemClick = useCallback((index) => {
         const dest = destinationsData[index];
         if (dest) {
             navigate(`/destinations/${dest.id}`);
         }
-    };
+    }, [navigate]);
 
     const ctaRef = useRef(null);
     const photosRef = useRef([]);

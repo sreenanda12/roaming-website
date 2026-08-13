@@ -370,11 +370,30 @@ class Media {
         this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
       }
     }
-    this.scale = this.screen.height / 1500;
-    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
-    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
+    
+    // Determine the width fraction of the WebGL viewport the card should occupy
+    let widthFraction = 0.22; // Desktop (>1024px)
+    if (this.screen && this.screen.width) {
+      const sw = this.screen.width;
+      if (sw <= 480) {
+        widthFraction = 0.65; // Mobile
+      } else if (sw <= 768) {
+        widthFraction = 0.32; // Tablet
+      } else if (sw <= 1024) {
+        widthFraction = 0.25; // Laptop/Large tablet
+      }
+    }
+
+    // Keep aspect ratio 7:9
+    const cardWidth = this.viewport.width * widthFraction;
+    const cardHeight = cardWidth * (9 / 7);
+
+    this.plane.scale.x = cardWidth;
+    this.plane.scale.y = cardHeight;
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
-    this.padding = 2;
+    
+    // Gap scales down with card width (~25% of card width)
+    this.padding = this.plane.scale.x * 0.25;
     this.width = this.plane.scale.x + this.padding;
     this.widthTotal = this.width * this.length;
     this.x = this.width * this.index;
@@ -394,6 +413,7 @@ class App {
       scrollEase = 0.05
     } = {}
   ) {
+    console.log("[CircularGallery] WebGL App Initialized");
     document.documentElement.classList.remove('no-js');
     this.container = container;
     this.scrollSpeed = scrollSpeed;
@@ -648,6 +668,7 @@ class App {
     }
   }
   destroy() {
+    console.log("[CircularGallery] WebGL App Destroyed");
     window.cancelAnimationFrame(this.raf);
     window.removeEventListener('resize', this.boundOnResize);
     
@@ -684,6 +705,19 @@ export default function CircularGallery({
   onActiveIndexChange
 }) {
   const containerRef = useRef(null);
+  
+  // Store the latest callbacks in refs to avoid restarting the WebGL application on every change
+  const onItemClickRef = useRef(onItemClick);
+  const onActiveIndexChangeRef = useRef(onActiveIndexChange);
+
+  useEffect(() => {
+    onItemClickRef.current = onItemClick;
+  }, [onItemClick]);
+
+  useEffect(() => {
+    onActiveIndexChangeRef.current = onActiveIndexChange;
+  }, [onActiveIndexChange]);
+
   useEffect(() => {
     if (!containerRef.current) return;
     let app;
@@ -699,15 +733,19 @@ export default function CircularGallery({
         scrollSpeed,
         scrollEase
       });
-      app.onItemClick = onItemClick;
-      app.onActiveIndexChange = onActiveIndexChange;
+      app.onItemClick = (index) => {
+        if (onItemClickRef.current) onItemClickRef.current(index);
+      };
+      app.onActiveIndexChange = (index) => {
+        if (onActiveIndexChangeRef.current) onActiveIndexChangeRef.current(index);
+      };
     });
 
     return () => {
       isMounted = false;
       if (app) app.destroy();
     };
-  }, [items, bend, textColor, borderRadius, font, fontUrl, scrollSpeed, scrollEase, onItemClick, onActiveIndexChange]);
+  }, [items, bend, textColor, borderRadius, font, fontUrl, scrollSpeed, scrollEase]);
   return (
     <div
       className="circular-gallery"
