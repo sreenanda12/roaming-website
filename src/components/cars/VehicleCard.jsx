@@ -77,7 +77,7 @@ export default function VehicleCard({ vehicle, index = 0 }) {
         )}
 
         {/* Dot indicators (always show if multiple or just use preview if 1, but we have 1 image per car now) */}
-        {hasMultiple ? (
+        {hasMultiple && (
           <div className="vc-dots">
             {vehicle.images.map((_, i) => (
               <button
@@ -87,14 +87,6 @@ export default function VehicleCard({ vehicle, index = 0 }) {
                 aria-label={`Image ${i + 1}`}
               />
             ))}
-          </div>
-        ) : (
-          <div className="vc-dots">
-             <button className="vc-dot vc-dot-active" />
-             <button className="vc-dot" />
-             <button className="vc-dot" />
-             <button className="vc-dot" />
-             <button className="vc-dot" />
           </div>
         )}
 
