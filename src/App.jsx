@@ -14,9 +14,11 @@ import KazakhstanGroupDetail from './pages/KazakhstanGroupDetail';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
 import destinationsData from './data/destinationsData';
+import { carsBySlug } from './data/carsData';
 import PropertyDetail from './pages/PropertyDetail';
 import OldKentDetail from './pages/OldKentDetail';
 import JungleParkDetail from './pages/JungleParkDetail';
+import VehicleDetail from './pages/VehicleDetail';
 import WhatsAppButton from './components/WhatsAppButton';
 import './App.css';
 
@@ -414,6 +416,40 @@ const PageTitleHandler = () => {
                 ]
             };
         }
+    } else if (path.startsWith('/services/car-rentals/')) {
+        const slug = path.split('/').pop();
+        const car = carsBySlug[slug];
+        if (car) {
+            seo = {
+                title: `${car.name} Rental | Roaming Directions`,
+                description: `Rent the ${car.year} ${car.name} starting at ₹${car.price8Plus.toLocaleString('en-IN')}/day. Premium ${car.category} rental by Roaming Directions.`,
+                keywords: `${car.name} rental, rent ${car.name}, premium car rental, ${car.category} rental`,
+                canonical: `https://www.roamingdirections.com/services/car-rentals/${slug}`,
+                ogImage: car.images[0],
+                schema: [
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "WebPage",
+                    "@id": `https://www.roamingdirections.com/services/car-rentals/${slug}#webpage`,
+                    "url": `https://www.roamingdirections.com/services/car-rentals/${slug}`,
+                    "name": `${car.name} Rental | Roaming Directions`,
+                    "isPartOf": { "@id": "https://www.roamingdirections.com/#website" },
+                    "breadcrumb": { "@id": `https://www.roamingdirections.com/services/car-rentals/${slug}#breadcrumb` }
+                  },
+                  {
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "@id": `https://www.roamingdirections.com/services/car-rentals/${slug}#breadcrumb`,
+                    "itemListElement": [
+                      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.roamingdirections.com/" },
+                      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.roamingdirections.com/services" },
+                      { "@type": "ListItem", "position": 3, "name": "Car Rentals", "item": "https://www.roamingdirections.com/services" },
+                      { "@type": "ListItem", "position": 4, "name": car.name, "item": `https://www.roamingdirections.com/services/car-rentals/${slug}` }
+                    ]
+                  }
+                ]
+            };
+        }
     }
 
     if (seo) {
@@ -518,6 +554,7 @@ function App() {
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/destinations/:id" element={<DestinationDetail />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/car-rentals/:slug" element={<VehicleDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/international/georgia" element={<GeorgiaDetail />} />
             <Route path="/international/kazakhstan-family" element={<KazakhstanFamilyDetail />} />

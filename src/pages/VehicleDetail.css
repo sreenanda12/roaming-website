@@ -1,0 +1,1043 @@
+/* VehicleDetail.css — Premium vehicle detail page for Roaming Directions */
+
+.vehicle-detail-page {
+  background: var(--beige-100);
+  min-height: 100vh;
+  padding-bottom: 120px; /* space for mobile sticky CTA */
+}
+
+/* ── Not Found ── */
+.vd-not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+/* ── Breadcrumb ── */
+.vd-breadcrumb-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--beige-200);
+  padding: 12px 0;
+}
+
+.vd-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.vd-bc-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.2s;
+  opacity: 0.7;
+}
+
+.vd-bc-link:hover {
+  color: var(--forest-600);
+  opacity: 1;
+}
+
+.vd-bc-sep {
+  color: var(--beige-300);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.vd-bc-current {
+  font-size: 0.8rem;
+  color: var(--forest-600);
+  font-weight: 600;
+}
+
+/* ── Title Row ── */
+.vd-hero-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.vd-category-pill {
+  display: inline-block;
+  background: var(--forest-800);
+  color: var(--gold-400);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.vd-vehicle-name {
+  color: var(--forest-800);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.vd-vehicle-sub {
+  font-size: 0.9rem;
+  color: var(--earth-400);
+  font-weight: 500;
+}
+
+/* Share button */
+.vd-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 1.5px solid var(--beige-300);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.vd-share-btn:hover {
+  border-color: var(--forest-600);
+  color: var(--forest-600);
+}
+
+/* ── Main Two-Column Layout ── */
+.vd-main-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 36px;
+  align-items: start;
+  padding-bottom: 60px;
+}
+
+/* ── Left Column ── */
+.vd-left {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* ── Gallery ── */
+.vd-gallery {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 12px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.vd-gallery-main {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.vd-gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vd-gallery-main:hover .vd-gallery-main-img {
+  transform: scale(1.02);
+}
+
+.vd-gallery-prev,
+.vd-gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.25s ease, background 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.vd-gallery-prev { left: 14px; }
+.vd-gallery-next { right: 14px; }
+
+.vd-gallery-main:hover .vd-gallery-prev,
+.vd-gallery-main:hover .vd-gallery-next {
+  opacity: 1;
+}
+
+.vd-gallery-prev:hover,
+.vd-gallery-next:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.vd-show-all-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.vd-show-all-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Thumbnails column */
+.vd-gallery-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vd-gallery-thumb {
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.vd-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  opacity: 0.75;
+}
+
+.vd-gallery-thumb:hover img,
+.vd-thumb-active img {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+.vd-thumb-active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--gold-400);
+  pointer-events: none;
+}
+
+/* Gallery dots */
+.vd-gallery-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  padding: 8px 0 0;
+}
+
+.vd-gallery-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--beige-300);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.vd-gallery-dot-active {
+  background: var(--forest-600);
+  transform: scale(1.3);
+}
+
+/* ── Specs Bar ── */
+.vd-specs-bar,
+.vd-description,
+.vd-features {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.vd-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--forest-800);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--beige-200);
+}
+
+.vd-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 12px;
+}
+
+.vd-spec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.vd-spec-icon {
+  color: var(--forest-600);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.vd-spec-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 3px;
+}
+
+.vd-spec-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--forest-800);
+}
+
+/* Description */
+.vd-description-text {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Features */
+.vd-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.vd-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.vd-feature-check {
+  color: var(--forest-600);
+  flex-shrink: 0;
+}
+
+/* ── Right: Rental Configurator ── */
+.vd-right {
+  position: sticky;
+  top: 100px;
+}
+
+.vd-configurator {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--beige-200);
+}
+
+.vd-config-heading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--forest-800);
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--beige-200);
+}
+
+/* Config price */
+.vd-config-price-wrap {
+  margin-bottom: 24px;
+}
+
+.vd-config-price {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--forest-700);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.vd-config-price-unit {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--earth-400);
+}
+
+.vd-config-price-alt {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* Config fields */
+.vd-config-field {
+  margin-bottom: 18px;
+}
+
+.vd-config-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.vd-config-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--beige-300);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--forest-800);
+  background: var(--beige-100);
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.vd-config-input:focus {
+  outline: none;
+  border-color: var(--forest-500);
+}
+
+.vd-config-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mileage */
+.vd-mileage-options {
+  display: flex;
+  gap: 8px;
+}
+
+.vd-mileage-btn {
+  flex: 1;
+  padding: 10px 8px;
+  border: 1.5px solid var(--beige-300);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--beige-100);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.vd-mileage-btn:hover {
+  border-color: var(--forest-500);
+  color: var(--forest-600);
+}
+
+.vd-mileage-active {
+  background: var(--forest-700) !important;
+  border-color: var(--forest-700) !important;
+  color: var(--white) !important;
+}
+
+/* Add-ons */
+.vd-addons {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.vd-addon-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1.5px solid var(--beige-300);
+  border-radius: var(--radius-sm);
+  font-size: 0.83rem;
+  font-weight: 500;
+  background: var(--beige-100);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.vd-addon-btn:hover {
+  border-color: var(--forest-500);
+  color: var(--forest-600);
+}
+
+.vd-addon-active {
+  background: rgba(25, 53, 28, 0.06);
+  border-color: var(--forest-600);
+  color: var(--forest-700);
+  font-weight: 600;
+}
+
+.vd-addon-active svg {
+  color: var(--forest-600);
+  flex-shrink: 0;
+}
+
+/* Price breakdown */
+.vd-price-breakdown {
+  background: var(--beige-100);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 1px solid var(--beige-200);
+}
+
+.vd-breakdown-row {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.vd-breakdown-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--forest-700);
+  padding-top: 10px;
+  border-top: 1px solid var(--beige-300);
+}
+
+/* WhatsApp CTA button */
+.vd-wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 14px 20px;
+  background: #19351c;
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.vd-wa-btn:hover {
+  background: #0d2c14;
+  transform: translateY(-1px);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.vd-contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--forest-600);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.vd-contact-link:hover {
+  color: var(--forest-800);
+}
+
+/* ── Similar Cars ── */
+.vd-similar-section {
+  padding: 60px 0 0;
+}
+
+.vd-similar-header {
+  margin-bottom: 36px;
+}
+
+.vd-similar-heading {
+  color: var(--forest-800);
+  margin-bottom: 8px;
+}
+
+.vd-similar-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.vd-similar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.vd-similar-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vd-similar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.vd-similar-card:focus-visible {
+  outline: 2px solid var(--forest-600);
+  outline-offset: 2px;
+}
+
+.vd-similar-img-wrap {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.vd-similar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.vd-similar-card:hover .vd-similar-img {
+  transform: scale(1.04);
+}
+
+.vd-similar-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--forest-800);
+  color: var(--gold-400);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.vd-similar-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 31, 14, 0.3) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.vd-similar-body {
+  padding: 14px 16px 16px;
+}
+
+.vd-similar-meta {
+  font-size: 0.73rem;
+  color: var(--earth-400);
+  margin-bottom: 4px;
+}
+
+.vd-similar-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--forest-800);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.vd-similar-price {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--forest-700);
+  margin-bottom: 10px;
+}
+
+.vd-similar-price span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--earth-400);
+}
+
+.vd-similar-cta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--forest-600);
+  transition: gap 0.2s ease;
+}
+
+.vd-similar-card:hover .vd-similar-cta {
+  gap: 8px;
+}
+
+/* ── Contact CTA ── */
+.vd-contact-cta {
+  background: var(--white);
+  margin-top: 60px;
+  padding: 60px 0;
+  border-top: 1px solid var(--beige-200);
+  border-bottom: 1px solid var(--beige-200);
+}
+
+.vd-contact-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.vd-cta-heading {
+  color: var(--forest-800);
+  margin-bottom: 8px;
+}
+
+.vd-cta-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.vd-cta-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.vd-wa-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  background: #19351c;
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.vd-wa-btn-outline:hover {
+  background: #0d2c14;
+  transform: translateY(-1px);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* ── Lightbox ── */
+.vd-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 12, 8, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vd-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.vd-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.vd-lightbox-prev,
+.vd-lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.2s;
+}
+
+.vd-lightbox-prev { left: 20px; }
+.vd-lightbox-next { right: 20px; }
+.vd-lightbox-prev:hover,
+.vd-lightbox-next:hover { background: rgba(255, 255, 255, 0.24); }
+
+.vd-lightbox-img-wrap {
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
+.vd-lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+.vd-lightbox-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.vd-lightbox-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.vd-lightbox-dot.active {
+  background: var(--gold-400);
+  transform: scale(1.3);
+}
+
+/* ── Mobile Sticky CTA ── */
+.vd-mobile-sticky {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--beige-200);
+  padding: 12px 20px;
+  z-index: 200;
+  gap: 14px;
+  align-items: center;
+  box-shadow: 0 -8px 24px rgba(25, 53, 28, 0.1);
+}
+
+.vd-mobile-sticky-price {
+  flex-shrink: 0;
+}
+
+.vd-ms-price {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--forest-700);
+}
+
+.vd-ms-unit {
+  font-size: 0.8rem;
+  color: var(--earth-400);
+}
+
+.vd-ms-wa-btn {
+  flex: 1;
+  margin-bottom: 0;
+  padding: 11px 14px;
+  font-size: 0.78rem;
+}
+
+/* AOS on vehicle detail page */
+.vd-aos {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.vd-aos.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .vd-main-layout {
+    grid-template-columns: 1fr 340px;
+    gap: 28px;
+  }
+
+  .vd-similar-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .vd-main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .vd-right {
+    position: static;
+    order: 2;
+  }
+
+  .vd-left {
+    order: 1;
+  }
+
+  .vd-gallery {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .vd-gallery-main {
+    height: 300px;
+  }
+
+  .vd-gallery-thumbs {
+    flex-direction: row;
+    height: 100px;
+  }
+
+  .vd-gallery-thumb {
+    flex: 1;
+  }
+
+  .vd-similar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .vd-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vd-mobile-sticky {
+    display: flex;
+  }
+
+  .vd-configurator {
+    display: none; /* Hidden on mobile — replaced by sticky bar */
+  }
+
+  .vehicle-detail-page {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vd-hero-title {
+    padding-top: 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .vd-gallery-main {
+    height: 240px;
+  }
+
+  .vd-gallery-thumbs {
+    height: 80px;
+  }
+
+  .vd-similar-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .vd-similar-img-wrap {
+    height: 130px;
+  }
+
+  .vd-contact-cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vd-cta-btns {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .vd-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .vd-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vd-specs-bar,
+  .vd-description,
+  .vd-features {
+    padding: 20px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .vd-aos,
+  .vd-gallery-main-img,
+  .vd-similar-img,
+  .vd-wa-btn,
+  .vd-wa-btn-outline,
+  .vd-similar-card {
+    transition: none !important;
+    animation: none !important;
+  }
+}

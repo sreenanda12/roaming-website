@@ -5,6 +5,7 @@ import {
     Clock, Users, Wifi, Coffee, Zap, Shield
 } from 'lucide-react';
 import './Services.css';
+import CarRentalSection from '../components/cars/CarRentalSection';
 
 const tabs = [
     { id: 'tourism', label: 'International Tourism', icon: <Globe size={18} /> },
@@ -254,48 +255,7 @@ const packages = [
     },
 ];
 
-const cars = [
-    {
-        id: 1,
-        name: 'Mercedes-Benz E-Class',
-        type: 'Luxury Sedan',
-        price: '₹4,999/day',
-        capacity: '4 Persons',
-        features: ['AC', 'GPS', 'WiFi', 'Chauffeur'],
-        img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80',
-        tag: 'Luxury',
-    },
-    {
-        id: 2,
-        name: 'Toyota Fortuner',
-        type: 'SUV / Family',
-        price: '₹3,499/day',
-        capacity: '7 Persons',
-        features: ['AC', 'GPS', 'Spacious', 'Roof Rack'],
-        img: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80',
-        tag: 'Family',
-    },
-    {
-        id: 3,
-        name: 'Hyundai Creta',
-        type: 'Self Drive',
-        price: '₹1,799/day',
-        capacity: '5 Persons',
-        features: ['AC', 'Fuel Efficient', 'Easy Drive', 'Music'],
-        img: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80',
-        tag: 'Self Drive',
-    },
-    {
-        id: 4,
-        name: 'Airport Shuttle',
-        type: 'Transfer Service',
-        price: '₹999/trip',
-        capacity: '8 Persons',
-        features: ['Punctual', 'AC', 'Meet & Greet', 'Fixed Price'],
-        img: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600&q=80',
-        tag: 'Transfer',
-    },
-];
+
 
 const properties = [
     {
@@ -666,51 +626,7 @@ export default function Services() {
             {/* ===== CARS ===== */}
             <section id="cars" className="section content-section scroll-section">
                 <div className="container">
-                    <div className="section-header aos">
-                        <div className="section-badge">Fleet</div>
-                        <h2 className="heading-lg">Premium Car Rentals</h2>
-                        <div className="section-divider" />
-                        <p>
-                            Airport pickups, luxury chauffeur rides, family SUVs, and self-drive options.
-                            Every car serviced to the highest standard.
-                        </p>
-                    </div>
-                    <div className="cars-grid">
-                        {cars.map((car, i) => (
-                            <div key={car.id} className={`car-card aos aos-scale aos-delay-${(i % 2) + 1}`}>
-                                <div className="car-img-wrap">
-                                    <img src={car.img} alt={car.name} className="car-img" loading="lazy" />
-                                    <div
-                                        className="car-tag"
-                                        style={{ background: tagColors[car.tag] || '#19351c' }}
-                                    >
-                                        {car.tag}
-                                    </div>
-                                </div>
-                                <div className="car-body">
-                                    <div className="car-type">{car.type}</div>
-                                    <h3 className="car-name">{car.name}</h3>
-                                    <div className="car-features">
-                                        {car.features.map((f) => (
-                                            <span key={f} className="car-feature">{f}</span>
-                                        ))}
-                                    </div>
-                                    <div className="car-footer">
-                                        <div className="car-capacity">
-                                            <Users size={15} />
-                                            <span>{car.capacity}</span>
-                                        </div>
-                                        <div className="car-price-wrap">
-                                            <div className="car-price">{car.price}</div>
-                                            <NavLink to="/contact" className="btn-primary car-book-btn">
-                                                Book <ArrowRight size={13} />
-                                            </NavLink>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <CarRentalSection />
                 </div>
             </section>
 
