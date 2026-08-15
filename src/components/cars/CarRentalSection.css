@@ -3,6 +3,8 @@
 /* ── Fleet Introduction ── */
 .car-rental-section {
   width: 100%;
+  background-color: #F5F1E8;
+  padding: 60px 0;
 }
 
 .fleet-intro {
@@ -26,7 +28,7 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold-400);
+  color: #C9A86A;
   white-space: nowrap;
 }
 
@@ -34,12 +36,12 @@
   flex: 1;
   max-width: 160px;
   height: 1px;
-  background: linear-gradient(90deg, var(--gold-400), transparent);
+  background: linear-gradient(90deg, #C9A86A, transparent);
   display: block;
 }
 
 .fleet-heading {
-  color: var(--forest-800);
+  color: #143D2B;
   margin-bottom: 10px;
 }
 
@@ -74,7 +76,7 @@
 }
 
 .fleet-stats-sep {
-  color: var(--gold-400);
+  color: #C9A86A;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1;
@@ -85,35 +87,33 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 40px;
+  gap: 12px;
+  margin: 0 auto 40px;
+  padding: 6px;
+  width: fit-content;
 }
 
 .fleet-filter-btn {
-  background: var(--white);
-  border: 1.5px solid var(--beige-300);
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  padding: 8px 20px;
+  background: white;
+  color: #143D2B;
+  border: 1px solid #D8D0C0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 40px;
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.25s ease;
-  text-transform: uppercase;
   line-height: 1;
 }
 
 .fleet-filter-btn:hover {
-  border-color: var(--forest-600);
-  color: var(--forest-700);
+  background: #f9f9f9;
 }
 
 .fleet-filter-btn.fleet-filter-active {
-  background: var(--forest-700);
-  border-color: var(--forest-700);
-  color: var(--white);
-  box-shadow: 0 4px 16px rgba(25, 53, 28, 0.2);
+  background: linear-gradient(135deg, #143D2B, #1F4D36);
+  color: white;
+  border: 1px solid transparent;
 }
 
 /* ── Vehicle Grid ── */

@@ -422,7 +422,7 @@ const PageTitleHandler = () => {
         if (car) {
             seo = {
                 title: `${car.name} Rental | Roaming Directions`,
-                description: `Rent the ${car.year} ${car.name} starting at ₹${car.price8Plus.toLocaleString('en-IN')}/day. Premium ${car.category} rental by Roaming Directions.`,
+                description: `Rent the ${car.year} ${car.name} starting at ${car.price8Plus}$/day. Premium ${car.category} rental by Roaming Directions.`,
                 keywords: `${car.name} rental, rent ${car.name}, premium car rental, ${car.category} rental`,
                 canonical: `https://www.roamingdirections.com/services/car-rentals/${slug}`,
                 ogImage: car.images[0],

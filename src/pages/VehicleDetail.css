@@ -4,6 +4,7 @@
   background: var(--beige-100);
   min-height: 100vh;
   padding-bottom: 120px; /* space for mobile sticky CTA */
+  padding-top: 100px;
 }
 
 /* ── Not Found ── */
@@ -141,6 +142,10 @@
   overflow: hidden;
   background: var(--white);
   box-shadow: var(--shadow-sm);
+}
+
+.vd-gallery.single-image {
+  grid-template-columns: 1fr;
 }
 
 .vd-gallery-main {

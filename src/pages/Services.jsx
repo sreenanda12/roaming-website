@@ -466,7 +466,7 @@ export default function Services() {
                                 <span className="tab-label">
                                     <span className="desktop-only">{tab.label}</span>
                                     <span className="mobile-only">
-                                        {tab.id === 'tourism' ? 'Tourism' : tab.id === 'property' ? 'Property' : tab.label}
+                                        {tab.id === 'tourism' ? 'Tourism' : tab.id === 'cars' ? 'Cars' : tab.id === 'property' ? 'Property' : tab.label}
                                     </span>
                                 </span>
                             </button>

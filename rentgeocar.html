@@ -1,0 +1,2907 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark" data-rental-day-units='{"one":"day","few":"days","many":"days"}'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" href="/static/logo.png" type="image/png">
+    <meta name="csrf-token" content="DWkPmHzjX9wQh6k1qDQw6PJ2XqSu1rqHtEJS9CjV">
+        <title></title>    <meta name="description" content="Rent luxury cars in Batumi: BMW M5, Lamborghini Urus, Mercedes G63, Audi RS6. Airport delivery, insurance included, premium service.">
+<link rel="canonical" href="https://rentgeocar.com/cars">
+<meta property="og:type" content="website">
+    <meta property="og:site_name" content="RGCAR">
+<meta property="og:title" content="Rent Geo Cars">
+    <meta property="og:description" content="Rent luxury cars in Batumi: BMW M5, Lamborghini Urus, Mercedes G63, Audi RS6. Airport delivery, insurance included, premium service.">
+<meta property="og:url" content="https://rentgeocar.com/cars">
+    <meta property="og:image" content="https://rentgeocar.com/storage/page-settings/seo/hDd84ZcQhUvGEfFjuSwx3sBwfNcDlUMWIMjOm38f.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rent Geo Cars">
+    <meta name="twitter:description" content="Rent luxury cars in Batumi: BMW M5, Lamborghini Urus, Mercedes G63, Audi RS6. Airport delivery, insurance included, premium service.">
+    <meta name="twitter:image" content="https://rentgeocar.com/storage/page-settings/seo/hDd84ZcQhUvGEfFjuSwx3sBwfNcDlUMWIMjOm38f.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RGCARS","url":"https://rentgeocar.com","logo":"/static/logo.png","email":"gtcarsgtcars136@gmail.com","telephone":"+995 557 591 963","address":"Tbilisi, Vaso Godziashvili St., 1"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"RGCARS","url":"https://rentgeocar.com"}</script>
+                    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://rentgeocar.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M4KP3LC2');
+    </script>
+    <!-- End Google Tag Manager -->
+                <!-- Google tag (gtag.js) -->
+    <script async src="https://rentgeocar.com/gtag/js?id=G-JSFLYD1GSM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-JSFLYD1GSM');
+    </script>
+        
+    <script>
+        (function () {
+            try {
+                document.documentElement.classList.add('dark');
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="preload" href="/fonts/lexend/lexend-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-woff2/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/roboto/roboto-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+            <script>
+            (function () {
+                if (typeof window.handleCustomButtonEvent === 'function') {
+                    return;
+                }
+                window.handleCustomButtonEvent = function (event) {
+                    const el = event.currentTarget;
+                    const type = el.getAttribute('data-event');
+                    if (!type) {
+                        return;
+                    }
+                    let detail = {};
+                    try {
+                        detail = JSON.parse(el.getAttribute('data-event-data') || '{}');
+                    } catch (e) {
+                        console.warn(e);
+                    }
+                    window.dispatchEvent(new CustomEvent(type, { detail: detail }));
+                };
+            })();
+        </script>
+            <script>
+            (function () {
+                if (typeof window.carGallerySlider === 'function') {
+                    return;
+                }
+                window.carGallerySlider = function (options) {
+                    options = options || {};
+                    const prioritizeFirst = !!options.prioritizeFirst;
+                    return {
+                        slide: 0,
+                        slides: options.slides || [],
+                        suppressCardNavEnabled: !!options.suppressCardNav,
+                        prioritizeFirst,
+                        inView: prioritizeFirst,
+                        loadedSlides: prioritizeFirst ? [0] : [],
+                        touchStartX: null,
+                        touchStartY: null,
+                        initVisibility() {
+                            if (this.prioritizeFirst) {
+                                return;
+                            }
+                            if (typeof IntersectionObserver === 'undefined') {
+                                this.inView = true;
+                                this.loadSlide(0);
+                                return;
+                            }
+                            const observer = new IntersectionObserver((entries) => {
+                                if (entries[0]?.isIntersecting) {
+                                    this.inView = true;
+                                    this.loadSlide(0);
+                                    observer.disconnect();
+                                }
+                            }, { rootMargin: '200px' });
+                            observer.observe(this.$el);
+                        },
+                        slideSrc(i) {
+                            if (!this.inView || !this.loadedSlides.includes(i)) {
+                                return undefined;
+                            }
+                            const slide = this.slides[i];
+                            return slide ? slide.url : undefined;
+                        },
+                        loadSlide(i) {
+                            if (!this.loadedSlides.includes(i)) {
+                                this.loadedSlides.push(i);
+                            }
+                        },
+                        dotActive(i) {
+                            const n = this.slides.length;
+                            if (n <= 5) {
+                                return this.slide === i;
+                            }
+                            return i === Math.min(this.slide, 4);
+                        },
+                        suppressCardNav() {
+                            if (!this.suppressCardNavEnabled) {
+                                return;
+                            }
+                            const art = this.$el.closest('article');
+                            if (!art) {
+                                return;
+                            }
+                            art.dataset.suppressNextNav = '1';
+                            window.setTimeout(() => {
+                                delete art.dataset.suppressNextNav;
+                            }, 450);
+                        },
+                        goTo(i) {
+                            if (this.suppressCardNavEnabled) {
+                                this.suppressCardNav();
+                            }
+                            this.slide = i;
+                            this.loadSlide(i);
+                        },
+                        prev() {
+                            this.suppressCardNav();
+                            this.slide = (this.slide - 1 + this.slides.length) % this.slides.length;
+                            this.loadSlide(this.slide);
+                        },
+                        next() {
+                            this.suppressCardNav();
+                            this.slide = (this.slide + 1) % this.slides.length;
+                            this.loadSlide(this.slide);
+                        },
+                        openLightbox(index) {
+                            const i = index != null ? Number(index) : 0;
+                            window.dispatchEvent(new CustomEvent('open-car-gallery', {
+                                detail: { index: Number.isFinite(i) ? i : 0 },
+                            }));
+                        },
+                        onGalleryTouchStart(e) {
+                            if (!e.touches || e.touches.length !== 1) {
+                                return;
+                            }
+                            this.touchStartX = e.touches[0].clientX;
+                            this.touchStartY = e.touches[0].clientY;
+                        },
+                        onGalleryTouchEnd(e) {
+                            if (this.touchStartX == null) {
+                                return;
+                            }
+                            const t = e.changedTouches && e.changedTouches[0];
+                            if (!t) {
+                                this.touchStartX = null;
+                                this.touchStartY = null;
+                                return;
+                            }
+                            const dx = t.clientX - this.touchStartX;
+                            const dy = t.clientY - (this.touchStartY != null ? this.touchStartY : 0);
+                            this.touchStartX = null;
+                            this.touchStartY = null;
+                            const threshold = 48;
+                            if (Math.abs(dx) < threshold || Math.abs(dx) < Math.abs(dy)) {
+                                return;
+                            }
+                            if (dx < 0) {
+                                this.next();
+                            } else {
+                                this.prev();
+                            }
+                        },
+                    };
+                };
+            })();
+        </script>
+            <link rel="preload" as="style" href="/build/assets/app-B9Tl_fBE.css" /><link rel="preload" as="style" href="/build/assets/car-page-8-rqXMzf.css" /><link rel="modulepreload" as="script" href="/build/assets/landing-D1iCe1pC.js" /><link rel="modulepreload" as="script" href="/build/assets/ui-calendar-boot-DACUkG4c.js" /><link rel="modulepreload" as="script" href="/build/assets/theme-CiuPmOjm.js" /><link rel="modulepreload" as="script" href="/build/assets/promo-page-loader-DNXCZYjw.js" /><link rel="stylesheet" href="/build/assets/app-B9Tl_fBE.css" /><link rel="stylesheet" href="/build/assets/car-page-8-rqXMzf.css" /><script type="module" src="/build/assets/landing-D1iCe1pC.js"></script><script type="module" src="/build/assets/promo-page-loader-DNXCZYjw.js"></script>    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+</head>
+<body class="flex min-h-screen flex-col bg-background font-sans text-foreground antialiased">
+            <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://rentgeocar.com/gtm/ns.html?id=GTM-M4KP3LC2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <style>
+    #splash-loader.promo-page-loader {
+        background: var(--brand-page-bg, #0B0B0C);
+        color: #fafafa;
+        --promo-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --promo-progress-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    #splash-loader.promo-page-loader .promo-page-loader__grain {
+        opacity: 0.04;
+    }
+    #splash-loader.promo-page-loader .promo-page-loader__title-wrap {
+        overflow: hidden;
+    }
+    @keyframes promo-title-fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes promo-title-rise {
+        from {
+            transform: translate3d(0, 108%, 0);
+        }
+        to {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes promo-progress-fill {
+        from {
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(1);
+        }
+    }
+    #splash-loader.promo-page-loader:not(.promo-page-loader--fonts-ready) .promo-page-loader__title-wrap {
+        opacity: 0;
+    }
+    #splash-loader.promo-page-loader.promo-page-loader--fonts-ready .promo-page-loader__title-wrap {
+        animation: promo-title-fade-in 560ms ease-out forwards;
+    }
+    #splash-loader.promo-page-loader:not(.promo-page-loader--fonts-ready) .promo-page-loader__title {
+        transform: translate3d(0, 108%, 0);
+        animation: none;
+    }
+    #splash-loader.promo-page-loader.promo-page-loader--fonts-ready .promo-page-loader__title {
+        animation: promo-title-rise 1000ms var(--promo-ease) forwards;
+    }
+    #splash-loader.promo-page-loader:not(.promo-page-loader--fonts-ready) .promo-page-loader__bar {
+        transform: scaleX(0);
+        animation: none;
+    }
+    #splash-loader.promo-page-loader.promo-page-loader--fonts-ready .promo-page-loader__bar {
+        transform-origin: left center;
+        animation: promo-progress-fill 1500ms var(--promo-progress-ease) forwards;
+    }
+    #splash-loader.promo-page-loader.splash-loader--leaving {
+        transition: opacity 300ms cubic-bezier(0.33, 1, 0.68, 1);
+        opacity: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #splash-loader.promo-page-loader:not(.promo-page-loader--fonts-ready) .promo-page-loader__title-wrap {
+            opacity: 0;
+        }
+        #splash-loader.promo-page-loader.promo-page-loader--fonts-ready .promo-page-loader__title-wrap {
+            animation: promo-title-fade-in 560ms ease-out forwards !important;
+        }
+        #splash-loader.promo-page-loader.promo-page-loader--fonts-ready .promo-page-loader__title {
+            animation: none !important;
+            transform: none !important;
+        }
+        #splash-loader.promo-page-loader .promo-page-loader__bar {
+            animation: none !important;
+            transform: scaleX(1) !important;
+        }
+    }
+</style>
+<div
+    id="splash-loader"
+    class="promo-page-loader pointer-events-auto fixed inset-0 z-[9999] flex flex-col justify-center bg-background opacity-100"
+    role="status"
+    aria-live="polite"
+    aria-busy="true"
+    data-reveal-ms="1000"
+    data-hold-ms="500"
+    data-fade-ms="300"
+>
+    <div class="promo-page-loader__grain pointer-events-none absolute inset-0" aria-hidden="true"></div>
+    <div class="relative mx-auto flex w-full flex-1 flex-col justify-center items-start px-8">
+        <div class="promo-page-loader__title-wrap w-full text-left">
+            <p class="company-name promo-page-loader__title w-full" style="--chars-count: 6;">
+    RGCARS
+</p>
+        </div>
+    </div>
+    <div
+        class="relative h-1 w-full bg-foreground/10"
+        aria-hidden="true"
+    >
+        <div class="promo-page-loader__bar absolute inset-y-0 left-0 w-full bg-[#f63f08d9]"></div>
+    </div>
+</div>
+    <main id="main-content" class="flex-1">
+        <div
+    id="car-page"
+    x-data='{ mobileOpen: false, filter: "all", toggleMobileOpen() { this.mobileOpen = !this.mobileOpen } }'
+    class="page relative min-h-screen bg-background text-foreground">
+    <div
+    class="nav-shell"
+    x-init="$watch('mobileOpen', (open) => requestAnimationFrame(() => document.body.classList.toggle('nav-mobile-menu-open', open)))"
+    x-on:keydown.escape.window="mobileOpen = false"
+>
+    <header id="app-header" class="nav-header">
+        <div class="nav-header__container">
+            <div class="nav-header__row">
+                <div class="nav-brand">
+                    <a
+                        href="https://rentgeocar.com"
+                        class="nav-brand__link"
+                        aria-label="RGCARS — Home">
+                        RGCARS
+                    </a>
+                </div>
+
+                                <div class="nav-center">
+                    <nav class="nav-primary" aria-label="Primary navigation">
+    <a href="https://rentgeocar.com/cars" class="nav-link">Cars</a>
+<a href="https://rentgeocar.com/services" class="nav-link">Services</a>
+<a href="https://rentgeocar.com/about" class="nav-link">About</a>
+<a href="https://rentgeocar.com#support-call-request" class="nav-link">Contact</a>
+</nav>
+                </div>
+                
+                <div class="nav-utilities">
+                    <div class="nav-utilities__cluster">
+                        <div class="relative" x-data='{ open: false, toggleOpen() { this.open = !this.open } }' x-on:keydown.escape.window="open = false">
+    <button type="button" class="inline-flex h-9 max-w-[10rem] items-center gap-1.5 rounded-full bg-transparent px-2 text-sm font-medium text-white transition hover:text-white/80" x-effect="$el.setAttribute('aria-expanded', open ? 'true' : 'false')" aria-haspopup="listbox" aria-label="Language: EN"   x-on:click="toggleOpen($event)"><svg
+            class="h-3.5 w-3.5 shrink-0 text-white transition duration-150"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+            x-bind:class="open ? 'rotate-180' : ''"
+        >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+        <span class="min-w-0 truncate">EN</span></button>
+
+    <div
+        x-cloak
+        x-show="open"
+        x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95"
+        x-on:click.outside="open = false"
+        class="absolute end-0 top-full z-[60] min-w-[11rem] rounded-xl border border-border bg-card py-1 shadow-lg shadow-black/20"
+        role="listbox"
+    >
+                                <a
+                href="https://rentgeocar.com/locale/en?redirect=https%3A%2F%2Frentgeocar.com%2Fcars"
+                role="option"
+                aria-selected="true"
+                class="block px-3 py-2 text-sm transition bg-muted/60 font-semibold text-foreground"
+                x-on:click="open = false"
+            >
+                EN
+            </a>
+                                <a
+                href="https://rentgeocar.com/locale/ru?redirect=https%3A%2F%2Frentgeocar.com%2Fcars"
+                role="option"
+                aria-selected="false"
+                class="block px-3 py-2 text-sm transition text-muted-foreground hover:bg-muted/40 hover:text-foreground"
+                x-on:click="open = false"
+            >
+                RU
+            </a>
+                                <a
+                href="https://rentgeocar.com/locale/ge?redirect=https%3A%2F%2Frentgeocar.com%2Fcars"
+                role="option"
+                aria-selected="false"
+                class="block px-3 py-2 text-sm transition text-muted-foreground hover:bg-muted/40 hover:text-foreground"
+                x-on:click="open = false"
+            >
+                GE
+            </a>
+            </div>
+</div>
+                                                <a href="tel:+995557591963" class="nav-phone">
+        +995 557 591 963
+    </a>
+                                                                        <div class="nav-social shrink-0">
+                                <a
+                href="https://t.me/rentgeocar"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-social__link"
+                aria-label="Telegram"
+            >
+                <img
+    src="/static/shared-icons/telegram.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon nav-social__icon"
+/>
+            </a>
+                                <a
+                href="https://instagram.com/gtcars.ge"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-social__link"
+                aria-label="Instagram"
+            >
+                <img
+    src="/static/shared-icons/instagram.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon nav-social__icon"
+/>
+            </a>
+                                <a
+                href="https://wa.me/message/NAH5XFW7V3YLF1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-social__link"
+                aria-label="WhatsApp"
+            >
+                <img
+    src="/static/shared-icons/whatsapp.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon nav-social__icon"
+/>
+            </a>
+            </div>
+                                            </div>
+
+                    <div class="nav-utilities__language-mobile">
+                        <div class="relative" x-data='{ open: false, toggleOpen() { this.open = !this.open } }' x-on:keydown.escape.window="open = false">
+    <button type="button" class="inline-flex h-9 max-w-[10rem] items-center gap-1.5 rounded-full bg-transparent px-2 text-sm font-medium text-white transition hover:text-white/80" x-effect="$el.setAttribute('aria-expanded', open ? 'true' : 'false')" aria-haspopup="listbox" aria-label="Language: EN"   x-on:click="toggleOpen($event)"><svg
+            class="h-3.5 w-3.5 shrink-0 text-white transition duration-150"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+            x-bind:class="open ? 'rotate-180' : ''"
+        >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+        <span class="min-w-0 truncate">EN</span></button>
+
+    <div
+        x-cloak
+        x-show="open"
+        x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95"
+        x-on:click.outside="open = false"
+        class="absolute end-0 top-full z-[60] min-w-[11rem] rounded-xl border border-border bg-card py-1 shadow-lg shadow-black/20"
+        role="listbox"
+    >
+                                <a
+                href="https://rentgeocar.com/locale/en?redirect=https%3A%2F%2Frentgeocar.com%2Fcars"
+                role="option"
+                aria-selected="true"
+                class="block px-3 py-2 text-sm transition bg-muted/60 font-semibold text-foreground"
+                x-on:click="open = false"
+            >
+                EN
+            </a>
+                                <a
+                href="https://rentgeocar.com/locale/ru?redirect=https%3A%2F%2Frentgeocar.com%2Fcars"
+                role="option"
+                aria-selected="false"
+                class="block px-3 py-2 text-sm transition text-muted-foreground hover:bg-muted/40 hover:text-foreground"
+                x-on:click="open = false"
+            >
+                RU
+            </a>
+                                <a
+                href="https://rentgeocar.com/locale/ge?redirect=https%3A%2F%2Frentgeocar.com%2Fcars"
+                role="option"
+                aria-selected="false"
+                class="block px-3 py-2 text-sm transition text-muted-foreground hover:bg-muted/40 hover:text-foreground"
+                x-on:click="open = false"
+            >
+                GE
+            </a>
+            </div>
+</div>
+                    </div>
+
+                                        <div class="nav-utilities__social-mobile">
+                        <div class="nav-social nav-social--mobile-drawer flex-nowrap">
+                                <a
+                href="https://t.me/rentgeocar"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-social__link nav-social__link--mobile-drawer"
+                aria-label="Telegram"
+            >
+                <img
+    src="/static/shared-icons/telegram.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon nav-social__icon"
+/>
+            </a>
+                                <a
+                href="https://wa.me/message/NAH5XFW7V3YLF1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-social__link nav-social__link--mobile-drawer"
+                aria-label="WhatsApp"
+            >
+                <img
+    src="/static/shared-icons/whatsapp.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon nav-social__icon"
+/>
+            </a>
+            </div>
+                    </div>
+                    
+                    <button type="button" class="nav-button nav-button--menu" id="app-header-menu-button" x-effect="$el.setAttribute('aria-expanded', mobileOpen ? 'true' : 'false')" aria-controls="app-header-mobile-drawer" aria-label="Menu"   x-on:click="toggleMobileOpen($event)"><svg x-show="!mobileOpen" class="nav-button__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-cloak x-show="mobileOpen" class="nav-button__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div
+        id="app-header-mobile-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+        x-cloak
+        x-show="mobileOpen"
+        x-transition
+        x-on:click="if ($event.target.closest('a[href]')) { mobileOpen = false }"
+        class="nav-mobile-drawer app-header-mobile-drawer">
+        <nav class="nav-mobile-drawer__nav" aria-label="Primary navigation">
+                                    <a href="https://rentgeocar.com" class="nav-link nav-link--mobile">Home</a>
+                        <a href="https://rentgeocar.com/cars" class="nav-link nav-link--mobile">Cars</a>
+                        <a href="https://rentgeocar.com/services" class="nav-link nav-link--mobile">Services</a>
+                        <a href="https://rentgeocar.com/about" class="nav-link nav-link--mobile">About</a>
+                        <a href="https://rentgeocar.com#support-call-request" class="nav-link nav-link--mobile">Contact</a>
+                                </nav>
+
+        <div class="nav-mobile-drawer__actions">
+                        <a href="tel:+995557591963" class="nav-phone nav-phone--mobile">
+                Call to advisor
+            </a>
+            
+                        <div class="nav-social nav-social--mobile-drawer">
+                                <a
+                href="https://t.me/rentgeocar"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-social__link nav-social__link--mobile-drawer"
+                aria-label="Telegram"
+            >
+                <img
+    src="/static/shared-icons/telegram.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon nav-social__icon"
+/>
+            </a>
+                                <a
+                href="https://instagram.com/gtcars.ge"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-social__link nav-social__link--mobile-drawer"
+                aria-label="Instagram"
+            >
+                <img
+    src="/static/shared-icons/instagram.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon nav-social__icon"
+/>
+            </a>
+                                <a
+                href="https://wa.me/message/NAH5XFW7V3YLF1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-social__link nav-social__link--mobile-drawer"
+                aria-label="WhatsApp"
+            >
+                <img
+    src="/static/shared-icons/whatsapp.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon nav-social__icon"
+/>
+            </a>
+            </div>
+                    </div>
+    </div>
+
+    </div>
+
+<script>
+    (function () {
+        function syncAppHeaderHeight() {
+            const header = document.getElementById('app-header');
+            if (!(header instanceof HTMLElement)) {
+                return;
+            }
+
+            const height = header.getBoundingClientRect().height;
+            if (height > 0) {
+                document.documentElement.style.setProperty('--app-header-height', `${height}px`);
+            }
+        }
+
+        syncAppHeaderHeight();
+        window.addEventListener('resize', syncAppHeaderHeight, { passive: true });
+    })();
+</script>
+
+    <section aria-label="Available vehicles">
+        <div data-element="section-header">
+    <div data-element="section-header-content">
+                <p class="typography typography--body-large text-primary uppercase" data-element="section-header-label"  data-variant="body-large" >
+    Our fleet
+</p>
+                        <h2 class="typography typography--heading-xl"  data-variant="heading-xl" >
+    Premium car rental
+</h2>
+                        <p class="typography typography--body"  data-variant="body" >
+    Premium car rental service. Drive luxury &amp; Feel control
+</p>
+            </div>
+    </div>        <style>
+    .category-tabs__btn {
+        cursor: pointer;
+        flex-grow: 1;
+    }
+
+    .category-tabs__btn.is-active {
+        cursor: default;
+    }
+</style>
+<div id="category-tabs">
+    <div class="booking-quick-form-link" data-visible="false" aria-hidden="true">
+        <a href="#booking-request-form-section" class="ui-btn ui-btn--md ui-btn--primary rounded-full w-full"   x-on:click.prevent="window.navigateToBookingQuickForm($event)">Submit request</a>
+    </div>
+    <div data-element="category-tabs-content">
+        <div class="flex w-full justify-center">
+            <div
+                data-element="category-tabs-tablist"
+                data-element-action="search-param"
+                role="group"
+                aria-label="Filter vehicles by category">
+                                                                <button
+                    type="button"
+                    x-on:click="if (filter === &#039;premium&#039;) return; const url = new URL(window.location.href); url.searchParams.delete(&#039;page&#039;); url.searchParams.set(&#039;filter&#039;, &#039;premium&#039;); window.location.assign(url.toString());"
+                    data-element="category-tabs-tab"
+                    x-bind:data-element-state="filter === 'premium' ? 'active' : 'default'"
+                    x-bind:aria-pressed="filter === 'premium' ? 'true' : 'false'">
+                    Premium
+                </button>
+                                                                                <button
+                    type="button"
+                    x-on:click="if (filter === &#039;standart&#039;) return; const url = new URL(window.location.href); url.searchParams.delete(&#039;page&#039;); url.searchParams.set(&#039;filter&#039;, &#039;standart&#039;); window.location.assign(url.toString());"
+                    data-element="category-tabs-tab"
+                    x-bind:data-element-state="filter === 'standart' ? 'active' : 'default'"
+                    x-bind:aria-pressed="filter === 'standart' ? 'true' : 'false'">
+                    Standart
+                </button>
+                                                                                <button
+                    type="button"
+                    x-on:click="if (filter === &#039;econom&#039;) return; const url = new URL(window.location.href); url.searchParams.delete(&#039;page&#039;); url.searchParams.set(&#039;filter&#039;, &#039;econom&#039;); window.location.assign(url.toString());"
+                    data-element="category-tabs-tab"
+                    x-bind:data-element-state="filter === 'econom' ? 'active' : 'default'"
+                    x-bind:aria-pressed="filter === 'econom' ? 'true' : 'false'">
+                    Econom
+                </button>
+                                                <button
+                    type="button"
+                    x-on:click="if (filter === &#039;all&#039;) return; const url = new URL(window.location.href); url.searchParams.delete(&#039;page&#039;); url.searchParams.delete(&#039;filter&#039;); window.location.assign(url.toString());"
+                    data-element="category-tabs-tab"
+                    x-bind:data-element-state="filter === 'all' ? 'active' : 'default'"
+                    x-bind:aria-pressed="filter === 'all' ? 'true' : 'false'">
+                    All
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        <article
+    data-car-show-url="https://rentgeocar.com/cars/vw-passat-r-line-2018"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYC12W42RTN49HDGBKVVHZ4"
+    class="car-card"
+    data-category="econom"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/preview-7a73f397ab5010d7.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-e0382799133d85eb.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-74db4a09da50e52f.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-90a965deae8c1e7a.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-ac6165e4cda93722.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-70a6aad98e534573.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-3cf0839980a7c855.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-dbfa0cd1b7a8bac7.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-ca094f14a3da74d9.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-4158b8b2b749cdcc.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-4ffda9cca54461fd.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-d2e83f084b24e959.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-a9ed7c4ecad10758.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYC12W42RTN49HDGBKVVHZ4\\\/gallery-b87a25bf9d7d2640.webp\u0022,\u0022alt\u0022:\u0022VW Passat R-Line rent in Tbilisi from $60\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:true}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYC12W42RTN49HDGBKVVHZ4"  data-variant="heading-md" >
+    VW Passat R-Line
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2018
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        FWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    50$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    45$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/vw-passat-r-line-2018" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/kia-soul-2023"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYBMZCNEEX6V208SD84ESJD"
+    class="car-card"
+    data-category="econom"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/preview-8632b46053f0e16e.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-d6843be5ab9d466e.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-011d0a9072dd2561.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-b7f9358701e3fe1f.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-e2ed14f1135ad820.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-d162ccc9f2a3e0a5.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-4bfc82708b19cbab.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-a44cd1bee437f5c3.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-3159e5f9da9695ea.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-06c4b2e8752c8844.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-f7d3d32bb72b8da1.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-e8008a2a8b7b912f.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYBMZCNEEX6V208SD84ESJD\\\/gallery-6928b9b425488c9f.webp\u0022,\u0022alt\u0022:\u0022KIA SOUL rent in Tbilisi from $60\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:true}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYBMZCNEEX6V208SD84ESJD"  data-variant="heading-md" >
+    KIA SOUL
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2023
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        FWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    50$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    47$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/kia-soul-2023" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-x5-2019"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYAQ8ZNVZ1GDF3R08HW47QG"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/preview-12458831ae63aac9.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-5d26da0418b559f7.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-194a23eccdbb2110.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-71b68d4dab56c68f.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-9b23ad50710bdebf.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-a39f0f6cc04fa840.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-49dfff3c925eb36a.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-44aaea5856d60269.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-b734f8fbf916fcef.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-8c0dabbdf4ddbfad.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAQ8ZNVZ1GDF3R08HW47QG\\\/gallery-c34dffb6106a2abe.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $110\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:true}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYAQ8ZNVZ1GDF3R08HW47QG"  data-variant="heading-md" >
+    BMW X5
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2019
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    90$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    80$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-x5-2019" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-535i-2017"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYA4FR39R928Y0JDXMNRP3K"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/preview-35331f18114bf05a.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-be2e1c5f04d1548a.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-c7d52af9c9886122.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-07243c08b86421d0.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-d896a00561342999.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-906f5a117037225c.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-cf0448c2cd78af2b.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-157a0ef7ff577c09.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-3fb06b7abc1b387a.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-ad0e05e39bf293e2.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-dae54a60a9f66783.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYA4FR39R928Y0JDXMNRP3K\\\/gallery-65f2d8051c154294.webp\u0022,\u0022alt\u0022:\u0022BMW 535i rent in Tbilisi from $100\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:true}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYA4FR39R928Y0JDXMNRP3K"  data-variant="heading-md" >
+    BMW 535i
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2017
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    85$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    80$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-535i-2017" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/mazda-cx-5-2019"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRT7ZNGYENVHPJKB7CYWP36G"
+    class="car-card"
+    data-category="standart"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/preview-bc21222c691710e3.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-67006e5df97b8581.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-dccdeb2a06ee3310.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-04ece285c2a90469.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-fe6ac85fe0d1afb6.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-4af0335b0eb4cb00.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-60a63a15c2706161.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-42dcbe56964a793a.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-d58f21621f15e0d0.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-ddd5263cf41c5dc9.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-2fcd0429a0ea7afc.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-209a517e876713ee.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-4781dfa503334dc2.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGYENVHPJKB7CYWP36G\\\/gallery-0e1807a4ed6776da.webp\u0022,\u0022alt\u0022:\u0022Mazda CX-5 rent in Tbilisi from $70\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRT7ZNGYENVHPJKB7CYWP36G"  data-variant="heading-md" >
+    Mazda CX-5
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2019
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    55$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    50$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/mazda-cx-5-2019" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/kia-sportage-2024"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRT7ZNGW6PXATEKV2QFJWJ0C"
+    class="car-card"
+    data-category="standart"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/preview-0f8c4334b042c6a1.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-bf3c3ffa38f2a908.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-07489101fe22fabc.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-205029221252cbe5.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-1afa2b5b50cd5ca9.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-448c651dfb59259e.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-8041b7f0ad108908.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-b5a89e89d4b48263.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-9860217f21c20daf.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-1a165fb09fe8d288.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-fd7c645b2a51e565.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-efc0707ccde9b7df.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRT7ZNGW6PXATEKV2QFJWJ0C\\\/gallery-485372c30e8285b0.webp\u0022,\u0022alt\u0022:\u0022KIA SPORTAGE rent in Tbilisi from $95\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRT7ZNGW6PXATEKV2QFJWJ0C"  data-variant="heading-md" >
+    KIA SPORTAGE
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2024
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    80$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    75$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/kia-sportage-2024" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-640i-cabrio-2018"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYAYDDBM755XKHRT6BQW66K"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/preview-2eeca4c0742e7cbc.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/gallery-13e14fb7eaf00d1e.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/gallery-06a4c5f3e1ce2e31.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/gallery-324a70ef518369a7.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/gallery-a32b6b6b4b174171.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/gallery-9ed6e8e7867f2171.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/gallery-4e8a06259e7c2974.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/gallery-39a25694c7a9f48e.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAYDDBM755XKHRT6BQW66K\\\/gallery-12570e056fb1009d.webp\u0022,\u0022alt\u0022:\u0022BMW 640i Cabrio rent in Tbilisi from $110\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYAYDDBM755XKHRT6BQW66K"  data-variant="heading-md" >
+    BMW 640i Cabrio
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2018
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    100$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    95$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-640i-cabrio-2018" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/ford-mustang-cabrio-2022"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYAJYYBRQJHJ4A8AH7P2X9W"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/preview-a6845b0747583dba.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-523f495cc0b94717.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-1aa43dec576e56aa.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-d8242e8472e75938.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-0a5aa575bc63e3bd.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-13e4884ff151397f.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-0acf56352b21cc95.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-0965fd9e3c321095.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-df69529c904303b7.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-7a58318a01ce90a8.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-0453d602a37f6470.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAJYYBRQJHJ4A8AH7P2X9W\\\/gallery-8160726980226ec1.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang Cabrio rent in Tbilisi from $115\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYAJYYBRQJHJ4A8AH7P2X9W"  data-variant="heading-md" >
+    Ford Mustang Cabrio
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2022
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        RWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    90$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    80$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/ford-mustang-cabrio-2022" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-m550-2019"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRY9CECHMK7ZVCTJ09JWFKAR"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/preview-b92190dbe9cecc56.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/gallery-5da6bfa0bf93780c.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/gallery-e12d74c5ab74ba8c.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/gallery-bbf5afe12a57c7cd.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/gallery-79a70250cb7e465d.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/gallery-cc5c960b33f1b229.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/gallery-93a8ed2a690038ad.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/gallery-5a5ef12385128d55.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRY9CECHMK7ZVCTJ09JWFKAR\\\/gallery-468e702512c4c5f3.webp\u0022,\u0022alt\u0022:\u0022BMW M550 rent in Tbilisi from $150\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRY9CECHMK7ZVCTJ09JWFKAR"  data-variant="heading-md" >
+    BMW M550
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2019
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    120$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    110$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-m550-2019" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-x3-2021"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYAMW63D5X2ATFBDW6PF1BN"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAMW63D5X2ATFBDW6PF1BN\\\/preview-78098085313d90ca.webp\u0022,\u0022alt\u0022:\u0022BMW X3 rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAMW63D5X2ATFBDW6PF1BN\\\/gallery-a4d66b71aa5fc10d.webp\u0022,\u0022alt\u0022:\u0022BMW X3 rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAMW63D5X2ATFBDW6PF1BN\\\/gallery-736c4792d729a296.webp\u0022,\u0022alt\u0022:\u0022BMW X3 rent in Tbilisi from $95\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAMW63D5X2ATFBDW6PF1BN\\\/gallery-7ac26d5c406ec7d5.webp\u0022,\u0022alt\u0022:\u0022BMW X3 rent in Tbilisi from $95\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYAMW63D5X2ATFBDW6PF1BN"  data-variant="heading-md" >
+    BMW X3
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2021
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    75$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    70$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-x3-2021" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/toyota-rav-4-2022"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYAE6QW50Y20A68WZZXM2R6"
+    class="car-card"
+    data-category="standart"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/preview-1ce4040790702ec5.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-de6c9b2d95a25eba.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-a75b4d02941d58b7.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-5bff910cc29c2bfc.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-2435075ced103b95.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-09bdc3c24ee74d49.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-0ea2c6617c5d1d4d.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-4ddb7e152df6a1d8.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-f9a02e1723a91a81.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAE6QW50Y20A68WZZXM2R6\\\/gallery-5858cc1dcee72eff.webp\u0022,\u0022alt\u0022:\u0022Toyota Rav-4 rent in Tbilisi from $80\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYAE6QW50Y20A68WZZXM2R6"  data-variant="heading-md" >
+    Toyota Rav-4
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2022
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    70$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    65$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/toyota-rav-4-2022" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/jeep-renegade-2019"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KRYAA84QMF5Y53MXSVYT5T6N"
+    class="car-card"
+    data-category="econom"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAA84QMF5Y53MXSVYT5T6N\\\/preview-60bd5722f3762c28.webp\u0022,\u0022alt\u0022:\u0022Jeep Renegade rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAA84QMF5Y53MXSVYT5T6N\\\/gallery-f3ca65dd7be3bce5.webp\u0022,\u0022alt\u0022:\u0022Jeep Renegade rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAA84QMF5Y53MXSVYT5T6N\\\/gallery-1a89e08467c93344.webp\u0022,\u0022alt\u0022:\u0022Jeep Renegade rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAA84QMF5Y53MXSVYT5T6N\\\/gallery-2a80ef8dab2da239.webp\u0022,\u0022alt\u0022:\u0022Jeep Renegade rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAA84QMF5Y53MXSVYT5T6N\\\/gallery-7db35e3fe24f6e37.webp\u0022,\u0022alt\u0022:\u0022Jeep Renegade rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAA84QMF5Y53MXSVYT5T6N\\\/gallery-c6235244568e0fa0.webp\u0022,\u0022alt\u0022:\u0022Jeep Renegade rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAA84QMF5Y53MXSVYT5T6N\\\/gallery-89c881e01fbda804.webp\u0022,\u0022alt\u0022:\u0022Jeep Renegade rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KRYAA84QMF5Y53MXSVYT5T6N\\\/gallery-9d271c290b6f746c.webp\u0022,\u0022alt\u0022:\u0022Jeep Renegade rent in Tbilisi from $60\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KRYAA84QMF5Y53MXSVYT5T6N"  data-variant="heading-md" >
+    Jeep Renegade
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2019
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    50$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    45$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/jeep-renegade-2019" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-640i-2016"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KVHBEYC5A483E106J8XBEKCV"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/preview-165659a113b76ade.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-243e875f38243af3.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-d50e31132394def8.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-043f4e801d0d558a.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-b493ac9e77effcfe.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-0ce1bd97d3635b64.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-ac0717d3a5e080f8.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-7560f8c4ba7492e0.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-4672f395fd5c653d.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHBEYC5A483E106J8XBEKCV\\\/gallery-8d3b679c532678e6.webp\u0022,\u0022alt\u0022:\u0022BMW 640i rent in Tbilisi from $100\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KVHBEYC5A483E106J8XBEKCV"  data-variant="heading-md" >
+    BMW 640i
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2016
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    87$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    78$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-640i-2016" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/volkswagen-jetta-sport-2025"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KVHB3H0ZMD08T6Z9W5PSG5GX"
+    class="car-card"
+    data-category="econom"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHB3H0ZMD08T6Z9W5PSG5GX\\\/preview-50f523e1eded5d73.webp\u0022,\u0022alt\u0022:\u0022Volkswagen Jetta Sport rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHB3H0ZMD08T6Z9W5PSG5GX\\\/gallery-e1a7f38476d7cdfe.webp\u0022,\u0022alt\u0022:\u0022Volkswagen Jetta Sport rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHB3H0ZMD08T6Z9W5PSG5GX\\\/gallery-16c6778d7a7716b0.webp\u0022,\u0022alt\u0022:\u0022Volkswagen Jetta Sport rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHB3H0ZMD08T6Z9W5PSG5GX\\\/gallery-89d5712e4a4e7969.webp\u0022,\u0022alt\u0022:\u0022Volkswagen Jetta Sport rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHB3H0ZMD08T6Z9W5PSG5GX\\\/gallery-80fd88c54108cfb7.webp\u0022,\u0022alt\u0022:\u0022Volkswagen Jetta Sport rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHB3H0ZMD08T6Z9W5PSG5GX\\\/gallery-d2a86dcae4927e85.webp\u0022,\u0022alt\u0022:\u0022Volkswagen Jetta Sport rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHB3H0ZMD08T6Z9W5PSG5GX\\\/gallery-18007699e7670335.webp\u0022,\u0022alt\u0022:\u0022Volkswagen Jetta Sport rent in Tbilisi from $60\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KVHB3H0ZMD08T6Z9W5PSG5GX\\\/gallery-0bcf6b2b66374dc1.webp\u0022,\u0022alt\u0022:\u0022Volkswagen Jetta Sport rent in Tbilisi from $60\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KVHB3H0ZMD08T6Z9W5PSG5GX"  data-variant="heading-md" >
+    Volkswagen Jetta Sport
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2025
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        FWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    50$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    45$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/volkswagen-jetta-sport-2025" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/ford-mustang-2015"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KTQ3C16632PZHQG0KRXEMGFA"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/preview-c58f6e75101fb560.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-4833e20865707f95.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-c4bc0f9851972d97.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-f7c755b290254fdb.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-099b8feb376cc968.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-debd11f25edf4187.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-296f79f663a9e164.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-646b1f3d97a0a5ea.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-251df6ad1485be42.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ3C16632PZHQG0KRXEMGFA\\\/gallery-1d026cbf167bb970.webp\u0022,\u0022alt\u0022:\u0022Ford Mustang rent in Tbilisi from $115\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KTQ3C16632PZHQG0KRXEMGFA"  data-variant="heading-md" >
+    Ford Mustang
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2015
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        RWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    100$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    90$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/ford-mustang-2015" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-428i-2013"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KTQ372YBH14EBQ9YDFBZYAK1"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/preview-0f36fb0a24e73f26.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-84f09c0c7f36a325.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-8b60826bcb096e5a.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-f568cf4739915685.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-86f5908080f2b985.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-55dba7f2120f9045.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-90adae9704ea5e4f.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-e53fd95eeeccc539.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-65d4ae1cbbc607a2.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-8cccb0e0172e5a11.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ372YBH14EBQ9YDFBZYAK1\\\/gallery-9a681f2d2e8b8e49.webp\u0022,\u0022alt\u0022:\u0022BMW 428i rent in Tbilisi from $93\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KTQ372YBH14EBQ9YDFBZYAK1"  data-variant="heading-md" >
+    BMW 428i
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2013
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        RWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    78$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    70$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-428i-2013" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-428i-cabrio-2015"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KTQ2YX51Y0VVVGQBEVX95G5S"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2YX51Y0VVVGQBEVX95G5S\\\/preview-4676c3f15e13c2e9.webp\u0022,\u0022alt\u0022:\u0022BMW 428i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2YX51Y0VVVGQBEVX95G5S\\\/gallery-a53d48418108a93d.webp\u0022,\u0022alt\u0022:\u0022BMW 428i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2YX51Y0VVVGQBEVX95G5S\\\/gallery-90d6159cae390c6b.webp\u0022,\u0022alt\u0022:\u0022BMW 428i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2YX51Y0VVVGQBEVX95G5S\\\/gallery-7955dbb2e0570b8f.webp\u0022,\u0022alt\u0022:\u0022BMW 428i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2YX51Y0VVVGQBEVX95G5S\\\/gallery-ac2feb2bf8f673fd.webp\u0022,\u0022alt\u0022:\u0022BMW 428i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2YX51Y0VVVGQBEVX95G5S\\\/gallery-f3791657ea64e603.webp\u0022,\u0022alt\u0022:\u0022BMW 428i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2YX51Y0VVVGQBEVX95G5S\\\/gallery-e6b483b069086e2d.webp\u0022,\u0022alt\u0022:\u0022BMW 428i Cabrio rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2YX51Y0VVVGQBEVX95G5S\\\/gallery-ce19ceb1b2d7e557.webp\u0022,\u0022alt\u0022:\u0022BMW 428i Cabrio rent in Tbilisi from $110\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KTQ2YX51Y0VVVGQBEVX95G5S"  data-variant="heading-md" >
+    BMW 428i Cabrio
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2015
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        RWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    94$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    87$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-428i-cabrio-2015" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/ford-explorer-2016"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KTQ2QNMX6A8ZEWNK8DXP4NK4"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/preview-a940b963a4813992.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/gallery-619b67a9ff5d0c9f.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/gallery-84157c98543dc8d8.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/gallery-8c78f0ca9a00b2a1.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/gallery-1819f39fcabbb634.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/gallery-3257f240e034c575.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/gallery-43747a2c7a709e9c.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/gallery-e9f074ca00f92398.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2QNMX6A8ZEWNK8DXP4NK4\\\/gallery-dc92486de5365358.webp\u0022,\u0022alt\u0022:\u0022Ford Explorer rent in Tbilisi from $80\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KTQ2QNMX6A8ZEWNK8DXP4NK4"  data-variant="heading-md" >
+    Ford Explorer
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2016
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    67$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    60$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/ford-explorer-2016" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-740i-2015"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KTQ2CVQ6MY3VKGS7CH7CKCT3"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/preview-78b445c15f91c3ae.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-12a06b893158b7cc.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-3c5974873fedce7f.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-2ccf693787e24e04.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-ae129ff02f85c4da.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-d16b0aa5fb5f9876.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-affd444554969ff1.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-85909dcd0d6fb37e.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-01c65ebcc95da513.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-f9c726cdf5bb25a2.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ2CVQ6MY3VKGS7CH7CKCT3\\\/gallery-d1c0b02721de34d4.webp\u0022,\u0022alt\u0022:\u0022BMW 740i rent in Tbilisi from $170\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KTQ2CVQ6MY3VKGS7CH7CKCT3"  data-variant="heading-md" >
+    BMW 740i
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2015
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        RWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    150$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    140$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-740i-2015" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-x5-2013"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KTQ1P7QR0PJWMJ5VZTXCZGRH"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ1P7QR0PJWMJ5VZTXCZGRH\\\/preview-e9406687563249a4.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $120\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ1P7QR0PJWMJ5VZTXCZGRH\\\/gallery-4e055ebbebcd727b.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $120\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ1P7QR0PJWMJ5VZTXCZGRH\\\/gallery-310f686514fed542.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $120\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ1P7QR0PJWMJ5VZTXCZGRH\\\/gallery-9d96501d032ded18.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $120\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ1P7QR0PJWMJ5VZTXCZGRH\\\/gallery-3bb0654c72ab9224.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $120\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ1P7QR0PJWMJ5VZTXCZGRH\\\/gallery-8f565527a4e6ab1b.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $120\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ1P7QR0PJWMJ5VZTXCZGRH\\\/gallery-755b46ae47e95637.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $120\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ1P7QR0PJWMJ5VZTXCZGRH\\\/gallery-5d9c80a235e5eb13.webp\u0022,\u0022alt\u0022:\u0022BMW X5 rent in Tbilisi from $120\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KTQ1P7QR0PJWMJ5VZTXCZGRH"  data-variant="heading-md" >
+    BMW X5
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2013
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    100$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    94$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-x5-2013" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                        <article
+    data-car-show-url="https://rentgeocar.com/cars/bmw-x6-2021"
+    onclick="if (this.dataset.suppressNextNav === '1') { this.dataset.suppressNextNav = ''; return; } window.skipSplashOnNextNavigation && window.skipSplashOnNextNavigation(); window.location.href = this.dataset.carShowUrl"
+    aria-labelledby="car-card-title-01KTQ0KDTKTWFSJBJZ0DX36921"
+    class="car-card"
+    data-category="premium"
+        x-show="filter === 'all' || (filter !== 'all' && $el.dataset.category === filter)"
+    >
+    <div data-element="car-card-gallery" class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+        <div
+        class="relative z-10 h-full w-full touch-pan-y h-full w-full"
+        x-data="carGallerySlider(JSON.parse('{\u0022slides\u0022:[{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/preview-fb0f3f37be163bf9.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-cc98826ff34365c7.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-932f9fe20ed4eb89.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-326bf72f782789c2.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-16f66e7b136638e3.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-d4d364c9a2856df9.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-febfdcfb65ed4ddf.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-9e983dfd971c8ee7.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-ff439a79dc4fd6bb.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-a73bd7cbab6f1c0c.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-0cc648cab35b3f24.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-3bd44572cc6f95d8.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-0daa115e96decc87.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-5fb18ffb75fe7c8d.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-68eeda553fd79244.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-f3df0b1cb2f857d0.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-67401ba00449c5fb.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-e63c662795d65a22.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-4ae22b2ed6a1d995.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022},{\u0022url\u0022:\u0022\\\/uploads\\\/car-01KTQ0KDTKTWFSJBJZ0DX36921\\\/gallery-ed2c7d6716d2467d.webp\u0022,\u0022alt\u0022:\u0022BMW X6 rent in Tbilisi from $110\\\/day\u0022}],\u0022suppressCardNav\u0022:true,\u0022prioritizeFirst\u0022:false}'))"
+        x-init="initVisibility()"
+        @touchstart.passive="onGalleryTouchStart($event)"
+        @touchend="onGalleryTouchEnd($event)">
+        <div class="relative h-full w-full overflow-hidden">
+            <template x-for="(slideItem, i) in slides" :key="i">
+                <div
+                    class="absolute inset-0 transition-opacity duration-500 ease-out"
+                    :class="slide === i ? 'z-[1] opacity-100' : 'pointer-events-none z-0 opacity-0'"
+                    :aria-hidden="slide !== i">
+                                            <img
+                            :src="slideSrc(i)"
+                            :alt="slideItem.alt"
+                            class="h-full w-full object-cover"
+                            width="800"
+                            height="500"
+                            :loading="prioritizeFirst && i === 0 ? 'eager' : 'lazy'"
+                            :fetchpriority="prioritizeFirst && i === 0 ? 'high' : 'auto'"
+                            decoding="async">
+                                    </div>
+            </template>
+        </div>
+
+                    <button type="button" class="" data-element="car-card-gallery-button" data-element-action="prev" aria-label="Previous image"   x-on:click.stop="prev($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg></button>
+            <button type="button" class="" data-element="car-card-gallery-button" data-element-action="next" aria-label="Next image"   x-on:click.stop="next($event)"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg></button>
+        
+                    <div class="pointer-events-none absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
+                <template x-for="(_, i) in slides.slice(0, 5)" :key="i">
+                    <span
+                        data-element="car-card-gallery-dot"
+                        x-bind:data-element-state="dotActive(i) ? 'active' : 'default'"></span>
+                </template>
+            </div>
+        
+            </div>
+
+        <div class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+
+    <div data-element="car-card-content">
+        <h3 class="typography typography--heading-md text-foreground" id="car-card-title-01KTQ0KDTKTWFSJBJZ0DX36921"  data-variant="heading-md" >
+    BMW X6
+</h3>
+
+        <p class="typography typography--body-small text-secondary"  data-variant="body-small" >
+    2021
+                                    <span aria-hidden="true">·</span>
+                        Automatic
+                                    <span aria-hidden="true">·</span>
+                        AWD
+</p>
+
+        <div data-element="car-card-price">
+            <h3 class="typography typography--heading-md"  data-variant="heading-md" >
+    94$
+                <span class="typography typography--caption text-secondary"  data-variant="caption" >
+    / daily for 4 - 7 days
+</span>
+</h3>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0 flex-1">
+                                        <p class="typography typography--body text-success"  data-variant="body" >
+    87$ from 8 days
+</p>
+                                    </div>
+                <a href="https://rentgeocar.com/cars/bmw-x6-2021" class="ui-btn ui-btn--md ui-btn ui-btn--secondary inline-flex shrink-0" @click.stop=""  >View details</a>
+            </div>
+        </div>
+    </div>
+    </article>                    </div>
+        
+        <div class="mt-10 flex justify-center">
+            
+        </div>
+    </section>
+
+    <section id="faq-list" aria-labelledby="faq-list-heading">
+    <div class="mx-auto">
+        <div data-element="section-header">
+    <div data-element="section-header-content">
+                <p class="typography typography--body-large text-primary uppercase" data-element="section-header-label"  data-variant="body-large" >
+    FAQ
+</p>
+                        <h2 class="typography typography--heading-xl"  data-variant="heading-xl" >
+    Frequently asked questions
+</h2>
+                    </div>
+    </div>        <div class="flex flex-col gap-3 md:gap-4">
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        What delivery options are available when booking?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    You can pick up your vehicle directly from our agency in our office, or order a delivery to your hotel, airport, or any other address in Tbilisi. Delivery fees depend on the distance.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        How does payment work?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    No advance payment is required at booking. Full rental payment and the security deposit are settled at vehicle pick-up. The security deposit is fully refunded upon return of the vehicle in good condition.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        What are the requirements for a driver?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    The minimum age of a driver is 21 years. The minimum driving experience is 1 year. A passport and a driver&#039;s license are required.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Is a deposit required?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    Yes, it&#039;s obligatory. The deposit amount depends on the selected vehicle.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        What about fuel policy?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    The vehicle must be returned with the same fuel level.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Are there any winter tires?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    Yes, all cars are equipped with winter tires during winter season.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Can you deliver car to the airport?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    Yes, you can pick up the car directly at the airport. We have a Meet&amp;Greet service, our delivery manager will meet you at the airport to handover the car immediately upon arrival.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Is it possible to return a car in another city?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    Yes, by prior agreement, you can return the car in any city of Georgia that is convenient for you.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Is it possible to add a second driver?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    Yes, an additional driver is available when registering a rental absolutely free of charge.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Is it possible to rent a car with pets?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    Of course, but we will be glad if you keep the interior of the car clean in the same perfect condition in which we will provide it to you.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Is it possible to book a car without prepayment?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    We do not need an advance payment to book a car! Your documents are enough for us to confirm the booking. Be careful, scammers may ask you to transfer the prepayment.
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Is it possible to arrange a rental without visiting the office?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    You do not need to visit our office to book a car, you can book a car online. In any case, you can always visit our office if you wish, if you wish to get to know the staff personally!
+                </div>
+        </div>
+    </div>
+</details>
+                        <details
+    class="ui-collapse ui-collapse--md faq-list__collapse overflow-hidden rounded-2xl border border-zinc-700/50 bg-[#1c1c1e]"
+    >
+    <summary class="ui-collapse__summary">
+                    <span class="ui-collapse__title ui-collapse__title--slot"><span class="block text-base font-medium leading-snug text-white md:text-lg">
+                        Is a free cancellation possible?
+                    </span></span>
+                            <span
+                class="ui-collapse__toggle ui-collapse__toggle--plusminus "
+                aria-hidden="true"
+            >
+                <span class="ui-collapse__icon ui-collapse__icon--plus">+</span>
+                <span class="ui-collapse__icon ui-collapse__icon--minus">−</span>
+            </span>
+            </summary>
+    <div class="ui-collapse__body">
+        <div class="ui-collapse__inner">
+            <div class="faq-list__answer">
+                    We are well aware that any plans may change, so notify us in advance if something in your plans changes.
+                </div>
+        </div>
+    </div>
+</details>
+                    </div>
+    </div>
+</section>
+
+<footer
+    id="site-footer"
+    aria-label="Site footer"
+    >
+    <section class="site-footer__inner">
+        <div class="site-footer__contact site-footer__framed cornered corner-top" aria-labelledby="site-footer-contact-heading">
+            <h2 class="typography typography--body-large site-footer__contact-heading" id="site-footer-contact-heading"  data-variant="body-large" >
+    CONTACT
+</h2>
+            <ul class="site-footer__contact-list">
+                                <li class="site-footer__contact-item">
+                    <img
+    src="/static/shared-icons/location_pin.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon site-footer__contact-icon"
+/>
+                    <p class="typography typography--body site-footer__contact-text"  data-variant="body" >
+    Tbilisi, Vaso Godziashvili St., 1
+</p>
+                </li>
+                                                <li class="site-footer__contact-item">
+                    <img
+    src="/static/shared-icons/envelope.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon site-footer__contact-icon"
+/>
+                    <a href="mailto:gtcarsgtcars136@gmail.com" class="site-footer__contact-link break-all"><span class="typography typography--body"  data-variant="body" >
+    gtcarsgtcars136@gmail.com
+</span>
+</a>
+                </li>
+                                                <li class="site-footer__contact-item">
+                    <img
+    src="/static/shared-icons/phone.svg"
+    alt=""
+    width="24"
+    height="24"
+    loading="eager"
+    decoding="async"
+    aria-hidden="true"
+    class="shared-icon site-footer__contact-icon"
+/>
+                    <a href="tel:+995557591963" class="site-footer__contact-link"><span class="typography typography--body"  data-variant="body" >
+    +995 557 591 963
+</span>
+</a>
+                </li>
+                                            </ul>
+        </div>
+
+        <div class="site-footer__brand site-footer__framed cornered corner-bottom" aria-label="RGCARS">
+            <p class="company-name text-center" style="--chars-count: 6;">
+    RGCARS
+</p>
+        </div>
+
+        <div class="site-footer__copyright">
+            <p>
+                &copy; 2026
+                <span class="site-footer__copyright-brand">RGCARS</span>.
+                All rights reserved.
+            </p>
+        </div>
+    </section>
+</footer></div>
+    </main>
+    </body>
+</html>

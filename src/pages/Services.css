@@ -682,72 +682,140 @@
 }
 
 @media (max-width: 768px) {
+    /* ── Hero Section (Mobile) ── */
+    .services-hero {
+        padding: 32px 24px 48px;
+        min-height: auto;
+    }
+
+    .services-hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    .services-hero p {
+        max-width: 280px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* ── Navigation Tabs (Mobile) ── */
     .tabs-section {
         position: sticky;
-        top: 80px;
-        z-index: 100;
-        background: transparent;
-        border-bottom: none;
-        box-shadow: none;
-        padding: 10px 16px;
+        top: 70px;
+        z-index: 1000;
+        background: #ffffff;
+        border-bottom: 1px solid rgba(20,61,43,0.08);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        margin: 0;
+        padding: 0;
         content-visibility: visible !important;
     }
 
     .tabs-wrap {
-        background: rgba(250, 247, 242, 0.85);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
-        border: 1px solid rgba(25, 53, 28, 0.08);
-        border-radius: 100px;
-        padding: 4px;
-        box-shadow: 0 8px 32px rgba(25, 53, 28, 0.08);
-        max-width: 480px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 24px;
+        padding: 12px 16px;
+        white-space: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        width: max-content;
+        min-width: 100%;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         margin: 0 auto;
-        gap: 0;
+    }
+    
+    .tabs-wrap::-webkit-scrollbar {
+        display: none;
     }
 
     .tab-btn {
-        padding: 12px 6px;
-        font-size: 0.8rem;
-        gap: 4px;
+        flex: 0 0 auto;
+        padding: 0;
+        background: transparent;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-muted);
+        border-radius: 0;
+        box-shadow: none;
+        min-width: 0;
+        position: relative;
     }
 
     .tab-btn svg {
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
     }
 
     .tab-indicator {
-        bottom: 4px;
-        left: 4px;
-        height: calc(100% - 8px);
-        background: rgba(25, 53, 28, 0.06);
-        border: 1px solid rgba(25, 53, 28, 0.1);
-        border-radius: 100px;
-        width: calc(33.333% - 8px);
-        box-shadow: none;
-    }
-
-    .indicator-tourism {
-        transform: translateX(0);
-    }
-
-    .indicator-cars {
-        transform: translateX(calc(100% + 8px));
-    }
-
-    .indicator-property {
-        transform: translateX(calc(200% + 16px));
+        display: none !important;
     }
 
     .tab-active {
-        color: var(--forest-800);
+        color: #143D2B;
         font-weight: 600;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .tab-active::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #C9A86A;
     }
 
     .tab-active svg {
-        color: var(--forest-600);
-        transform: scale(1.1);
+        color: #143D2B;
+        transform: none;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: inline !important;
+    }
+
+    /* ── Package Filters (Mobile) ── */
+    .pkg-filter-bar {
+        gap: 12px;
+    }
+
+    .pkg-filter-btn {
+        padding: 12px 18px;
+    }
+
+    /* ── Typography & Cards (Mobile) ── */
+    .pkg-name, .car-name, .property-name {
+        color: #143D2B;
+        line-height: 1.3;
+    }
+
+    .pkg-location, .pkg-duration, .car-type, .property-type {
+        color: #4B5A4F;
+        line-height: 1.7;
     }
 
     /* Single-column stacked grid on mobile — no horizontal scroll */
@@ -756,7 +824,7 @@
         grid-template-columns: 1fr !important;
         gap: 20px !important;
         overflow-x: visible !important;
-        padding: 0 !important;
+        padding: 0 16px !important;
         margin: 0 !important;
         scroll-snap-type: none !important;
     }
@@ -765,17 +833,20 @@
         width: 100% !important;
         flex: none !important;
         scroll-snap-align: none !important;
+        border-radius: 22px !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
     }
 
     /* Spacing and typography changes for property section */
     .property-grid {
         gap: 24px;
+        padding: 0 16px !important;
     }
 
     .property-card {
         grid-template-columns: 1fr;
-        border-radius: var(--radius-lg);
-        box-shadow: 0 8px 24px rgba(25, 53, 28, 0.05);
+        border-radius: 22px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
     .property-body {
@@ -793,10 +864,13 @@
     .cars-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+        padding: 0 16px !important;
     }
 
     .car-card {
         grid-template-columns: 1fr;
+        border-radius: 22px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
     .car-body {

@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate, NavLink } from 'react-router-dom';
 import {
   ChevronLeft, ChevronRight, ChevronRight as BreadcrumbArrow,
-  Share2, Users, Fuel, Zap, Gauge, Briefcase, Wind,
+  Users, Fuel, Zap, Gauge, Briefcase, Wind,
   Check, ArrowRight, Calendar
 } from 'lucide-react';
 import { carsBySlug, getSimilarCars } from '../data/carsData';
@@ -10,7 +10,7 @@ import './VehicleDetail.css';
 
 const WHATSAPP_NUMBER = '917204370369';
 
-const formatINR = (n) => '₹' + n.toLocaleString('en-IN');
+const formatUSD = (n) => n + '$';
 
 const formatDate = (dateStr) => {
   if (!dateStr) return '';
@@ -58,7 +58,7 @@ export default function VehicleDetail() {
   const [mileage, setMileage] = useState('');
   const [addons, setAddons] = useState([]);
   const [showAllPhotos, setShowAllPhotos] = useState(false);
-  const [shareMsg, setShareMsg] = useState('');
+
 
   const similarCars = vehicle ? getSimilarCars(vehicle, 4) : [];
 
@@ -112,17 +112,7 @@ export default function VehicleDetail() {
     );
   };
 
-  const handleShare = () => {
-    const url = window.location.href;
-    if (navigator.share) {
-      navigator.share({ title: vehicle.name, url });
-    } else {
-      navigator.clipboard.writeText(url).then(() => {
-        setShareMsg('Link copied!');
-        setTimeout(() => setShareMsg(''), 2000);
-      });
-    }
-  };
+
 
   const buildWAMessage = () => {
     let msg = `Hello, I am interested in renting the ${vehicle.name}`;
@@ -167,10 +157,6 @@ export default function VehicleDetail() {
             {vehicle.year} · {vehicle.transmission} · {vehicle.driveType}
           </div>
         </div>
-        <button className="vd-share-btn" onClick={handleShare} aria-label="Share this page">
-          <Share2 size={16} />
-          <span>{shareMsg || 'Share'}</span>
-        </button>
       </div>
 
       {/* ── Main Content ── */}
@@ -180,7 +166,7 @@ export default function VehicleDetail() {
         <div className="vd-left">
 
           {/* Gallery */}
-          <div className="vd-gallery vd-aos">
+          <div className={`vd-gallery vd-aos${vehicle.images.length === 1 ? ' single-image' : ''}`}>
             {/* Main large image */}
             <div className="vd-gallery-main" onClick={() => setShowAllPhotos(true)}>
               <img
@@ -188,15 +174,16 @@ export default function VehicleDetail() {
                 alt={`${vehicle.name} — main view`}
                 className="vd-gallery-main-img"
               />
-              <button className="vd-gallery-prev" onClick={(e) => { e.stopPropagation(); prevImg(); }} aria-label="Previous">
-                <ChevronLeft size={20} />
-              </button>
-              <button className="vd-gallery-next" onClick={(e) => { e.stopPropagation(); nextImg(); }} aria-label="Next">
-                <ChevronRight size={20} />
-              </button>
-              <button className="vd-show-all-btn" onClick={(e) => { e.stopPropagation(); setShowAllPhotos(true); }}>
-                Show all photos
-              </button>
+              {vehicle.images.length > 1 && (
+                <>
+                  <button className="vd-gallery-prev" onClick={(e) => { e.stopPropagation(); prevImg(); }} aria-label="Previous">
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button className="vd-gallery-next" onClick={(e) => { e.stopPropagation(); nextImg(); }} aria-label="Next">
+                    <ChevronRight size={20} />
+                  </button>
+                </>
+              )}
             </div>
 
             {/* Thumbnails column */}
@@ -292,11 +279,11 @@ export default function VehicleDetail() {
             {/* Pricing display */}
             <div className="vd-config-price-wrap">
               <div className="vd-config-price">
-                {formatINR(vehicle.price4to7)}
+                {formatUSD(vehicle.price4to7)}
                 <span className="vd-config-price-unit"> / day</span>
               </div>
               <div className="vd-config-price-alt">
-                {formatINR(vehicle.price8Plus)} / day from 8 days
+                {formatUSD(vehicle.price8Plus)} / day from 8 days
               </div>
             </div>
 
@@ -337,7 +324,7 @@ export default function VehicleDetail() {
             <div className="vd-config-field">
               <label className="vd-config-label">Mileage Package</label>
               <div className="vd-mileage-options">
-                {vehicle.mileageOptions.map((opt) => (
+                {(vehicle.mileageOptions || []).map((opt) => (
                   <button
                     key={opt}
                     className={`vd-mileage-btn${mileage === opt ? ' vd-mileage-active' : ''}`}
@@ -372,11 +359,11 @@ export default function VehicleDetail() {
             {totalAmount && (
               <div className="vd-price-breakdown">
                 <div className="vd-breakdown-row">
-                  <span>{days} day{days > 1 ? 's' : ''} × {formatINR(dailyRate)}</span>
+                  <span>{days} day{days > 1 ? 's' : ''} × {formatUSD(dailyRate)}</span>
                 </div>
                 <div className="vd-breakdown-total">
                   <span>Estimated Total</span>
-                  <span>{formatINR(totalAmount)}</span>
+                  <span>{formatUSD(totalAmount)}</span>
                 </div>
               </div>
             )}
@@ -420,10 +407,10 @@ export default function VehicleDetail() {
                 <div
                   key={car.id}
                   className="vd-similar-card vd-aos"
-                  onClick={() => navigate(`/services/car-rentals/${car.slug}`)}
+                  onClick={() => navigate(`/services/car-rentals/${car.id}`)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && navigate(`/services/car-rentals/${car.slug}`)}
+                  onKeyDown={(e) => e.key === 'Enter' && navigate(`/services/car-rentals/${car.id}`)}
                   aria-label={`View ${car.name}`}
                 >
                   <div className="vd-similar-img-wrap">
@@ -435,7 +422,7 @@ export default function VehicleDetail() {
                     <div className="vd-similar-meta">{car.year} · {car.transmission}</div>
                     <h3 className="vd-similar-name">{car.name}</h3>
                     <div className="vd-similar-price">
-                      {formatINR(car.price4to7)} <span>/day</span>
+                      {formatUSD(car.price4to7)} <span>/day</span>
                     </div>
                     <div className="vd-similar-cta">
                       View Details <ArrowRight size={13} />
@@ -509,7 +496,7 @@ export default function VehicleDetail() {
       {/* Mobile sticky CTA */}
       <div className="vd-mobile-sticky">
         <div className="vd-mobile-sticky-price">
-          <span className="vd-ms-price">{formatINR(vehicle.price4to7)}</span>
+          <span className="vd-ms-price">{formatUSD(vehicle.price4to7)}</span>
           <span className="vd-ms-unit">/day</span>
         </div>
         <a

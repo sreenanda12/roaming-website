@@ -4,7 +4,7 @@ import VehicleCard from './VehicleCard';
 import './CarRentalSection.css';
 
 export default function CarRentalSection() {
-  const [activeCategory, setActiveCategory] = useState('ALL');
+  const [activeCategory, setActiveCategory] = useState('All');
   const [displayed, setDisplayed] = useState(carsData);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -13,7 +13,7 @@ export default function CarRentalSection() {
     setIsAnimating(true);
     setTimeout(() => {
       setActiveCategory(cat);
-      setDisplayed(cat === 'ALL' ? carsData : carsData.filter((c) => c.category === cat));
+      setDisplayed(cat === 'All' ? carsData : carsData.filter((c) => c.category === cat));
       setIsAnimating(false);
     }, 200);
   }, [activeCategory]);
@@ -58,13 +58,13 @@ export default function CarRentalSection() {
 
         {/* Signature stats strip */}
         <div className="fleet-stats">
-          <span>{totalCount} Vehicles</span>
+          <span>{totalCount} Premium Vehicles</span>
           <span className="fleet-stats-sep">·</span>
-          <span>Flexible Rental Periods</span>
+          <span>Airport Delivery</span>
           <span className="fleet-stats-sep">·</span>
-          <span>Premium &amp; Family Options</span>
+          <span>Insurance Included</span>
           <span className="fleet-stats-sep">·</span>
-          <span>Easy WhatsApp Booking</span>
+          <span>Premium Service</span>
         </div>
       </div>
 
